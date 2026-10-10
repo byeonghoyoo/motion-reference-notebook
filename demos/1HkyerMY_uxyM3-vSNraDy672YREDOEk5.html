@@ -1,0 +1,21 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>검색창 타이핑 후킹</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><style>*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;background:#111;overflow:hidden}body{display:flex;align-items:center;justify-content:center}#s{position:relative;width:1080px;height:1350px;flex:none;overflow:hidden;font-family:Pretendard,sans-serif;transform-origin:50% 50%}#s{background:#fff;color:#202124}
+.q{position:absolute;left:0;right:0;top:160px;text-align:center;font:800 64px/1.3 Pretendard;letter-spacing:-2px}
+.q span{color:#1A73E8}
+.box{position:absolute;left:90px;right:90px;top:450px;height:120px;border-radius:60px;border:2px solid #dfe1e5;box-shadow:0 6px 24px rgba(32,33,36,.15);display:flex;align-items:center;padding:0 50px;font:500 44px Pretendard;background:#fff;z-index:2}
+.box .ic{width:40px;height:40px;border:5px solid #9aa0a6;border-radius:50%;margin-right:36px;position:relative;flex:none}.box .ic:after{content:"";position:absolute;right:-16px;bottom:-12px;width:18px;height:5px;background:#9aa0a6;transform:rotate(45deg)}
+.cur{display:inline-block;width:4px;height:52px;background:#1A73E8;margin-left:4px;vertical-align:middle}
+.dd{position:absolute;left:90px;right:90px;top:540px;padding:60px 0 20px;border-radius:0 0 50px 50px;background:#fff;box-shadow:0 12px 24px rgba(32,33,36,.15);border:2px solid #dfe1e5;border-top:0;z-index:1;transform-origin:50% 0}
+.dd div{padding:22px 50px;font:400 38px Pretendard;display:flex;gap:30px;align-items:center}.dd div:before{content:"⌕";color:#9aa0a6;font-size:40px}
+.dd div b{font-weight:700}
+.dd .hl{background:#F1F3F4}
+.ptr{position:absolute;width:60px;height:60px;z-index:3}
+.foot{position:absolute;left:0;right:0;bottom:130px;text-align:center;font:500 38px/1.5 Pretendard;color:#5f6368}
+.foot b{color:#202124;font-weight:800}</style></head><body><div id="s"><div class="q">다들 한 번쯤<br><span>검색해 봤잖아요?</span></div>
+<div class="box"><div class="ic"></div><span id="tx"></span><span class="cur" id="cu"></span></div>
+<div class="dd" id="dd"><div id="d1"></div><div id="d2"></div><div id="d3"></div><div id="d4"></div></div>
+<svg class="ptr" id="pt" viewBox="0 0 24 24"><path d="M4 2 L4 19 L8.5 15 L11.5 22 L14.5 20.7 L11.5 14 L18 14 Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg>
+<div class="foot">그 고민, <b>이제 검색 대신 답을 드릴게요</b></div></div><script>(function(){var s=document.getElementById("s");function fit(){var k=Math.min(innerWidth/1080,innerHeight/1350);s.style.transform=k<1?"scale("+k+")":"none"}addEventListener("resize",fit);fit()})();window.__seek=function(t){window.__T=t;document.getAnimations().forEach(function(a){a.pause();a.currentTime=t*1000});if(window.draw)draw(t)};var Q="피부 관리 어디서 시작하지";var S=["피부 관리 어디서 시작하지","피부 관리 어디서 시작하지 20대","피부 관리 어디서 시작하지 초보","피부 관리 어디서 시작하지 비용"];
+window.draw=function(t){t=t%7;var n=Math.max(0,Math.min(Q.length,Math.floor((t-.3)/0.12)));var s=Q.slice(0,n);document.getElementById("tx").textContent=s;document.getElementById("cu").style.opacity=(Math.floor(t*2.5)%2&&n>=Q.length)?0:1;
+var dd=document.getElementById("dd");var k=n>=4?Math.min(1,(t-(0.3+4*0.12))/.25):0;dd.style.opacity=k;dd.style.transform="scaleY("+(0.8+0.2*k)+")";
+S.forEach(function(v,i){var el=document.getElementById("d"+(i+1));el.innerHTML=s+"<b>"+v.slice(s.length)+"</b>";el.className=(t>2.9&&i==0)?"hl":""});
+var p=document.getElementById("pt");var pk=Math.max(0,Math.min(1,(t-2.2)/.7));var e=1-Math.pow(1-pk,3);p.style.left=(880-440*e)+"px";p.style.top=(1100-440*e)+"px";p.style.transform=(t>2.9&&t<3.05)?"scale(.85)":"none"};if(window.draw){var __t0=performance.now();(function L(){if(window.__T===undefined)draw((performance.now()-__t0)/1000);requestAnimationFrame(L)})()}</script></body></html>

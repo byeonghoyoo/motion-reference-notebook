@@ -1,0 +1,18 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>스플릿 플랩 전광판</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><style>*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;background:#111;overflow:hidden}body{display:flex;align-items:center;justify-content:center}#s{position:relative;width:1080px;height:1350px;flex:none;overflow:hidden;font-family:Pretendard,sans-serif;transform-origin:50% 50%}#s{background:#141414;color:#fff}
+.hd{position:absolute;left:90px;top:110px;font:600 28px Pretendard;letter-spacing:8px;color:#F2C94C}
+.hd2{position:absolute;left:90px;top:160px;font:800 64px/1.2 Pretendard;letter-spacing:-2px}
+.board{position:absolute;left:90px;top:360px;display:grid;grid-template-columns:repeat(5,164px);gap:14px}
+.f{position:relative;width:164px;height:220px;perspective:600px}
+.h{position:absolute;left:0;right:0;height:110px;overflow:hidden;background:#232323}.h span,.fl span{position:absolute;left:0;right:0;height:220px;text-align:center;font:800 150px/220px Pretendard;color:#f4f4f4}.h.t{top:0;border-radius:12px 12px 0 0}.h.t span{top:0}.h.b{bottom:0;border-radius:0 0 12px 12px;background:#1f1f1f}.h.b span{top:-110px}
+.fl{position:absolute;left:0;right:0;top:0;height:110px;overflow:hidden;background:#2c2c2c;border-radius:12px 12px 0 0;transform-origin:50% 100%;box-shadow:0 10px 20px rgba(0,0,0,.4)}.fl span{top:0}
+.f:after{content:"";position:absolute;left:0;right:0;top:109px;height:2px;background:#0a0a0a}
+.row2{top:620px}
+.foot{position:absolute;left:90px;top:960px;font:500 44px/1.5 Pretendard;color:#bbb}
+.foot b{color:#F2C94C}</style></head><body><div id="s"><div class="hd">DEPARTURE · 출발 안내</div><div class="hd2">다음 목적지는<br>새로운 나</div><div class="board" id="b1"></div><div class="board row2" id="b2" style="top:620px"></div>
+<div class="foot">탑승 마감까지 <b>단 3일</b><br>지금 바로 예약하세요</div></div><script>(function(){var s=document.getElementById("s");function fit(){var k=Math.min(innerWidth/1080,innerHeight/1350);s.style.transform=k<1?"scale("+k+")":"none"}addEventListener("resize",fit);fit()})();window.__seek=function(t){window.__T=t;document.getAnimations().forEach(function(a){a.pause();a.currentTime=t*1000});if(window.draw)draw(t)};var W1="봄맞이특가",W2="최대50%";var CH="가나다라마바사아자차카타파하0123456789%★";
+function mkB(id,w){var b=document.getElementById(id),a=[];for(var i=0;i<w.length;i++){var f=document.createElement("div");f.className="f";f.innerHTML='<div class="h t"><span></span></div><div class="h b"><span></span></div><div class="fl"><span style="line-height:220px"></span></div>';b.appendChild(f);a.push(f)}return a}
+var A=mkB("b1",W1),Bb=mkB("b2",W2);
+function r(i){var s=Math.sin(i*91.7)*9999;return CH[Math.floor((s-Math.floor(s))*CH.length)]}
+function set(arr,w,t,off){arr.forEach(function(f,i){var end=0.9+i*0.28+off;var step=0.09;var n=Math.floor(t/step);var ph=(t%step)/step;var done=t>=end;var cur=done?w[i]:r(n*7+i*13),nxt=done?w[i]:r((n+1)*7+i*13);
+var ss=f.querySelectorAll("span");ss[0].textContent=done?w[i]:nxt;ss[1].textContent=cur;ss[2].textContent=cur;var fl=f.querySelector(".fl");fl.style.transform=done?"rotateX(-90deg)":"rotateX("+(-ph*180)+"deg)";fl.style.opacity=(done||ph>.5)?0:1;f.style.opacity=t<0.1*i?0:1})}
+window.draw=function(t){t=t%6;set(A,W1,t,0);set(Bb,W2,t,.6)};if(window.draw){var __t0=performance.now();(function L(){if(window.__T===undefined)draw((performance.now()-__t0)/1000);requestAnimationFrame(L)})()}</script></body></html>

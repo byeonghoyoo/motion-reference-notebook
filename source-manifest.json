@@ -1,0 +1,1337 @@
+[
+  {
+    "id": "1Tu3S3kqRjefgSdcO1D2xrjGIyl5bTn7x",
+    "name": "영상_레퍼런스를_AI_제작_프롬프트로_바꾸는_실무가이드.md",
+    "mime": "text/markdown",
+    "local": "documents/1Tu3S3kqRjefgSdcO1D2xrjGIyl5bTn7x.md",
+    "size": 20869,
+    "originalPath": "모션그래픽/영상 레퍼런스로 AI 영상 만들기/영상_레퍼런스를_AI_제작_프롬프트로_바꾸는_실무가이드.md"
+  },
+  {
+    "id": "13YoXQkWSDlet-RUTLMy2gdHyChmFwGwB",
+    "name": "AI_영상_카메라_움직임_46종_한글_실무_가이드.md",
+    "mime": "text/markdown",
+    "local": "documents/13YoXQkWSDlet-RUTLMy2gdHyChmFwGwB.md",
+    "size": 46448,
+    "originalPath": "모션그래픽/AI 영상 카메라 움직임 46종/AI_영상_카메라_움직임_46종_한글_실무_가이드.md"
+  },
+  {
+    "id": "17-CwxvtHweDaWwTlbzkFjWoQrv-zDDT4",
+    "name": "카메라_움직임_비교.png",
+    "mime": "image/png",
+    "local": "assets/17-CwxvtHweDaWwTlbzkFjWoQrv-zDDT4.png",
+    "size": 96202,
+    "originalPath": "모션그래픽/AI 영상 카메라 움직임 46종/첨부이미지/카메라_움직임_비교.png"
+  },
+  {
+    "id": "1u_sMVoIGUJw9yINlDtVy78purEiceDHS",
+    "name": "클로드_카타나_영상_프리셋_편집_실무_가이드.md",
+    "mime": "text/markdown",
+    "local": "documents/1u_sMVoIGUJw9yINlDtVy78purEiceDHS.md",
+    "size": 26567,
+    "originalPath": "모션그래픽/클로드 카타나 영상 프리셋 편집/클로드_카타나_영상_프리셋_편집_실무_가이드.md"
+  },
+  {
+    "id": "1Iht7g212gL6aA52rYs6ruqRiyUbr8VoL",
+    "name": "디자인_프롬프트_2_하늘낙하_제품광고_한글_가이드.md",
+    "mime": "text/markdown",
+    "local": "documents/1Iht7g212gL6aA52rYs6ruqRiyUbr8VoL.md",
+    "size": 44266,
+    "originalPath": "모션그래픽/디자인 프롬프트 2/디자인_프롬프트_2_하늘낙하_제품광고_한글_가이드.md"
+  },
+  {
+    "id": "1tdPbD5dxJv6pJwwmflx3r-M439aEEj96",
+    "name": "하늘낙하_04_제품상자.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1tdPbD5dxJv6pJwwmflx3r-M439aEEj96.jpg",
+    "size": 85538,
+    "originalPath": "모션그래픽/디자인 프롬프트 2/첨부이미지/하늘낙하_04_제품상자.jpg"
+  },
+  {
+    "id": "1e-JPuYTrrMAJ-bwRtNYbuA8X3NBi0z0S",
+    "name": "하늘낙하_03_스니커즈제품.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1e-JPuYTrrMAJ-bwRtNYbuA8X3NBi0z0S.jpg",
+    "size": 89447,
+    "originalPath": "모션그래픽/디자인 프롬프트 2/첨부이미지/하늘낙하_03_스니커즈제품.jpg"
+  },
+  {
+    "id": "1k08cTWc0hVxF2AMKTiSJyLAkTRHTjEJy",
+    "name": "하늘낙하_02_종료프레임.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1k08cTWc0hVxF2AMKTiSJyLAkTRHTjEJy.jpg",
+    "size": 208412,
+    "originalPath": "모션그래픽/디자인 프롬프트 2/첨부이미지/하늘낙하_02_종료프레임.jpg"
+  },
+  {
+    "id": "1QPEt9IBL_q-Ue3Fpb3ixE1auCZPtc2oT",
+    "name": "하늘낙하_01_시작프레임.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1QPEt9IBL_q-Ue3Fpb3ixE1auCZPtc2oT.jpg",
+    "size": 171443,
+    "originalPath": "모션그래픽/디자인 프롬프트 2/첨부이미지/하늘낙하_01_시작프레임.jpg"
+  },
+  {
+    "id": "1CvBchMo1h4IW1NZslnPcGuDaxzXwWT1-",
+    "name": "00-post-card-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1CvBchMo1h4IW1NZslnPcGuDaxzXwWT1-.jpg",
+    "size": 71268,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/00-post-card-20261007.jpg"
+  },
+  {
+    "id": "1DfDZXirp6BQfCy_6Zz-qdGFeHCk9kPzV",
+    "name": "30-nautical-chart-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1DfDZXirp6BQfCy_6Zz-qdGFeHCk9kPzV.jpg",
+    "size": 288499,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/30-nautical-chart-20261007.jpg"
+  },
+  {
+    "id": "1EufkZTNTA3yAM5fU8MUxxUkI2bpJjjH3",
+    "name": "29-film-grain-editorial-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1EufkZTNTA3yAM5fU8MUxxUkI2bpJjjH3.jpg",
+    "size": 390594,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/29-film-grain-editorial-20261007.jpg"
+  },
+  {
+    "id": "15G2XsJFqhItemlbVIarraHLq7SZ732tU",
+    "name": "28-constructivism-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/15G2XsJFqhItemlbVIarraHLq7SZ732tU.jpg",
+    "size": 263032,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/28-constructivism-20261007.jpg"
+  },
+  {
+    "id": "1mFlmfSQHw-2-pkl55xTeoOpeA7_ZC7Sv",
+    "name": "27-audio-waveform-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1mFlmfSQHw-2-pkl55xTeoOpeA7_ZC7Sv.jpg",
+    "size": 210397,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/27-audio-waveform-20261007.jpg"
+  },
+  {
+    "id": "1S_RGjqkouJYBmOx3rt9fGfk9JgD0XJkd",
+    "name": "26-isometric-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1S_RGjqkouJYBmOx3rt9fGfk9JgD0XJkd.jpg",
+    "size": 239876,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/26-isometric-20261007.jpg"
+  },
+  {
+    "id": "1m4sLJUp6iTFoJKIUXNdUuIQgz84RinrC",
+    "name": "25-glassmorphism-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1m4sLJUp6iTFoJKIUXNdUuIQgz84RinrC.jpg",
+    "size": 286179,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/25-glassmorphism-20261007.jpg"
+  },
+  {
+    "id": "1bMthNTp_0o5LTJq0V9N7EggBk4AVXIfT",
+    "name": "24-cut-out-collage-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1bMthNTp_0o5LTJq0V9N7EggBk4AVXIfT.jpg",
+    "size": 371737,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/24-cut-out-collage-20261007.jpg"
+  },
+  {
+    "id": "1YcGSk2-xNECaXRQhALx9r67fPhmqj51N",
+    "name": "23-split-flap-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1YcGSk2-xNECaXRQhALx9r67fPhmqj51N.jpg",
+    "size": 139429,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/23-split-flap-20261007.jpg"
+  },
+  {
+    "id": "1SkUrgGOvJmrh_IxRhc8xG1UtmY-_jQ37",
+    "name": "22-ink-wash-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1SkUrgGOvJmrh_IxRhc8xG1UtmY-_jQ37.jpg",
+    "size": 241979,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/22-ink-wash-20261007.jpg"
+  },
+  {
+    "id": "11I63XMbO3G64-zaqsbxbAu3BsKlGAn7b",
+    "name": "21-retro-os-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/11I63XMbO3G64-zaqsbxbAu3BsKlGAn7b.jpg",
+    "size": 294753,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/21-retro-os-20261007.jpg"
+  },
+  {
+    "id": "17bYgVyb6EnRzFMLEvoYsaU6RWG-z1Q81",
+    "name": "20-clay-3d-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/17bYgVyb6EnRzFMLEvoYsaU6RWG-z1Q81.jpg",
+    "size": 236616,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/20-clay-3d-20261007.jpg"
+  },
+  {
+    "id": "1frRPNNfi3Oavu-T1aSts9SNkqJmiZ9ES",
+    "name": "19-op-art-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1frRPNNfi3Oavu-T1aSts9SNkqJmiZ9ES.jpg",
+    "size": 339354,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/19-op-art-20261007.jpg"
+  },
+  {
+    "id": "1aVKiJ-2z798VASyEcXdBcG46nP7XFC7u",
+    "name": "18-flat-infographic-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1aVKiJ-2z798VASyEcXdBcG46nP7XFC7u.jpg",
+    "size": 119707,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/18-flat-infographic-20261007.jpg"
+  },
+  {
+    "id": "1LDTAmv1i6UHPNRZ_f5eCbIklrfPrbr13",
+    "name": "17-y2k-chrome-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1LDTAmv1i6UHPNRZ_f5eCbIklrfPrbr13.jpg",
+    "size": 187863,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/17-y2k-chrome-20261007.jpg"
+  },
+  {
+    "id": "15Jos5b1bhZuQjKwx_lVwF5mtvK1Xwe9O",
+    "name": "16-brutalism-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/15Jos5b1bhZuQjKwx_lVwF5mtvK1Xwe9O.jpg",
+    "size": 114342,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/16-brutalism-20261007.jpg"
+  },
+  {
+    "id": "1TcnDI841TOnbpAM6sHOsUO2NcARyNJBS",
+    "name": "15-8-bit-pixel-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1TcnDI841TOnbpAM6sHOsUO2NcARyNJBS.jpg",
+    "size": 253930,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/15-8-bit-pixel-20261007.jpg"
+  },
+  {
+    "id": "13AvOpN1vXlHyUZfZJZLeEA4pUBxPC49U",
+    "name": "14-hand-drawn-doodle-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/13AvOpN1vXlHyUZfZJZLeEA4pUBxPC49U.jpg",
+    "size": 182639,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/14-hand-drawn-doodle-20261007.jpg"
+  },
+  {
+    "id": "1MIrAkFS_P8z0-oIai1L4kPUTf--VKrKT",
+    "name": "13-led-dot-matrix-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1MIrAkFS_P8z0-oIai1L4kPUTf--VKrKT.jpg",
+    "size": 267540,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/13-led-dot-matrix-20261007.jpg"
+  },
+  {
+    "id": "1Io9thCO17bzF-wWsiAKb2CexLC3W5_MJ",
+    "name": "12-paper-craft-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1Io9thCO17bzF-wWsiAKb2CexLC3W5_MJ.jpg",
+    "size": 226780,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/12-paper-craft-20261007.jpg"
+  },
+  {
+    "id": "10SbNzf4h4mJbn9IHfy1bCd_5rjujD5EG",
+    "name": "11-synthwave-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/10SbNzf4h4mJbn9IHfy1bCd_5rjujD5EG.jpg",
+    "size": 272505,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/11-synthwave-20261007.jpg"
+  },
+  {
+    "id": "1AJ2My-DH-KQmaC1nlzPcBPd0lwHoSppL",
+    "name": "10-risograph-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1AJ2My-DH-KQmaC1nlzPcBPd0lwHoSppL.jpg",
+    "size": 528706,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/10-risograph-20261007.jpg"
+  },
+  {
+    "id": "1h2MXfQCaOVg_S_5PnF6mOOHtcUtajmO5",
+    "name": "09-blueprint-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1h2MXfQCaOVg_S_5PnF6mOOHtcUtajmO5.jpg",
+    "size": 395301,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/09-blueprint-20261007.jpg"
+  },
+  {
+    "id": "1Om8qs53LHV-m9UcIxGksGE0Rk9-HuQMA",
+    "name": "08-comic-halftone-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1Om8qs53LHV-m9UcIxGksGE0Rk9-HuQMA.jpg",
+    "size": 397511,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/08-comic-halftone-20261007.jpg"
+  },
+  {
+    "id": "1T31ZlEGlq9M7pX45edEiJykJ0HVRhN5P",
+    "name": "07-ascii-terminal-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1T31ZlEGlq9M7pX45edEiJykJ0HVRhN5P.jpg",
+    "size": 451810,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/07-ascii-terminal-20261007.jpg"
+  },
+  {
+    "id": "1I7HriU5nxpz5oYIMF8Itdbmxr62qQng4",
+    "name": "06-memphis-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1I7HriU5nxpz5oYIMF8Itdbmxr62qQng4.jpg",
+    "size": 285716,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/06-memphis-20261007.jpg"
+  },
+  {
+    "id": "1ceeAdB3gyvNqTSySv-xxz7itzfl8ubM0",
+    "name": "05-glitch-vhs-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1ceeAdB3gyvNqTSySv-xxz7itzfl8ubM0.jpg",
+    "size": 215463,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/05-glitch-vhs-20261007.jpg"
+  },
+  {
+    "id": "1kCF0MF4y-0_-j7JUOwlLDCphCVlVMyOM",
+    "name": "04-bauhaus-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1kCF0MF4y-0_-j7JUOwlLDCphCVlVMyOM.jpg",
+    "size": 141943,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/04-bauhaus-20261007.jpg"
+  },
+  {
+    "id": "1bMU5F6W6vySJ5p8fnh-Gfyk0qAZ0zp_I",
+    "name": "03-neon-sign-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1bMU5F6W6vySJ5p8fnh-Gfyk0qAZ0zp_I.jpg",
+    "size": 203344,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/03-neon-sign-20261007.jpg"
+  },
+  {
+    "id": "1YheJwBgl61PeUszp_P9rcU0SCIDCP5l3",
+    "name": "02-swiss-grid-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1YheJwBgl61PeUszp_P9rcU0SCIDCP5l3.jpg",
+    "size": 139077,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/02-swiss-grid-20261007.jpg"
+  },
+  {
+    "id": "1Vmmvz5JNIlA0tQIdC1oDLM7RqWJAfJZ5",
+    "name": "01-kinetic-typography-20261007.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1Vmmvz5JNIlA0tQIdC1oDLM7RqWJAfJZ5.jpg",
+    "size": 137699,
+    "originalPath": "모션그래픽/_첨부_클로드모션그래픽30스타일/01-kinetic-typography-20261007.jpg"
+  },
+  {
+    "id": "1dqUuNYxRt8cYTYX_TcMl9Eg3Lv-S9TPG",
+    "name": "클로드 모션그래픽 스타일 30개 프롬프트 전부 공개.md",
+    "mime": "text/markdown",
+    "local": "documents/1dqUuNYxRt8cYTYX_TcMl9Eg3Lv-S9TPG.md",
+    "size": 28064,
+    "originalPath": "모션그래픽/클로드 모션그래픽 스타일 30개 프롬프트 전부 공개.md"
+  },
+  {
+    "id": "18JHjsIX7vx8jMM5KYfkwgs3e-XXzSixV",
+    "name": "Opus 5.5로 5분만에 만드는 브랜드 홍보 영상 — 프롬프트 7개 전부 공개.md",
+    "mime": "text/markdown",
+    "local": "documents/18JHjsIX7vx8jMM5KYfkwgs3e-XXzSixV.md",
+    "size": 12524,
+    "originalPath": "모션그래픽/Opus 5.5로 5분만에 만드는 브랜드 홍보 영상 — 프롬프트 7개 전부 공개.md"
+  },
+  {
+    "id": "1YDjAh4gOmLTNPY60mnmHKBTWkKnc9wIH",
+    "name": "cases.md",
+    "mime": "text/markdown",
+    "local": "documents/1YDjAh4gOmLTNPY60mnmHKBTWkKnc9wIH.md",
+    "size": 15542,
+    "originalPath": "모션그래픽/opus-video-prompts/cases.md"
+  },
+  {
+    "id": "1pReOTKjGeagz0aYRGWnxtGjUmNRAE8nr",
+    "name": "cases.json",
+    "mime": "application/json",
+    "local": "documents/1pReOTKjGeagz0aYRGWnxtGjUmNRAE8nr.json",
+    "size": 15530,
+    "originalPath": "모션그래픽/opus-video-prompts/cases.json"
+  },
+  {
+    "id": "15yJuP-k3KlnT8To4nltfEhZOWZBry9LM",
+    "name": "README.md",
+    "mime": "text/markdown",
+    "local": "documents/15yJuP-k3KlnT8To4nltfEhZOWZBry9LM.md",
+    "size": 44491,
+    "originalPath": "모션그래픽/opus-video-prompts/README.md"
+  },
+  {
+    "id": "1TeK03RiAX7MkWEV3KWIhLu7Vl9quWalH",
+    "name": "18-prehistoric-island-threejs.md",
+    "mime": "text/markdown",
+    "local": "documents/1TeK03RiAX7MkWEV3KWIhLu7Vl9quWalH.md",
+    "size": 5729,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/18-prehistoric-island-threejs.md"
+  },
+  {
+    "id": "1i28-8q2OWmaxcOJdqSpz1zH-QJ6rFvD2",
+    "name": "17-pixel-wizard.md",
+    "mime": "text/markdown",
+    "local": "documents/1i28-8q2OWmaxcOJdqSpz1zH-QJ6rFvD2.md",
+    "size": 3724,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/17-pixel-wizard.md"
+  },
+  {
+    "id": "12Snsncoj8FDSIyYZklH-9RjHoCmXN-up",
+    "name": "16-high-end-product-video.md",
+    "mime": "text/markdown",
+    "local": "documents/12Snsncoj8FDSIyYZklH-9RjHoCmXN-up.md",
+    "size": 4211,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/16-high-end-product-video.md"
+  },
+  {
+    "id": "1bgUE2Xm5eTFY1d0qJ6WcEiyLHAFvJWwe",
+    "name": "15-ui-morph-loop.md",
+    "mime": "text/markdown",
+    "local": "documents/1bgUE2Xm5eTFY1d0qJ6WcEiyLHAFvJWwe.md",
+    "size": 4359,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/15-ui-morph-loop.md"
+  },
+  {
+    "id": "1mSRcMBBzuioCFR9U0Y-QVlzvic1V4sWu",
+    "name": "14-saas-launch-real-assets.md",
+    "mime": "text/markdown",
+    "local": "documents/1mSRcMBBzuioCFR9U0Y-QVlzvic1V4sWu.md",
+    "size": 1592,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/14-saas-launch-real-assets.md"
+  },
+  {
+    "id": "1_PUZaY_PbJw6FuuOj4iFh-5XVyOPZKBX",
+    "name": "13-remotion-app-promo-2.md",
+    "mime": "text/markdown",
+    "local": "documents/1_PUZaY_PbJw6FuuOj4iFh-5XVyOPZKBX.md",
+    "size": 1511,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/13-remotion-app-promo-2.md"
+  },
+  {
+    "id": "1DqxwvI8fH_FcuunrdImBeMR5HiqqcGTb",
+    "name": "12-remotion-app-promo-1.md",
+    "mime": "text/markdown",
+    "local": "documents/1DqxwvI8fH_FcuunrdImBeMR5HiqqcGTb.md",
+    "size": 1551,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/12-remotion-app-promo-1.md"
+  },
+  {
+    "id": "17Qt5EjVcd1eRyBUeN3rIUjf2K0ntmJpb",
+    "name": "11-austerlitz-film.md",
+    "mime": "text/markdown",
+    "local": "documents/17Qt5EjVcd1eRyBUeN3rIUjf2K0ntmJpb.md",
+    "size": 1953,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/11-austerlitz-film.md"
+  },
+  {
+    "id": "1mdEINzTNiAK6tIicM7agXCj-uu-TZ6Rw",
+    "name": "10-talking-head-to-lineart.md",
+    "mime": "text/markdown",
+    "local": "documents/1mdEINzTNiAK6tIicM7agXCj-uu-TZ6Rw.md",
+    "size": 1596,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/10-talking-head-to-lineart.md"
+  },
+  {
+    "id": "192EuTi-Pp95fnOkvqLsqgjvl73pfx--a",
+    "name": "09-atmospheric-circulation-tts.md",
+    "mime": "text/markdown",
+    "local": "documents/192EuTi-Pp95fnOkvqLsqgjvl73pfx--a.md",
+    "size": 1543,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/09-atmospheric-circulation-tts.md"
+  },
+  {
+    "id": "1QO8lkr2GaSFMwSYkDr2tpaJr-V3SFb8h",
+    "name": "08-negroni-recipe-explainer.md",
+    "mime": "text/markdown",
+    "local": "documents/1QO8lkr2GaSFMwSYkDr2tpaJr-V3SFb8h.md",
+    "size": 1359,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/08-negroni-recipe-explainer.md"
+  },
+  {
+    "id": "1oFbNZmsqj7a7pEKKSnEPS_N4OwIqFffz",
+    "name": "07-business-explainer-30s.md",
+    "mime": "text/markdown",
+    "local": "documents/1oFbNZmsqj7a7pEKKSnEPS_N4OwIqFffz.md",
+    "size": 1484,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/07-business-explainer-30s.md"
+  },
+  {
+    "id": "1HInF5NPJs9J2MAam0xwfh3dtBaEIrYd0",
+    "name": "06-room-to-quarks-zoom.md",
+    "mime": "text/markdown",
+    "local": "documents/1HInF5NPJs9J2MAam0xwfh3dtBaEIrYd0.md",
+    "size": 1120,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/06-room-to-quarks-zoom.md"
+  },
+  {
+    "id": "1tUid93mKULI_BhFqBrWzzFJ0uUC4xGH3",
+    "name": "05-transformer-explainer-js.md",
+    "mime": "text/markdown",
+    "local": "documents/1tUid93mKULI_BhFqBrWzzFJ0uUC4xGH3.md",
+    "size": 1036,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/05-transformer-explainer-js.md"
+  },
+  {
+    "id": "1gXrIziJTUBG8cqpC1WInLVBJNK8W_ucO",
+    "name": "04-opus-1984-ad.md",
+    "mime": "text/markdown",
+    "local": "documents/1gXrIziJTUBG8cqpC1WInLVBJNK8W_ucO.md",
+    "size": 1140,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/04-opus-1984-ad.md"
+  },
+  {
+    "id": "1FsklsoBDoNzSynatd-ZX2ebYNDKeQXQr",
+    "name": "02-motion-showreel-15s.md",
+    "mime": "text/markdown",
+    "local": "documents/1FsklsoBDoNzSynatd-ZX2ebYNDKeQXQr.md",
+    "size": 1117,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/02-motion-showreel-15s.md"
+  },
+  {
+    "id": "141OJz0i2NM2ZADXw3-xnwUFy9nL0rueb",
+    "name": "01-inference-startup-launch.md",
+    "mime": "text/markdown",
+    "local": "documents/141OJz0i2NM2ZADXw3-xnwUFy9nL0rueb.md",
+    "size": 1104,
+    "originalPath": "모션그래픽/opus-video-prompts/prompts/01-inference-startup-launch.md"
+  },
+  {
+    "id": "102JNgmRbyoPreWLQnZx5xf-fRycGUQ60",
+    "name": "모션그래픽 레퍼런스.md",
+    "mime": "text/markdown",
+    "local": "documents/102JNgmRbyoPreWLQnZx5xf-fRycGUQ60.md",
+    "size": 36757,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/모션그래픽 레퍼런스.md"
+  },
+  {
+    "id": "1SFAWxdU0G39YEL4SxNcpq54QIljw1H9V",
+    "name": "46_키네틱_박자_단어.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1SFAWxdU0G39YEL4SxNcpq54QIljw1H9V.jpg",
+    "size": 33549,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/46_키네틱_박자_단어.jpg"
+  },
+  {
+    "id": "1jhqSyTsv-DQjblmaFWF-X4pphkcwbCuY",
+    "name": "45_비트범프_0초포스터.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1jhqSyTsv-DQjblmaFWF-X4pphkcwbCuY.jpg",
+    "size": 49399,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/45_비트범프_0초포스터.jpg"
+  },
+  {
+    "id": "18ZdYkomlwqvAmtrH0onf82YI-bqkLnVx",
+    "name": "44_퍼즐피드_3연결.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/18ZdYkomlwqvAmtrH0onf82YI-bqkLnVx.jpg",
+    "size": 99076,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/44_퍼즐피드_3연결.jpg"
+  },
+  {
+    "id": "1CVGsF-9s0GMBuFoaze6UCn2DG0vC1xTc",
+    "name": "43_라인_캐러셀.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1CVGsF-9s0GMBuFoaze6UCn2DG0vC1xTc.jpg",
+    "size": 32152,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/43_라인_캐러셀.jpg"
+  },
+  {
+    "id": "1LFNJTJ4_93myUFhSHb9lafLGqJ1Q7vRO",
+    "name": "42_픽셀_파티클_글로우.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1LFNJTJ4_93myUFhSHb9lafLGqJ1Q7vRO.jpg",
+    "size": 55361,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/42_픽셀_파티클_글로우.jpg"
+  },
+  {
+    "id": "1u8CpykkqfL_Y9XkMy-OX_4IfmBWAJArH",
+    "name": "41_펀치인_펀치아웃.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1u8CpykkqfL_Y9XkMy-OX_4IfmBWAJArH.jpg",
+    "size": 32370,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/41_펀치인_펀치아웃.jpg"
+  },
+  {
+    "id": "12HSTtlq_Ns4nHhmio6pj7RQJOPZfNSsG",
+    "name": "40_그래픽매치_TV프레임.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/12HSTtlq_Ns4nHhmio6pj7RQJOPZfNSsG.jpg",
+    "size": 30247,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/40_그래픽매치_TV프레임.jpg"
+  },
+  {
+    "id": "1HSADbvpTZKtiUEiorZn14_dyKOUpeU1f",
+    "name": "39_깨진_유리_리빌.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1HSADbvpTZKtiUEiorZn14_dyKOUpeU1f.jpg",
+    "size": 78730,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/39_깨진_유리_리빌.jpg"
+  },
+  {
+    "id": "1qXHk4pXGxoNIoh6LTu7O-dAkDbdWrEBi",
+    "name": "38_라이트_스윕.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1qXHk4pXGxoNIoh6LTu7O-dAkDbdWrEBi.jpg",
+    "size": 39067,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/38_라이트_스윕.jpg"
+  },
+  {
+    "id": "119SXcD-wVh6nYky95aF7U2mUEGPKiIoK",
+    "name": "37_3D_큐브_면전환.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/119SXcD-wVh6nYky95aF7U2mUEGPKiIoK.jpg",
+    "size": 15919,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/37_3D_큐브_면전환.jpg"
+  },
+  {
+    "id": "1YifBh3UuV7yQLKiFuHDThisp1Y_56p4t",
+    "name": "36_젤리_스쿼시.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1YifBh3UuV7yQLKiFuHDThisp1Y_56p4t.jpg",
+    "size": 38295,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/36_젤리_스쿼시.jpg"
+  },
+  {
+    "id": "1xKIEDVHzqeG1TA-sfMNxxRa6V5kw9kTh",
+    "name": "35_리퀴드_드립.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1xKIEDVHzqeG1TA-sfMNxxRa6V5kw9kTh.jpg",
+    "size": 39211,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/35_리퀴드_드립.jpg"
+  },
+  {
+    "id": "1NZeA-gwZKt6eAfnE9qTuIGVlPlaYrx2R",
+    "name": "34_메타볼_블롭_리빌.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1NZeA-gwZKt6eAfnE9qTuIGVlPlaYrx2R.jpg",
+    "size": 28726,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/34_메타볼_블롭_리빌.jpg"
+  },
+  {
+    "id": "1gTHJqkIZcrYLtObFpoWFKb0PDIp_gy8H",
+    "name": "33_VHS_오프셋_미스프린트.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1gTHJqkIZcrYLtObFpoWFKb0PDIp_gy8H.jpg",
+    "size": 65685,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/33_VHS_오프셋_미스프린트.jpg"
+  },
+  {
+    "id": "1HPo6KLFcqfRD6E4mIyUfu6FlPi8nAnUt",
+    "name": "32_서클_팝_링.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1HPo6KLFcqfRD6E4mIyUfu6FlPi8nAnUt.jpg",
+    "size": 22736,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/32_서클_팝_링.jpg"
+  },
+  {
+    "id": "1vK40csBW9V4XcAVPYY9BKIyCoSsScIE0",
+    "name": "31_스캔_밴드_와이프.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1vK40csBW9V4XcAVPYY9BKIyCoSsScIE0.jpg",
+    "size": 26566,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/31_스캔_밴드_와이프.jpg"
+  },
+  {
+    "id": "1AhjqdCrYKpNAYnXl_7EepMUmgCGs4G5v",
+    "name": "30_슬롯머신_타이포.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1AhjqdCrYKpNAYnXl_7EepMUmgCGs4G5v.jpg",
+    "size": 33478,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/30_슬롯머신_타이포.jpg"
+  },
+  {
+    "id": "1km5U3we0I9bWnzRRlsdiVoptXwwIKcKJ",
+    "name": "29_CRT_파워_온오프.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1km5U3we0I9bWnzRRlsdiVoptXwwIKcKJ.jpg",
+    "size": 167173,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/29_CRT_파워_온오프.jpg"
+  },
+  {
+    "id": "1C3qX2LfmnmAmq5T8U5yR1v2yS2tqYLCj",
+    "name": "28_랜섬노트_타이포.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1C3qX2LfmnmAmq5T8U5yR1v2yS2tqYLCj.jpg",
+    "size": 52769,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/28_랜섬노트_타이포.jpg"
+  },
+  {
+    "id": "12pO9hi8abgYvEULsJtCs5-AdNl2o-c4e",
+    "name": "27_카메라_줌블러.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/12pO9hi8abgYvEULsJtCs5-AdNl2o-c4e.jpg",
+    "size": 30113,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/27_카메라_줌블러.jpg"
+  },
+  {
+    "id": "18CRfpnO0XYHuuSA6v4yZigrQ2APYfX7-",
+    "name": "26_연필_손그림_boil.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/18CRfpnO0XYHuuSA6v4yZigrQ2APYfX7-.jpg",
+    "size": 50147,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/26_연필_손그림_boil.jpg"
+  },
+  {
+    "id": "1nECqX6JoxlC5uf3xq04pk4lBKIZ_JRkc",
+    "name": "25_페이지_넘기기.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1nECqX6JoxlC5uf3xq04pk4lBKIZ_JRkc.jpg",
+    "size": 44157,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/25_페이지_넘기기.jpg"
+  },
+  {
+    "id": "1MIiPglyBHTd4xBljsZXVo14eRoCDh2q_",
+    "name": "24_스톱모션_12fps_위글.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1MIiPglyBHTd4xBljsZXVo14eRoCDh2q_.jpg",
+    "size": 39059,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/24_스톱모션_12fps_위글.jpg"
+  },
+  {
+    "id": "1DwAAnolAnl782yiyu_9wVP4Dk5RPEi3x",
+    "name": "23_카드_플립_도어.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1DwAAnolAnl782yiyu_9wVP4Dk5RPEi3x.jpg",
+    "size": 26392,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/23_카드_플립_도어.jpg"
+  },
+  {
+    "id": "121O2I_r_Kk7hT-ETihoh_pm3exPk7GIX",
+    "name": "22_픽셀_계단_와이프.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/121O2I_r_Kk7hT-ETihoh_pm3exPk7GIX.jpg",
+    "size": 30217,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/22_픽셀_계단_와이프.jpg"
+  },
+  {
+    "id": "1qpHQZqtoUynBwpDcNFCUJIcDLJCjalgR",
+    "name": "21_UI_커서_버튼언폴드.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1qpHQZqtoUynBwpDcNFCUJIcDLJCjalgR.jpg",
+    "size": 57391,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/21_UI_커서_버튼언폴드.jpg"
+  },
+  {
+    "id": "1wqQM-w1igh9EaLy2C4frHvU6nASSycG0",
+    "name": "20_3D_큐브.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1wqQM-w1igh9EaLy2C4frHvU6nASSycG0.jpg",
+    "size": 71488,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/20_3D_큐브.jpg"
+  },
+  {
+    "id": "1NQMuQ0gtMhKSA9U-GqiDmB_5JfMvi1i5",
+    "name": "19_검색창_타이핑.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1NQMuQ0gtMhKSA9U-GqiDmB_5JfMvi1i5.jpg",
+    "size": 89341,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/19_검색창_타이핑.jpg"
+  },
+  {
+    "id": "1l4U2Jx4iWFWxYzziXsRA52HLcFDQinwS",
+    "name": "18_채팅_버블.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1l4U2Jx4iWFWxYzziXsRA52HLcFDQinwS.jpg",
+    "size": 62105,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/18_채팅_버블.jpg"
+  },
+  {
+    "id": "1Ubgm4qk_ewVNPJymSULHaanoOt6nuQFF",
+    "name": "17_벤토_그리드.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1Ubgm4qk_ewVNPJymSULHaanoOt6nuQFF.jpg",
+    "size": 104968,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/17_벤토_그리드.jpg"
+  },
+  {
+    "id": "1hqW22j6aESv5JhWa5eubDdL9TDJJY4_2",
+    "name": "16_텍스트_스크램블.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1hqW22j6aESv5JhWa5eubDdL9TDJJY4_2.jpg",
+    "size": 97167,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/16_텍스트_스크램블.jpg"
+  },
+  {
+    "id": "1Q2bBKTUQUWomTqdnJHVG8bwD6px4Nb6G",
+    "name": "15_폰_목업_UI.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1Q2bBKTUQUWomTqdnJHVG8bwD6px4Nb6G.jpg",
+    "size": 86942,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/15_폰_목업_UI.jpg"
+  },
+  {
+    "id": "1jSUdKOjnz2S8FBfZzs2uTQT9Ky-69vHd",
+    "name": "14_클레이_3D.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1jSUdKOjnz2S8FBfZzs2uTQT9Ky-69vHd.jpg",
+    "size": 79752,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/14_클레이_3D.jpg"
+  },
+  {
+    "id": "1O7pJXMDx4j6dH2swCUMEixr30pKLsbY_",
+    "name": "13_페이퍼_콜라주.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1O7pJXMDx4j6dH2swCUMEixr30pKLsbY_.jpg",
+    "size": 115787,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/13_페이퍼_콜라주.jpg"
+  },
+  {
+    "id": "1LI1XT4cHXAnSvZjeWfIDTrS9lfOI_qGX",
+    "name": "12_마키_브루탈.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1LI1XT4cHXAnSvZjeWfIDTrS9lfOI_qGX.jpg",
+    "size": 126398,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/12_마키_브루탈.jpg"
+  },
+  {
+    "id": "1CDqUct0fyMVgRCDfUyydSlrYnKdzPmTU",
+    "name": "11_네온_사인.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1CDqUct0fyMVgRCDfUyydSlrYnKdzPmTU.jpg",
+    "size": 102909,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/11_네온_사인.jpg"
+  },
+  {
+    "id": "14WnO2Z7RmCgE2rk_T-NM1Ps_L0CqaHcc",
+    "name": "10_아이소메트릭.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/14WnO2Z7RmCgE2rk_T-NM1Ps_L0CqaHcc.jpg",
+    "size": 60459,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/10_아이소메트릭.jpg"
+  },
+  {
+    "id": "1C2F9pe-8RaSEmQMJscxAUp2b56QMVr8l",
+    "name": "09_마스크_리빌.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1C2F9pe-8RaSEmQMJscxAUp2b56QMVr8l.jpg",
+    "size": 68153,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/09_마스크_리빌.jpg"
+  },
+  {
+    "id": "16imld1Ei8kR-kVZNeK7VCkzqcTx-PBJO",
+    "name": "08_라인_드로잉.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/16imld1Ei8kR-kVZNeK7VCkzqcTx-PBJO.jpg",
+    "size": 57204,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/08_라인_드로잉.jpg"
+  },
+  {
+    "id": "1QShf_Cj6SfryvOn4TvqyLRe2NcVO-5a1",
+    "name": "07_글리치.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1QShf_Cj6SfryvOn4TvqyLRe2NcVO-5a1.jpg",
+    "size": 164399,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/07_글리치.jpg"
+  },
+  {
+    "id": "1VOILjZf8g9RuSJpcNTA63Evx2Sf2MSHB",
+    "name": "06_데이터_카운트업.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1VOILjZf8g9RuSJpcNTA63Evx2Sf2MSHB.jpg",
+    "size": 88204,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/06_데이터_카운트업.jpg"
+  },
+  {
+    "id": "10r8hGTq0hDE8CLBZE3NI0zwtQCuCp-if",
+    "name": "05_스플릿_플랩.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/10r8hGTq0hDE8CLBZE3NI0zwtQCuCp-if.jpg",
+    "size": 72188,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/05_스플릿_플랩.jpg"
+  },
+  {
+    "id": "1gveRrJUQr8_QnECPI7hoWkty6jQa8v7O",
+    "name": "04_파티클_조립.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1gveRrJUQr8_QnECPI7hoWkty6jQa8v7O.jpg",
+    "size": 78251,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/04_파티클_조립.jpg"
+  },
+  {
+    "id": "1DgOtZqXreguyV3QqMtzc17smeP9Tmpy1",
+    "name": "03_오로라_그라디언트.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1DgOtZqXreguyV3QqMtzc17smeP9Tmpy1.jpg",
+    "size": 85966,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/03_오로라_그라디언트.jpg"
+  },
+  {
+    "id": "1cTO5PJ1tI0SPq9W-VWg5RG-C2B50f9jz",
+    "name": "02_리퀴드_블롭.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1cTO5PJ1tI0SPq9W-VWg5RG-C2B50f9jz.jpg",
+    "size": 47321,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/02_리퀴드_블롭.jpg"
+  },
+  {
+    "id": "1og0k4Ti5n80MK4Gv-_T8ELHThSLc0l4t",
+    "name": "01_에디토리얼_매거진.jpg",
+    "mime": "image/jpeg",
+    "local": "assets/1og0k4Ti5n80MK4Gv-_T8ELHThSLc0l4t.jpg",
+    "size": 77488,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/이미지/01_에디토리얼_매거진.jpg"
+  },
+  {
+    "id": "1koJE8hHBuxxUeov3vn_9qrqrQzKodxGF",
+    "name": "41_펀치인_펀치아웃.html",
+    "mime": "text/html",
+    "local": "demos/1koJE8hHBuxxUeov3vn_9qrqrQzKodxGF.html",
+    "size": 2932,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/41_펀치인_펀치아웃.html"
+  },
+  {
+    "id": "1hBZANfTHBU2t2ojV4l06M4xVfLCR3i0F",
+    "name": "38_라이트_스윕.html",
+    "mime": "text/html",
+    "local": "demos/1hBZANfTHBU2t2ojV4l06M4xVfLCR3i0F.html",
+    "size": 3132,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/38_라이트_스윕.html"
+  },
+  {
+    "id": "1Uy6m0092gDWeTEmHsNfoAexP2ZDbq4JN",
+    "name": "44_퍼즐피드_3연결.html",
+    "mime": "text/html",
+    "local": "demos/1Uy6m0092gDWeTEmHsNfoAexP2ZDbq4JN.html",
+    "size": 4629,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/44_퍼즐피드_3연결.html"
+  },
+  {
+    "id": "1r1i7EDyww68tgPwlxMSWWrzjI4CsHQeH",
+    "name": "39_깨진_유리_리빌.html",
+    "mime": "text/html",
+    "local": "demos/1r1i7EDyww68tgPwlxMSWWrzjI4CsHQeH.html",
+    "size": 4176,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/39_깨진_유리_리빌.html"
+  },
+  {
+    "id": "1rn4QUtWi8osreqwBGkJHgxj3H_U4TOEr",
+    "name": "46_키네틱_박자_단어.html",
+    "mime": "text/html",
+    "local": "demos/1rn4QUtWi8osreqwBGkJHgxj3H_U4TOEr.html",
+    "size": 2990,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/46_키네틱_박자_단어.html"
+  },
+  {
+    "id": "18VCk2J33jrk9jHPzeVLZTUc6I_QnNQUr",
+    "name": "43_라인_캐러셀.html",
+    "mime": "text/html",
+    "local": "demos/18VCk2J33jrk9jHPzeVLZTUc6I_QnNQUr.html",
+    "size": 3616,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/43_라인_캐러셀.html"
+  },
+  {
+    "id": "140s_gcfNKzj4TSdTs-y1iqrYHMbNVFDE",
+    "name": "42_픽셀_파티클_글로우.html",
+    "mime": "text/html",
+    "local": "demos/140s_gcfNKzj4TSdTs-y1iqrYHMbNVFDE.html",
+    "size": 3394,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/42_픽셀_파티클_글로우.html"
+  },
+  {
+    "id": "1rQ7GJEXA4eyVJ15MnGgWQZxf3VPS_qBw",
+    "name": "40_그래픽매치_TV프레임.html",
+    "mime": "text/html",
+    "local": "demos/1rQ7GJEXA4eyVJ15MnGgWQZxf3VPS_qBw.html",
+    "size": 3299,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/40_그래픽매치_TV프레임.html"
+  },
+  {
+    "id": "1PMsq3EDgyMI8idOaSpbm8YfuCZ3oxMLy",
+    "name": "45_비트범프_0초포스터.html",
+    "mime": "text/html",
+    "local": "demos/1PMsq3EDgyMI8idOaSpbm8YfuCZ3oxMLy.html",
+    "size": 3492,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/45_비트범프_0초포스터.html"
+  },
+  {
+    "id": "1chBa-xhIBbFhaIDOLwqXBXxJ-GbwhVmM",
+    "name": "37_3D_큐브_면전환.html",
+    "mime": "text/html",
+    "local": "demos/1chBa-xhIBbFhaIDOLwqXBXxJ-GbwhVmM.html",
+    "size": 3169,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/37_3D_큐브_면전환.html"
+  },
+  {
+    "id": "1obzjHmyTSdWxWZ3waiVu42GCPNORr7an",
+    "name": "32_서클_팝_링.html",
+    "mime": "text/html",
+    "local": "demos/1obzjHmyTSdWxWZ3waiVu42GCPNORr7an.html",
+    "size": 3260,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/32_서클_팝_링.html"
+  },
+  {
+    "id": "1BpyZMPo-rcCfqGA_FZyIkEETddaz0dTn",
+    "name": "23_카드_플립_도어.html",
+    "mime": "text/html",
+    "local": "demos/1BpyZMPo-rcCfqGA_FZyIkEETddaz0dTn.html",
+    "size": 3029,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/23_카드_플립_도어.html"
+  },
+  {
+    "id": "1QiO3U9ZNNnbKqsH_LLz2MJu2SgE5duzQ",
+    "name": "29_CRT_파워_온오프.html",
+    "mime": "text/html",
+    "local": "demos/1QiO3U9ZNNnbKqsH_LLz2MJu2SgE5duzQ.html",
+    "size": 3791,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/29_CRT_파워_온오프.html"
+  },
+  {
+    "id": "1KgFg_-PEvBxYI__ztRBEOi80c-tQk_mX",
+    "name": "34_메타볼_블롭_리빌.html",
+    "mime": "text/html",
+    "local": "demos/1KgFg_-PEvBxYI__ztRBEOi80c-tQk_mX.html",
+    "size": 3176,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/34_메타볼_블롭_리빌.html"
+  },
+  {
+    "id": "1M2cScParKTpyp6j5N5plieV4T6YMjN_7",
+    "name": "25_페이지_넘기기.html",
+    "mime": "text/html",
+    "local": "demos/1M2cScParKTpyp6j5N5plieV4T6YMjN_7.html",
+    "size": 4173,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/25_페이지_넘기기.html"
+  },
+  {
+    "id": "15U6c5C_Xt5Dt_B7_HddYdY8r9QFHi5Q_",
+    "name": "35_리퀴드_드립.html",
+    "mime": "text/html",
+    "local": "demos/15U6c5C_Xt5Dt_B7_HddYdY8r9QFHi5Q_.html",
+    "size": 3115,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/35_리퀴드_드립.html"
+  },
+  {
+    "id": "1UJtBtSbMDDKBNUgZFf5ych4qHOOo0IYv",
+    "name": "22_픽셀_계단_와이프.html",
+    "mime": "text/html",
+    "local": "demos/1UJtBtSbMDDKBNUgZFf5ych4qHOOo0IYv.html",
+    "size": 3087,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/22_픽셀_계단_와이프.html"
+  },
+  {
+    "id": "1mLZyvHcDI1-WbaeWjtKJ4rx-wEy5hMfR",
+    "name": "28_랜섬노트_타이포.html",
+    "mime": "text/html",
+    "local": "demos/1mLZyvHcDI1-WbaeWjtKJ4rx-wEy5hMfR.html",
+    "size": 3279,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/28_랜섬노트_타이포.html"
+  },
+  {
+    "id": "13to9T5Rf9tK6rEl_usRJC9qbGh3BxVQF",
+    "name": "27_카메라_줌블러.html",
+    "mime": "text/html",
+    "local": "demos/13to9T5Rf9tK6rEl_usRJC9qbGh3BxVQF.html",
+    "size": 3108,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/27_카메라_줌블러.html"
+  },
+  {
+    "id": "1dXWX5HnVVDMHJWoaU1AVmgDsTtknR2ao",
+    "name": "31_스캔_밴드_와이프.html",
+    "mime": "text/html",
+    "local": "demos/1dXWX5HnVVDMHJWoaU1AVmgDsTtknR2ao.html",
+    "size": 3268,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/31_스캔_밴드_와이프.html"
+  },
+  {
+    "id": "1Nc9NPplfpucYbCg4Y2_kN1o1a1uQNs1D",
+    "name": "26_연필_손그림_boil.html",
+    "mime": "text/html",
+    "local": "demos/1Nc9NPplfpucYbCg4Y2_kN1o1a1uQNs1D.html",
+    "size": 3483,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/26_연필_손그림_boil.html"
+  },
+  {
+    "id": "1BMJZdHI0-mSYcT_PUQsBfhRRXALKEx5w",
+    "name": "24_스톱모션_12fps_위글.html",
+    "mime": "text/html",
+    "local": "demos/1BMJZdHI0-mSYcT_PUQsBfhRRXALKEx5w.html",
+    "size": 3374,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/24_스톱모션_12fps_위글.html"
+  },
+  {
+    "id": "1KXaiAzhpevue7mI6gcSSH9WNO0GjI4Tq",
+    "name": "36_젤리_스쿼시.html",
+    "mime": "text/html",
+    "local": "demos/1KXaiAzhpevue7mI6gcSSH9WNO0GjI4Tq.html",
+    "size": 3363,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/36_젤리_스쿼시.html"
+  },
+  {
+    "id": "1JyvraHCl6v6mp1wnQXMlqFg797HkVtkQ",
+    "name": "33_VHS_오프셋_미스프린트.html",
+    "mime": "text/html",
+    "local": "demos/1JyvraHCl6v6mp1wnQXMlqFg797HkVtkQ.html",
+    "size": 3347,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/33_VHS_오프셋_미스프린트.html"
+  },
+  {
+    "id": "18vjVVBFkGDP3nDPPLVeC6q5BOwS93ds9",
+    "name": "30_슬롯머신_타이포.html",
+    "mime": "text/html",
+    "local": "demos/18vjVVBFkGDP3nDPPLVeC6q5BOwS93ds9.html",
+    "size": 3184,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/30_슬롯머신_타이포.html"
+  },
+  {
+    "id": "1W0rEGkXXVle0ruaEzowK1jCFGnuB9oE6",
+    "name": "21_UI_커서_버튼언폴드.html",
+    "mime": "text/html",
+    "local": "demos/1W0rEGkXXVle0ruaEzowK1jCFGnuB9oE6.html",
+    "size": 4550,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/21_UI_커서_버튼언폴드.html"
+  },
+  {
+    "id": "1QIGgN1TgfOQBqs_uu96GEQouT5nB9Xt9",
+    "name": "20_3D_큐브.html",
+    "mime": "text/html",
+    "local": "demos/1QIGgN1TgfOQBqs_uu96GEQouT5nB9Xt9.html",
+    "size": 3334,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/20_3D_큐브.html"
+  },
+  {
+    "id": "1HkyerMY_uxyM3-vSNraDy672YREDOEk5",
+    "name": "19_검색창_타이핑.html",
+    "mime": "text/html",
+    "local": "demos/1HkyerMY_uxyM3-vSNraDy672YREDOEk5.html",
+    "size": 4047,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/19_검색창_타이핑.html"
+  },
+  {
+    "id": "1Q8UI3lKJ4tn_Cl9lIueHw9WxTbdYY0VL",
+    "name": "18_채팅_버블.html",
+    "mime": "text/html",
+    "local": "demos/1Q8UI3lKJ4tn_Cl9lIueHw9WxTbdYY0VL.html",
+    "size": 3351,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/18_채팅_버블.html"
+  },
+  {
+    "id": "17pkVk6iAk8lgoq8c42PvUT1gwlD_2yyG",
+    "name": "17_벤토_그리드.html",
+    "mime": "text/html",
+    "local": "demos/17pkVk6iAk8lgoq8c42PvUT1gwlD_2yyG.html",
+    "size": 3711,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/17_벤토_그리드.html"
+  },
+  {
+    "id": "1Hy4Va1Dm-s897fMBn2hn_2JlOycdx5W4",
+    "name": "16_텍스트_스크램블.html",
+    "mime": "text/html",
+    "local": "demos/1Hy4Va1Dm-s897fMBn2hn_2JlOycdx5W4.html",
+    "size": 3620,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/16_텍스트_스크램블.html"
+  },
+  {
+    "id": "1TJdSmFELmNum6FBNuCyaJ6PavUDJAJmu",
+    "name": "15_폰_목업_UI.html",
+    "mime": "text/html",
+    "local": "demos/1TJdSmFELmNum6FBNuCyaJ6PavUDJAJmu.html",
+    "size": 4931,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/15_폰_목업_UI.html"
+  },
+  {
+    "id": "1AP7DXBGtdFuk3-4_pNlAPA0h38TDtiTV",
+    "name": "14_클레이_3D.html",
+    "mime": "text/html",
+    "local": "demos/1AP7DXBGtdFuk3-4_pNlAPA0h38TDtiTV.html",
+    "size": 3479,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/14_클레이_3D.html"
+  },
+  {
+    "id": "1cx6NNvHGtwaQZUO1nyJMYc6Lrc795hNe",
+    "name": "13_페이퍼_콜라주.html",
+    "mime": "text/html",
+    "local": "demos/1cx6NNvHGtwaQZUO1nyJMYc6Lrc795hNe.html",
+    "size": 4294,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/13_페이퍼_콜라주.html"
+  },
+  {
+    "id": "1Wf8EG2FGjlAXEMdkgKVKrjl4TLkkoOU_",
+    "name": "12_마키_브루탈.html",
+    "mime": "text/html",
+    "local": "demos/1Wf8EG2FGjlAXEMdkgKVKrjl4TLkkoOU_.html",
+    "size": 3041,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/12_마키_브루탈.html"
+  },
+  {
+    "id": "18tzUzOlJijihGjEdCIeSb5nDRLT_Pteb",
+    "name": "11_네온_사인.html",
+    "mime": "text/html",
+    "local": "demos/18tzUzOlJijihGjEdCIeSb5nDRLT_Pteb.html",
+    "size": 3009,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/11_네온_사인.html"
+  },
+  {
+    "id": "144yZeMwvGjKvFz-wQv-xlZtWXl9Ks-x0",
+    "name": "10_아이소메트릭.html",
+    "mime": "text/html",
+    "local": "demos/144yZeMwvGjKvFz-wQv-xlZtWXl9Ks-x0.html",
+    "size": 3736,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/10_아이소메트릭.html"
+  },
+  {
+    "id": "1MVUWAkuwAeoNunRigBrUNtaz519_pM9b",
+    "name": "09_마스크_리빌.html",
+    "mime": "text/html",
+    "local": "demos/1MVUWAkuwAeoNunRigBrUNtaz519_pM9b.html",
+    "size": 2886,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/09_마스크_리빌.html"
+  },
+  {
+    "id": "1Q_kmuN92lw5uIJfULNpUrjhGCQKF1Lku",
+    "name": "08_라인_드로잉.html",
+    "mime": "text/html",
+    "local": "demos/1Q_kmuN92lw5uIJfULNpUrjhGCQKF1Lku.html",
+    "size": 3516,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/08_라인_드로잉.html"
+  },
+  {
+    "id": "1-unD--QBf71LDSoIIKkYOVWecI8DpGLm",
+    "name": "07_글리치.html",
+    "mime": "text/html",
+    "local": "demos/1-unD--QBf71LDSoIIKkYOVWecI8DpGLm.html",
+    "size": 3690,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/07_글리치.html"
+  },
+  {
+    "id": "1jr_e_AE_CBpUrI-JLceDaU7JvqNeJdWj",
+    "name": "06_데이터_카운트업.html",
+    "mime": "text/html",
+    "local": "demos/1jr_e_AE_CBpUrI-JLceDaU7JvqNeJdWj.html",
+    "size": 3838,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/06_데이터_카운트업.html"
+  },
+  {
+    "id": "1qAzA7xNo-9dar7YMgD3fvl8gqJNuwDXx",
+    "name": "05_스플릿_플랩.html",
+    "mime": "text/html",
+    "local": "demos/1qAzA7xNo-9dar7YMgD3fvl8gqJNuwDXx.html",
+    "size": 3638,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/05_스플릿_플랩.html"
+  },
+  {
+    "id": "1Vg-iq3tLvvXz7LUJHboiflmIiqIWExSa",
+    "name": "04_파티클_조립.html",
+    "mime": "text/html",
+    "local": "demos/1Vg-iq3tLvvXz7LUJHboiflmIiqIWExSa.html",
+    "size": 2639,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/04_파티클_조립.html"
+  },
+  {
+    "id": "1_KlivPtnzotnqSs1TMZf8CSeXclr4UPq",
+    "name": "03_오로라_그라디언트.html",
+    "mime": "text/html",
+    "local": "demos/1_KlivPtnzotnqSs1TMZf8CSeXclr4UPq.html",
+    "size": 2732,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/03_오로라_그라디언트.html"
+  },
+  {
+    "id": "1ZJZoL8dfjTjMGkZWFyM-S4nNrK5eORW4",
+    "name": "02_리퀴드_블롭.html",
+    "mime": "text/html",
+    "local": "demos/1ZJZoL8dfjTjMGkZWFyM-S4nNrK5eORW4.html",
+    "size": 2983,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/02_리퀴드_블롭.html"
+  },
+  {
+    "id": "1oxdnagg6jGTJ9ybvq38Sy3z-lIo3HXIZ",
+    "name": "01_에디토리얼_매거진.html",
+    "mime": "text/html",
+    "local": "demos/1oxdnagg6jGTJ9ybvq38Sy3z-lIo3HXIZ.html",
+    "size": 3327,
+    "originalPath": "모션그래픽/모션그래픽 레퍼런스/데모/01_에디토리얼_매거진.html"
+  },
+  {
+    "id": "1J3dnDxxPATVI_Jrp026h252fqv9OFynf",
+    "name": "Vox 스타일 모션그래픽 프롬프트.md",
+    "mime": "text/markdown",
+    "local": "documents/1J3dnDxxPATVI_Jrp026h252fqv9OFynf.md",
+    "size": 9902,
+    "originalPath": "모션그래픽/영상/Vox 스타일 모션그래픽 프롬프트.md"
+  },
+  {
+    "id": "1IjKO-LFqBoNtiJJVj448LE-jzR3HTpX6",
+    "name": "Seedance 2.0 영상 연출 프롬프트 (seedance-director).md",
+    "mime": "text/markdown",
+    "local": "documents/1IjKO-LFqBoNtiJJVj448LE-jzR3HTpX6.md",
+    "size": 6863,
+    "originalPath": "모션그래픽/영상/Seedance 2.0 영상 연출 프롬프트 (seedance-director).md"
+  },
+  {
+    "id": "1qYmruv_ybQrc2YTHINIP3wZoEnBEIT3z",
+    "name": "릴스 아래로 떨어지는 영상 프롬프트.md",
+    "mime": "text/markdown",
+    "local": "documents/1qYmruv_ybQrc2YTHINIP3wZoEnBEIT3z.md",
+    "size": 9141,
+    "originalPath": "모션그래픽/영상/릴스 아래로 떨어지는 영상 프롬프트.md"
+  },
+  {
+    "id": "1xfvBBEgV5-uMJSMide03NioQAAEWiEJ4",
+    "name": "로고 애니메이션 가이드.md",
+    "mime": "text/markdown",
+    "local": "documents/1xfvBBEgV5-uMJSMide03NioQAAEWiEJ4.md",
+    "size": 25056,
+    "originalPath": "모션그래픽/영상/로고 애니메이션 가이드.md"
+  },
+  {
+    "id": "15G3g3J4S8kMF2KR4m46kIul393LTNSHA",
+    "name": "AI 영상 스타일 프롬프트 15가지.md",
+    "mime": "text/markdown",
+    "local": "documents/15G3g3J4S8kMF2KR4m46kIul393LTNSHA.md",
+    "size": 8286,
+    "originalPath": "모션그래픽/영상/AI 영상 스타일 프롬프트 15가지.md"
+  },
+  {
+    "id": "1Ddm186_8rMypq67xWX4ai3YHMopJmIu4",
+    "name": "모션그래픽 오픈소스.md",
+    "mime": "text/markdown",
+    "local": "documents/1Ddm186_8rMypq67xWX4ai3YHMopJmIu4.md",
+    "size": 3250,
+    "originalPath": "모션그래픽/모션그래픽 오픈소스.md"
+  },
+  {
+    "id": "1bpMGBG3q5nmwT7YSUpMyhU9-Wl5LnnvY",
+    "name": "Pasted image 20260801131205.png",
+    "mime": "image/png",
+    "local": "assets/1bpMGBG3q5nmwT7YSUpMyhU9-Wl5LnnvY.png",
+    "size": 1014928,
+    "originalPath": "Pasted image 20260801131205.png"
+  },
+  {
+    "id": "1slgbgrFLx6nxRTBTvuo9tC9BafT1U5Eh",
+    "name": "Pasted image 20260801131150.png",
+    "mime": "image/png",
+    "local": "assets/1slgbgrFLx6nxRTBTvuo9tC9BafT1U5Eh.png",
+    "size": 996079,
+    "originalPath": "Pasted image 20260801131150.png"
+  },
+  {
+    "id": "17HmJrhKh3E2MzloV2XAdcuxdDumPJrnd",
+    "name": "Pasted image 20260801131128.png",
+    "mime": "image/png",
+    "local": "assets/17HmJrhKh3E2MzloV2XAdcuxdDumPJrnd.png",
+    "size": 1071608,
+    "originalPath": "Pasted image 20260801131128.png"
+  },
+  {
+    "id": "11OMXFgNhZ4dt7DB_P4MfdMLRePTXTYKq",
+    "name": "Pasted image 20260801131044.png",
+    "mime": "image/png",
+    "local": "assets/11OMXFgNhZ4dt7DB_P4MfdMLRePTXTYKq.png",
+    "size": 1047244,
+    "originalPath": "Pasted image 20260801131044.png"
+  },
+  {
+    "id": "1wSLRKzCXek2Yp9QCH81i_SR8GoPNYMCJ",
+    "name": "Pasted image 20260801131007.png",
+    "mime": "image/png",
+    "local": "assets/1wSLRKzCXek2Yp9QCH81i_SR8GoPNYMCJ.png",
+    "size": 1019069,
+    "originalPath": "Pasted image 20260801131007.png"
+  },
+  {
+    "id": "longform-sync-guide",
+    "name": "AI_롱폼_영상_재편집과_음성_자막_동기화_실무가이드.md",
+    "mime": "text/markdown",
+    "local": "documents/longform-sync-guide.md",
+    "originalPath": "모션그래픽/AI 롱폼 재편집과 음성·자막 동기화/AI_롱폼_영상_재편집과_음성_자막_동기화_실무가이드.md"
+  }
+]

@@ -1,0 +1,19 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>3D 큐브 텍스트 롤링</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><style>*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;background:#111;overflow:hidden}body{display:flex;align-items:center;justify-content:center}#s{position:relative;width:1080px;height:1350px;flex:none;overflow:hidden;font-family:Pretendard,sans-serif;transform-origin:50% 50%}#s{background:#FF5A1F;color:#fff}
+.k{position:absolute;left:90px;top:110px;font:600 30px Pretendard;letter-spacing:8px}
+.pre{position:absolute;left:90px;top:330px;font:800 110px/1 Pretendard;letter-spacing:-4px}
+.sc{position:absolute;left:90px;top:470px;width:900px;height:220px;perspective:1400px}
+.cube{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:50% 50% -110px}
+.fc{position:absolute;inset:0;display:flex;align-items:center;font:900 190px/1 Pretendard;letter-spacing:-8px;backface-visibility:hidden;padding-left:10px;border-radius:24px}
+.f0{background:#fff;color:#FF5A1F;transform:translateZ(0)}
+.f1{background:#111;color:#fff;transform:rotateX(-90deg) translateZ(0);transform-origin:50% 0}
+.f2{background:#FFD23F;color:#111;transform:rotateX(-180deg) translateZ(220px) rotateX(0deg)}
+.post{position:absolute;left:90px;top:760px;font:800 110px/1 Pretendard;letter-spacing:-4px}
+.s{position:absolute;left:90px;bottom:120px;font:500 36px/1.5 Pretendard;opacity:.9}
+.dots{position:absolute;right:90px;top:120px;display:flex;gap:12px}.dots i{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.4)}.dots i.on{background:#fff}</style></head><body><div id="s"><div class="k">OUR PROMISE</div><div class="dots"><i class="on"></i><i></i><i></i></div>
+<div class="pre">더</div><div class="sc"><div class="cube" id="cb"></div></div><div class="post">당신에게.</div>
+<div class="s">하나를 고르라면 셋 다.<br>그게 우리가 일하는 방식이에요</div></div><script>(function(){var s=document.getElementById("s");function fit(){var k=Math.min(innerWidth/1080,innerHeight/1350);s.style.transform=k<1?"scale("+k+")":"none"}addEventListener("resize",fit);fit()})();window.__seek=function(t){window.__T=t;document.getAnimations().forEach(function(a){a.pause();a.currentTime=t*1000});if(window.draw)draw(t)};var W=["빠르게","정확하게","편안하게","빠르게"],C=[["#fff","#FF5A1F"],["#111","#fff"],["#FFD23F","#111"],["#fff","#FF5A1F"]];var cb=document.getElementById("cb");
+W.forEach(function(w,i){var f=document.createElement("div");f.className="fc";f.textContent=w;f.style.background=C[i][0];f.style.color=C[i][1];f.style.transform="rotateX("+(-90*i)+"deg) translateZ(110px)";cb.appendChild(f)});
+cb.style.transformOrigin="50% 50%";
+function e(k){return k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2}
+window.draw=function(t){t=t%4.5;var seg=Math.floor(t/1.5),ph=(t%1.5)/1.5;var k=ph<.55?0:e((ph-.55)/.45);var ang=(seg+k)*90;cb.style.transform="translateZ(-110px) rotateX("+ang+"deg)";
+document.querySelectorAll(".dots i").forEach(function(d,i){d.className=i==((seg+(k>.5?1:0))%3)?"on":""})};if(window.draw){var __t0=performance.now();(function L(){if(window.__T===undefined)draw((performance.now()-__t0)/1000);requestAnimationFrame(L)})()}</script></body></html>

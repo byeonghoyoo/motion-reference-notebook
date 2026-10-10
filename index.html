@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f3f2ec">
+<meta name="description" content="수집한 모션그래픽 스타일, 카메라 움직임, 영상 제작 가이드와 프롬프트를 한곳에서 탐색하세요.">
+<title>모션 아카이브 · 움직임을 모으다</title>
+<link rel="stylesheet" href="styles.css">
+<script defer src="data.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#collection">자료 목록으로 바로 가기</a>
+<header class="topbar">
+<a class="brand" href="#" aria-label="모션 아카이브 처음"><span class="brand-mark">m<span>↗</span></span><span>모션 아카이브<small>MOTION REFERENCE NOTEBOOK</small></span></a>
+<div class="header-actions"><button id="savedToggle" aria-pressed="false">☆ 저장한 자료 <span id="savedCount">0</span></button><a href="#tab=sources">원문·파일 목록 ↗</a></div>
+</header>
+<main>
+<section class="intro">
+<div><p class="eyebrow"><span></span> MY CREATIVE COLLECTION / 2026</p><h1>좋은 움직임을 모으고,<br><em>다음 작업으로 이어가세요.</em></h1><p class="lede">스타일을 고르고, 예시를 보고, 프롬프트를 가져오세요.<br>수집한 설명과 원문은 그대로, 필요한 자료는 더 가깝게.</p></div>
+<div class="hero-note"><span class="note-num">01—122</span><p>시선을 잡는 타이포부터<br>장면을 연결하는 카메라까지.</p><div class="mini-stats"><span><b id="statImages">87</b>이미지</span><span><b id="statDemos">46</b>실행 데모</span><span><b id="statDocs">33</b>원문 가이드</span></div><span class="note-arrow">↘</span></div>
+</section>
+<section class="workspace" id="collection" aria-label="모션그래픽 자료 탐색">
+<div class="search-row"><label class="searchbox"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="키네틱, 로고, 카메라, TTS… 내용까지 검색" aria-label="자료 제목과 본문 검색"><kbd>/</kbd></label><select id="sort" aria-label="자료 정렬"><option value="curated">추천 순서</option><option value="title">이름 순서</option></select></div>
+<div class="tab-scroll"><div id="tabs" role="tablist" aria-label="자료 카테고리"></div></div>
+<div class="collection-head"><div><p class="eyebrow" id="sectionOverline">EXPLORE THE COLLECTION</p><h2 id="sectionTitle">전체 컬렉션</h2><p id="sectionDesc">원하는 움직임을 골라 설명과 프롬프트를 살펴보세요.</p></div><span id="resultCount" aria-live="polite"></span></div>
+<div id="activeFilters" class="active-filters"></div>
+<div id="results" role="tabpanel" tabindex="-1"></div>
+<button id="loadMore" class="load-more" hidden>자료 더 보기 <span>↓</span></button>
+</section>
+<aside class="integrity-note"><span>↳</span><p><strong>원문까지 함께 보관했습니다.</strong> 내용을 짧게 생략하지 않고 전체 문서·이미지·데모를 연결했습니다. 원래 자료에 있던 미확인 첨부 3개는 <a href="#tab=sources">원문·파일 목록</a>에 따로 표시합니다.</p></aside>
+</main>
+<footer><span>모션 아카이브 <small>COLLECT → EXPLORE → MAKE</small></span><p>수집본 기준 2026.10.10 · 문서의 출처와 작성 당시 정보를 함께 확인하세요.</p><a href="#collection">맨 위로 ↑</a></footer>
+<dialog id="reader" aria-labelledby="readerTitle">
+<div class="reader-shell"><header class="reader-header"><div><span id="readerCategory" class="eyebrow"></span><h2 id="readerTitle"></h2></div><button id="closeReader" class="icon-button" aria-label="문서 닫기">×</button></header>
+<div class="reader-toolbar"><div class="reader-modes" role="group" aria-label="문서 보기 방식"><button id="readMode" class="active">읽기</button><button id="rawMode">원문 전체</button></div><div><button id="saveReader">☆ 저장</button><button id="shareReader">링크 복사</button><a id="downloadDoc" download>MD 다운로드 ↓</a></div></div>
+<div class="reader-grid"><nav id="readerToc" aria-label="문서 목차"></nav><div class="reader-scroll" id="readerScroll"><div id="detailMeta"></div><div id="demoArea"></div><article id="readerBody" class="prose"></article><pre id="readerRaw" hidden></pre></div></div></div>
+</dialog>
+<dialog id="lightbox" aria-label="이미지 확대 보기"><button id="closeLightbox" class="icon-button" aria-label="이미지 닫기">×</button><img id="lightboxImg" alt=""><p id="lightboxCaption"></p></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<noscript><p>탭·검색에는 JavaScript가 필요합니다. <a href="inventory.json">전체 파일 목록</a>은 여기서 확인할 수 있습니다.</p></noscript>
+</body></html>

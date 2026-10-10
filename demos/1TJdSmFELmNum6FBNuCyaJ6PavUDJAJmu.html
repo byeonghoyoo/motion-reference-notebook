@@ -1,0 +1,29 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>폰 목업 UI 데모</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><style>*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;background:#111;overflow:hidden}body{display:flex;align-items:center;justify-content:center}#s{position:relative;width:1080px;height:1350px;flex:none;overflow:hidden;font-family:Pretendard,sans-serif;transform-origin:50% 50%}#s{background:linear-gradient(160deg,#101828,#1d2b53);color:#fff}
+.h{position:absolute;left:80px;top:110px;font:800 84px/1.18 Pretendard;letter-spacing:-3px}
+.h b{color:#7DD3FC}
+.k{position:absolute;left:84px;top:60px;font:600 26px Pretendard;letter-spacing:6px;color:#7DD3FC}
+.ph{position:absolute;left:300px;top:390px;width:480px;height:980px;border-radius:70px;background:#0b0b0f;padding:16px;box-shadow:0 0 0 3px #3a3f4f,0 60px 100px rgba(0,0,0,.5);transform:rotate(-6deg);transform-origin:50% 100%}
+.sc{position:relative;width:100%;height:100%;border-radius:56px;overflow:hidden;background:#F6F7FB;color:#111}
+.isl{position:absolute;left:50%;top:14px;width:130px;height:36px;margin-left:-65px;border-radius:20px;background:#000;z-index:5}
+.feed{position:absolute;left:0;right:0;top:0;padding:80px 24px 0;animation:scr 4s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes scr{0%,15%{transform:translateY(0)}45%,100%{transform:translateY(-230px)}}
+.ti{font:800 34px Pretendard;margin-bottom:20px}
+.it{background:#fff;border-radius:24px;padding:20px;margin-bottom:16px;display:flex;gap:16px;align-items:center;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+.th{width:80px;height:80px;border-radius:18px;flex:none}
+.it b{display:block;font:700 24px Pretendard}.it i{font:400 19px Pretendard;color:#888;font-style:normal}
+.sheet{position:absolute;left:0;right:0;bottom:0;height:430px;background:#fff;border-radius:40px 40px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.18);padding:36px 30px;transform:translateY(100%);animation:sh 4s cubic-bezier(.2,.9,.2,1) infinite}
+@keyframes sh{0%,55%{transform:translateY(100%)}70%,100%{transform:translateY(0)}}
+.chk{width:110px;height:110px;border-radius:50%;background:#22C55E;margin:10px auto 20px;display:flex;align-items:center;justify-content:center;font:900 60px Pretendard;color:#fff}
+.sheet h3{text-align:center;font:800 36px Pretendard}.sheet p{text-align:center;font:400 22px Pretendard;color:#777;margin-top:10px}
+.bt{margin-top:30px;background:#111;color:#fff;border-radius:20px;text-align:center;padding:22px;font:700 24px Pretendard}
+.tap{position:absolute;left:330px;top:560px;width:90px;height:90px;border-radius:50%;background:rgba(56,189,248,.45);border:3px solid #38BDF8;transform:scale(0);animation:tp 4s ease-out infinite}
+@keyframes tp{0%,48%{transform:scale(0);opacity:1}50%{transform:scale(.6);opacity:1}60%{transform:scale(1.6);opacity:0}100%{opacity:0}}
+.badge{position:absolute;right:60px;top:560px;padding:20px 30px;border-radius:26px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);font:700 30px Pretendard}</style></head><body><div id="s"><div class="k">EASY BOOKING</div><div class="h">탭 세 번이면<br><b>예약 끝</b></div>
+<div class="ph"><div class="sc"><div class="isl"></div><div class="feed"><div class="ti">추천 프로그램</div>
+<div class="it"><div class="th" style="background:linear-gradient(135deg,#FBCFE8,#F472B6)"></div><div><b>수분 집중 케어</b><i>60분 · 오늘 예약 가능</i></div></div>
+<div class="it"><div class="th" style="background:linear-gradient(135deg,#BAE6FD,#38BDF8)"></div><div><b>진정 리프레시</b><i>40분 · 인기 1위</i></div></div>
+<div class="it"><div class="th" style="background:linear-gradient(135deg,#FDE68A,#F59E0B)"></div><div><b>광채 부스터</b><i>50분 · 신규</i></div></div>
+<div class="it"><div class="th" style="background:linear-gradient(135deg,#BBF7D0,#22C55E)"></div><div><b>톤업 베이직</b><i>30분</i></div></div>
+<div class="it"><div class="th" style="background:linear-gradient(135deg,#DDD6FE,#8B5CF6)"></div><div><b>프리미엄 풀코스</b><i>90분</i></div></div>
+</div><div class="tap"></div><div class="sheet"><div class="chk">✓</div><h3>예약이 완료됐어요!</h3><p>10월 3일 (금) 오후 2:00</p><div class="bt">확인</div></div></div></div>
+<div class="badge">⚡ 평균 15초</div></div><script>(function(){var s=document.getElementById("s");function fit(){var k=Math.min(innerWidth/1080,innerHeight/1350);s.style.transform=k<1?"scale("+k+")":"none"}addEventListener("resize",fit);fit()})();window.__seek=function(t){window.__T=t;document.getAnimations().forEach(function(a){a.pause();a.currentTime=t*1000});if(window.draw)draw(t)};if(window.draw){var __t0=performance.now();(function L(){if(window.__T===undefined)draw((performance.now()-__t0)/1000);requestAnimationFrame(L)})()}</script></body></html>

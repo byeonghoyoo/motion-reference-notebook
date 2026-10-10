@@ -1,0 +1,18 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>글리치 RGB 스플릿</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"><style>*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;background:#111;overflow:hidden}body{display:flex;align-items:center;justify-content:center}#s{position:relative;width:1080px;height:1350px;flex:none;overflow:hidden;font-family:Pretendard,sans-serif;transform-origin:50% 50%}#s{background:#050505;color:#fff}
+.scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 5px);pointer-events:none}
+.gt{position:absolute;left:80px;top:420px;font:900 170px/1.1 Pretendard;letter-spacing:-8px}
+.gt .l{position:absolute;left:0;top:0;white-space:nowrap}
+.gt .base{position:relative}
+.gt .r{color:#FF2E63;mix-blend-mode:screen;animation:gr 1.2s steps(1) infinite}
+.gt .c{color:#08F7FE;mix-blend-mode:screen;animation:gc 1.2s steps(1) infinite}
+.gt .base{animation:gb 1.2s steps(1) infinite}
+@keyframes gr{0%{transform:translate(0,0);clip-path:inset(0 0 0 0)}10%{transform:translate(-14px,4px);clip-path:inset(10% 0 55% 0)}20%{transform:translate(10px,-3px);clip-path:inset(60% 0 8% 0)}30%{transform:translate(-8px,0);clip-path:inset(30% 0 40% 0)}45%{transform:translate(0,0);clip-path:inset(0)}70%{transform:translate(18px,2px);clip-path:inset(45% 0 30% 0)}80%{transform:translate(0,0);clip-path:inset(0)}}
+@keyframes gc{0%{transform:translate(0,0);clip-path:inset(0)}10%{transform:translate(14px,-4px);clip-path:inset(40% 0 20% 0)}20%{transform:translate(-12px,2px);clip-path:inset(5% 0 70% 0)}30%{transform:translate(8px,3px);clip-path:inset(70% 0 5% 0)}45%{transform:translate(0,0);clip-path:inset(0)}70%{transform:translate(-18px,-2px);clip-path:inset(15% 0 60% 0)}80%{transform:translate(0,0);clip-path:inset(0)}}
+@keyframes gb{0%{transform:none}10%{transform:skewX(-8deg) translateX(6px)}20%{transform:none}70%{transform:translateX(-10px)}80%{transform:none}}
+.bar{position:absolute;left:0;right:0;height:26px;background:rgba(255,255,255,.9);mix-blend-mode:difference;animation:bar 1.2s steps(1) infinite}
+@keyframes bar{0%{top:-40px}10%{top:520px;height:16px}20%{top:780px;height:40px}30%{top:-40px}70%{top:640px;height:22px}80%{top:-40px}}
+.tag{position:absolute;left:84px;top:300px;font:500 28px 'Space Mono',monospace;color:#08F7FE;letter-spacing:4px}
+.sub{position:absolute;left:84px;top:900px;font:500 36px/1.5 Pretendard;color:#aaa}
+.err{position:absolute;right:80px;bottom:90px;font:400 24px 'Space Mono',monospace;color:#FF2E63}</style></head><body><div id="s"><div class="tag">[ SYSTEM ERROR 404 ]</div>
+<div class="gt"><div class="l base">평범함은<br>끝났다</div><div class="l r">평범함은<br>끝났다</div><div class="l c">평범함은<br>끝났다</div></div>
+<div class="bar"></div><div class="sub">기존 방식은 이제 그만.<br>완전히 새로운 경험을 시작하세요</div><div class="err">REC ● 00:00:07:12</div><div class="scan"></div></div><script>(function(){var s=document.getElementById("s");function fit(){var k=Math.min(innerWidth/1080,innerHeight/1350);s.style.transform=k<1?"scale("+k+")":"none"}addEventListener("resize",fit);fit()})();window.__seek=function(t){window.__T=t;document.getAnimations().forEach(function(a){a.pause();a.currentTime=t*1000});if(window.draw)draw(t)};if(window.draw){var __t0=performance.now();(function L(){if(window.__T===undefined)draw((performance.now()-__t0)/1000);requestAnimationFrame(L)})()}</script></body></html>

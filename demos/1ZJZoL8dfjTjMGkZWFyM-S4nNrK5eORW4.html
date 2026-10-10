@@ -1,0 +1,16 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>리퀴드 블롭 모핑</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><style>*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;background:#111;overflow:hidden}body{display:flex;align-items:center;justify-content:center}#s{position:relative;width:1080px;height:1350px;flex:none;overflow:hidden;font-family:Pretendard,sans-serif;transform-origin:50% 50%}#s{background:radial-gradient(circle at 50% 40%,#2a1450,#0d0620 75%)}
+svg.g{position:absolute;inset:0}
+.b{animation:orb 6s ease-in-out infinite}
+@keyframes orb{0%,100%{transform:translate(0,0)}25%{transform:translate(var(--x1),var(--y1))}50%{transform:translate(var(--x2),var(--y2))}75%{transform:translate(var(--x3),var(--y3))}}
+.t{position:absolute;left:0;right:0;top:960px;text-align:center;color:#fff;font:800 92px/1.15 Pretendard;letter-spacing:-3px}
+.t small{display:block;font:500 30px Pretendard;letter-spacing:10px;color:#C9A6FF;margin-bottom:26px}</style></head><body><div id="s"><svg class="g" viewBox="0 0 1080 1350"><defs><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="28"/><feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 40 -16"/></filter>
+<linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7AD9"/><stop offset=".5" stop-color="#9B6BFF"/><stop offset="1" stop-color="#4FD1FF"/></linearGradient></defs>
+<g filter="url(#goo)" fill="url(#lg)">
+<circle class="b" cx="540" cy="520" r="150" style="--x1:40px;--y1:-30px;--x2:-30px;--y2:40px;--x3:20px;--y3:20px"/>
+<circle class="b" cx="250" cy="330" r="110" style="--x1:200px;--y1:120px;--x2:60px;--y2:220px;--x3:-40px;--y3:60px;animation-duration:5s"/>
+<circle class="b" cx="830" cy="700" r="120" style="--x1:-220px;--y1:-100px;--x2:-40px;--y2:-200px;--x3:50px;--y3:-20px;animation-duration:7s"/>
+<circle class="b" cx="800" cy="260" r="80" style="--x1:-160px;--y1:160px;--x2:40px;--y2:60px;--x3:-20px;--y3:-40px;animation-duration:4.5s"/>
+<circle class="b" cx="260" cy="760" r="90" style="--x1:180px;--y1:-160px;--x2:160px;--y2:-20px;--x3:40px;--y3:30px;animation-duration:5.5s"/>
+<circle class="b" cx="560" cy="820" r="60" style="--x1:-60px;--y1:-200px;--x2:80px;--y2:-80px;--x3:0px;--y3:40px;animation-duration:3.8s"/>
+</g></svg>
+<div class="t"><small>ALL IN ONE</small>하나로 녹아드는<br>완벽한 루틴</div></div><script>(function(){var s=document.getElementById("s");function fit(){var k=Math.min(innerWidth/1080,innerHeight/1350);s.style.transform=k<1?"scale("+k+")":"none"}addEventListener("resize",fit);fit()})();window.__seek=function(t){window.__T=t;document.getAnimations().forEach(function(a){a.pause();a.currentTime=t*1000});if(window.draw)draw(t)};if(window.draw){var __t0=performance.now();(function L(){if(window.__T===undefined)draw((performance.now()-__t0)/1000);requestAnimationFrame(L)})()}</script></body></html>
