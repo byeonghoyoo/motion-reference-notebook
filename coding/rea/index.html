@@ -1,0 +1,937 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>REA 실사용 가이드 | Coding Notebook</title><meta name="description" content="두 REA 실험 영상의 핵심을 검증해 정리한 한국어 실사용 가이드. Windows 설치, 복붙 프롬프트 10개, 용어 사전, 근거 검수표."><meta name="theme-color" content="#1c342e"><style>@charset "UTF-8";
+:root{--paper:#f5f3ec;--panel:#fffef9;--ink:#1c342e;--muted:#576b63;--accent:#176850;--line:#d7ded1;--soft:#e8eee2;--mono:#192f29;--code:#e8f1df;--gold:#d2fb74;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}a{color:var(--accent);text-underline-offset:4px}button,input{font:inherit}button,a,input{touch-action:manipulation}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #be7600;outline-offset:3px}button{border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink);padding:10px 15px;min-height:44px}button:hover{border-color:var(--accent)}.skip{position:fixed;left:16px;top:-80px;z-index:100;background:white;padding:16px}.skip:focus{top:10px}.topbar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:var(--paper);gap:12px}.brand{text-decoration:none;font-weight:850;letter-spacing:-.5px;color:var(--ink)}.brand span{display:inline-grid;place-items:center;background:var(--ink);color:var(--gold);width:30px;height:30px;border-radius:7px;margin-right:8px;font-size:15px}.edition{font-size:12px;letter-spacing:.08em;color:var(--muted)}.page{max-width:1400px;margin:auto;padding:0 5vw}.hero{padding:62px 0 36px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}.eyebrow{text-transform:uppercase;font-size:12px;letter-spacing:.15em;font-weight:750;color:var(--accent);margin:0 0 22px}.hero h1{font-size:clamp(36px,4.8vw,66px);font-weight:800;line-height:1.13;letter-spacing:-.055em;margin:0 0 24px}.hero h1 em{font-style:normal;color:var(--accent)}.hero p.lead{font-size:17px;line-height:1.85;max-width:540px;color:var(--muted);word-break:keep-all}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.primary,.hero-actions a{border-radius:8px;padding:13px 19px;text-decoration:none;display:inline-block;font-size:14px;font-weight:700}.primary{background:var(--ink);color:#fff!important}.secondary{border:1px solid var(--line);color:var(--ink)}.hero-visual{background:var(--ink);color:var(--code);padding:28px;border-radius:18px;position:relative;overflow:hidden}.hero-visual::after{content:"";position:absolute;right:-40px;top:-45px;width:160px;height:160px;border-radius:50%;border:1px solid #8bae5a;opacity:.22}.visual-label{font-size:11px;letter-spacing:.14em;color:#b3c7bb;margin-bottom:25px}.visual-row{display:flex;gap:13px;align-items:center;padding:16px 0;border-top:1px solid #3b5148}.visual-row b{font-size:27px;line-height:1;color:var(--gold);width:34px;font-weight:500}.visual-row strong{font-size:16px;display:block}.visual-row small{display:block;color:#b7c8bf;margin-top:6px;font-size:12px}.signal{font-size:12px;margin:20px 0 0;color:var(--gold)}.facts{display:flex;gap:26px;padding:21px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--muted);font-size:13px;flex-wrap:wrap}.facts strong{color:var(--ink);font-size:18px;margin-right:7px}.workspace{display:grid;grid-template-columns:235px minmax(0,1fr);gap:48px;padding:36px 0 70px}.sidebar{position:sticky;top:24px;align-self:start;max-height:calc(100vh - 50px);overflow:auto}.search-label{font-size:12px;color:var(--muted);display:block;margin-bottom:8px}.search{width:100%;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:13px 12px;color:var(--ink)}.nav-list{display:flex;flex-direction:column;gap:4px;margin:20px 0}.nav-list a{padding:11px 10px;text-decoration:none;font-size:13px;color:var(--muted);border-radius:7px;display:flex;gap:10px;align-items:baseline}.nav-list a:hover,.nav-list a.active{background:var(--soft);color:var(--ink)}.nav-list a span{font:12px ui-monospace,monospace;color:var(--accent)}.nav-list a.done::after{content:"✓";margin-left:auto;color:var(--accent)}.progress-label{display:flex;justify-content:space-between;font-size:12px;gap:10px}.progress-track{background:var(--line);height:5px;border-radius:6px;margin:10px 0 12px;overflow:hidden}.progress-track i{display:block;height:100%;background:var(--accent);width:0;transition:width .2s}.storage-note{font-size:11px;color:var(--muted);line-height:1.7}.reset{padding:4px 0;background:transparent;border:0;text-decoration:underline;font-size:12px;color:var(--muted)}.reading-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:26px}.reading-toolbar p{font-size:12px;color:var(--muted);margin:0}.filter-buttons{display:flex;gap:6px}.filter-buttons button{font-size:12px;padding:8px 12px}.filter-buttons button[aria-pressed=true]{background:var(--ink);color:white;border-color:var(--ink)}.chapter{scroll-margin-top:24px;padding-bottom:30px;margin-bottom:26px;border-bottom:1px solid var(--line);line-height:1.95;font-size:16px;word-break:keep-all;overflow-wrap:anywhere}.chapter h2{font-size:28px;line-height:1.45;letter-spacing:-.045em;margin:0 0 23px;max-width:100%}.chapter h3{font-size:20px;line-height:1.5;margin:30px 0 14px;letter-spacing:-.025em}.chapter p{margin:14px 0}.chapter ul,.chapter ol{padding-left:23px}.chapter li{padding-left:3px;margin:7px 0}.chapter strong{font-weight:750}.chapter :not(pre)>code{font:13px ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--soft);padding:3px 5px;border-radius:4px;overflow-wrap:anywhere}.table-wrap{overflow-x:auto;width:100%;margin:22px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.8;word-break:normal}th,td{text-align:left;vertical-align:top;padding:13px 15px;border-bottom:1px solid var(--line);min-width:120px}th{background:var(--soft);font-weight:750;color:var(--ink)}tr:last-child td{border-bottom:0}.code-wrap{border-radius:12px;overflow:hidden;margin:20px 0;background:var(--mono);color:var(--code)}.code-toolbar{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#243f35;border-bottom:1px solid #456052;gap:12px}.code-toolbar span{font-size:11px;letter-spacing:.06em;color:#ceddce}.copy{font-size:12px;color:#eaf3e0;background:#355446;border-color:#5b7565;min-height:36px;padding:6px 12px}.code-wrap pre{margin:0;padding:20px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.85;font:13px/1.85 ui-monospace,SFMono-Regular,Consolas,monospace}.chapter-footer{display:flex;justify-content:flex-end;margin-top:24px}.complete{display:flex;gap:8px;align-items:center;font-size:12px;background:var(--soft);border-color:transparent}.complete[aria-pressed=true]{background:var(--accent);color:white}.empty{padding:45px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:10px}.notice{padding:16px 19px;background:var(--soft);border-radius:9px;font-size:13px;line-height:1.85;margin-bottom:28px}.footer{border-top:1px solid var(--line);padding:22px 5vw;font-size:12px;line-height:1.8;color:var(--muted);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:12px 22px;border-radius:12px;z-index:100;box-shadow:0 6px 25px #0003;max-width:90%;font-size:13px}.diagram{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:23px;margin:25px 0}.diagram-title{font-size:13px;color:var(--muted);margin:0 0 20px!important}.flow-node{padding:13px;text-align:center;background:var(--soft);border:1px solid var(--line);border-radius:8px;font-size:13px;line-height:1.6}.flow-node.emphasis{background:var(--ink);color:var(--gold)}.flow-root{max-width:320px;margin:auto}.flow-branches{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:12px 0}.flow-branch small{display:block;text-align:center;color:var(--muted);font-size:11px;padding:8px}.flow-arrow{display:block;text-align:center;color:var(--accent);font-size:20px;line-height:1.3;margin:5px}.flow-note{text-align:center;font-size:12px;margin-top:14px!important}.mobile-menu{display:none}.noscript{padding:15px;background:#fff3cf}.prompt-only .chapter:not([data-chapter="07"]){display:none}[hidden]{display:none!important}
+@media(min-width:1100px){.chapter{max-width:860px}.reader{min-width:0}}
+@media(max-width:850px){.hero{grid-template-columns:1fr;gap:28px;padding-top:36px}.hero-visual{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;padding:22px}.visual-label{grid-column:1/-1;margin-bottom:2px}.visual-row{display:block;padding:13px 0 0}.visual-row b{display:block;margin-bottom:10px;font-size:22px}.visual-row strong{font-size:14px}.signal{grid-column:1/-1;margin-top:2px}.workspace{grid-template-columns:1fr;gap:24px;padding-top:23px}.sidebar{position:static;max-height:none}.nav-list{display:grid;grid-template-columns:1fr 1fr;margin:14px 0}.sidebar .storage-note,.sidebar .reset{display:none}.nav-list a{font-size:12px;padding:9px}.chapter h2{font-size:25px}.hero h1{font-size:46px}.mobile-menu{display:inline-flex;font-size:12px;align-items:center;gap:8px;margin-top:13px}.nav-list.closed{display:none}.reading-toolbar{margin-bottom:20px}.facts{gap:17px;font-size:12px}.facts strong{font-size:16px}.chapter{scroll-margin-top:15px}.hero p.lead{font-size:16px}.progress-area{margin-top:15px}}
+@media(max-width:480px){.page{padding:0 20px}.topbar{padding:0 20px}.edition{font-size:10px}.hero h1{font-size:39px}.hero{padding-top:31px}.hero-visual{padding:18px;gap:8px}.visual-row small{font-size:10px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}.chapter{font-size:15px;line-height:1.95}.chapter h2{font-size:23px}.chapter h3{font-size:18px}.code-wrap pre{font-size:12px;padding:17px}.filter-buttons button{padding:8px 10px}.table-wrap{border-radius:7px}th,td{padding:11px;font-size:12px}.hero-actions a{font-size:13px;padding:12px 15px}.flow-branches{gap:8px}.flow-node{font-size:12px;padding:10px}.diagram{padding:15px}.notice{font-size:12px}.nav-list{gap:2px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media print{.topbar,.sidebar,.reading-toolbar,.hero-actions,.copy,.chapter-footer,.toast,.footer,.facts{display:none!important}.page{max-width:none;padding:0}.workspace,.hero{display:block;padding:10px 0}.hero-visual{display:none}.chapter{display:block!important;break-inside:auto;font-size:11pt}.code-wrap{background:#f4f4f4;color:#111;border:1px solid #ccc;break-inside:avoid}.code-toolbar{background:#eee;color:#111}.code-toolbar span{color:#111}.table-wrap{overflow:visible}a{color:#111}.hero h1{font-size:30pt}body{background:white}}
+</style></head><body><a class="skip" href="#reader">본문으로 이동</a><header class="topbar"><a class="brand" href="#"><span>R</span>CODING NOTEBOOK</a><span class="edition">FIELD GUIDE / 001</span></header><main class="page"><section class="hero"><div><p class="eyebrow">Reverse Engineer Anything</p><h1>앱을 이해하고,<br><em>내 기능으로 만들기.</em></h1><p class="lead">두 실험 영상에서 배운 것을 실제 작업 순서로.<br>도구의 이름보다 근거를 보고, 기능 하나부터 시작해요.</p><div class="hero-actions"><a class="primary" href="#chapter-5">설치부터 시작하기 ↗</a><a class="secondary" href="#chapter-7">프롬프트 10개 보기</a></div></div><div class="hero-visual"><div class="visual-label">OBSERVE → VERIFY → BUILD</div><div class="visual-row"><b>01</b><div><strong>분석</strong><small>기능 하나의 흐름을 읽기</small></div></div><div class="visual-row"><b>02</b><div><strong>검증</strong><small>근거와 실제 동작 대조</small></div></div><div class="visual-row"><b>03</b><div><strong>구현</strong><small>확인한 원리를 내 코드로</small></div></div><p class="signal">● 소스 복구와 동작 재현은 달라요.</p></div></section><div class="facts"><span><strong>02</strong>영상 비교</span><span><strong>10</strong>복붙 프롬프트</span><span><strong>12</strong>학습 챕터</span><span>공식 자료 확인 · 2026.10.13</span></div><div class="workspace"><aside class="sidebar"><label class="search-label" for="search">가이드에서 찾기</label><input id="search" class="search" type="search" placeholder="예: Ghidra, 손상, MCP" autocomplete="off"><button class="mobile-menu" id="menu" type="button" aria-controls="chapters-nav" aria-expanded="true">☰ 전체 목차 펼치기 / 접기</button><nav class="nav-list" id="chapters-nav" aria-label="가이드 목차"><a href="#chapter-1"><span>01</span>먼저 이해할 핵심</a><a href="#chapter-2"><span>02</span>영상 1 — 앱을 분석하고 다시 만들기</a><a href="#chapter-3"><span>03</span>영상 2 — REA가 없어도 가능할까?</a><a href="#chapter-4"><span>04</span>무엇부터 적용하면 좋을까?</a><a href="#chapter-5"><span>05</span>설치 — Windows에서 시작하기</a><a href="#chapter-6"><span>06</span>첫 실습 — 파일 내보내기 경로 읽기</a><a href="#chapter-7"><span>07</span>순서대로 복붙하는 프롬프트 10개</a><a href="#chapter-8"><span>08</span>검수표 — 믿어도 되는 결과인지 보기</a><a href="#chapter-9"><span>09</span>용어 사전 — 읽는 법과 쉬운 뜻</a><a href="#chapter-10"><span>10</span>오류가 났을 때</a><a href="#chapter-11"><span>11</span>저작권·약관·데이터에서 꼭 구분할 것</a><a href="#chapter-12"><span>12</span>출퇴근 학습 순서와 출처</a></nav><div class="progress-area"><div class="progress-label"><span>나의 학습 체크</span><strong id="progress-label">0 / 12장</strong></div><div class="progress-track" id="progress-track" role="progressbar" aria-label="학습 완료한 장" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><i id="progress"></i></div><p id="storage-note" class="storage-note">체크한 진도는 이 브라우저에만 저장돼요.</p><button id="reset" class="reset" type="button">학습 체크 초기화</button></div></aside><div class="reader" id="reader"><div class="reading-toolbar"><div class="filter-buttons" role="group" aria-label="보기 선택"><button data-mode="all" aria-pressed="true" type="button">전체 가이드</button><button data-mode="prompts" aria-pressed="false" type="button">프롬프트만</button></div><p id="result-count" aria-live="polite">전체 가이드 · 12개 장</p></div><div class="notice"><strong>자료를 읽는 기준</strong><br>영상 실험 수치는 제공된 설명글 기준이며, 설치·지원 조건은 공식 문서로 확인했어요. 영상 전체를 시청하거나 실험을 재현한 보고서는 아니에요. 각 장에 출처와 확인 범위를 표시했어요.</div><noscript><p class="noscript">JavaScript가 꺼져 있어 검색·복사·진도 저장은 비활성화돼요. 아래에서 전체 본문을 읽을 수 있어요.</p></noscript><div id="empty" class="empty" hidden>검색 결과가 없어요. 짧은 단어나 다른 용어로 찾아보세요.</div><section class="chapter" id="chapter-1" data-chapter="01"><h2>01 · 먼저 이해할 핵심</h2>
+<p>REA는 AI 자체나 만능 복제기가 아니다. 코딩 에이전트가 분석 도구를 사용하도록 연결하는 도구다. <strong>AI는 질문과 구현을 담당하고, REA는 조사 경로와 근거를 전달하고, Ghidra 같은 엔진은 네이티브 바이너리를 분석한다.</strong> JavaScript/Electron 정적 분석은 네이티브 엔진 없이 시작할 수 있다. <a href="https://github.com/morluto/rea">공식 저장소</a></p>
+<p>레시피를 잃어버린 요리를 떠올리면 쉽다. 완성된 요리의 재료와 조리 흔적을 조사해 비슷한 결과를 만드는 것이 역공학이다. 원래 요리사의 메모까지 그대로 되찾는 것은 아니다.</p>
+<h3>이 가이드의 검증 범위</h3>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>표시</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>영상 설명 기준</td>
+<td>사용자가 제공한 설명글·타임라인에 있는 주장. 영상 전체 재생·자막·실험 원본을 독립 검증한 것은 아님</td>
+</tr>
+<tr>
+<td>공식 문서 확인</td>
+<td>2026-10-13 한국시간에 REA 저장소·공식 가이드·법령 안내에서 확인한 내용</td>
+</tr>
+<tr>
+<td>실무 제안</td>
+<td>위 자료를 토대로 이 가이드에서 새로 설계한 작업 순서·프롬프트·평가 방식</td>
+</tr>
+</tbody></table></div>
+<p>유튜브 두 페이지는 이번 조회에서 오류가 발생했다. 따라서 화면에서만 보이는 명령, 첫 영상의 잘못 해석한 근거의 구체적 내용, 전체 채점표는 복원하거나 추측하지 않았다. 설치와 지원 조건은 조회 당시 공식 문서를 반영했으며, 저장소 main 문서와 실제 npm 배포판의 기능은 다를 수 있다. 이 문서를 만들면서 사용자 PC에 REA를 설치하거나 실제 앱을 역분석한 것은 아니다.</p>
+<h3>광고·과장 문구를 걸러낸 결론</h3>
+<ul>
+<li>강의·커뮤니티·구독·알림 홍보는 학습 본문에서 제외했다.</li>
+<li>“소프트웨어는 끝났다”, “몇 분이면 모든 앱 복제”는 실험으로 입증된 결론이 아니다.</li>
+<li>GitHub 순위·별 수·조회수는 설치 판단이나 성능 증거로 사용하지 않았다.</li>
+<li>23분·6분·74점·16개 성공은 해당 영상의 특정 실험 결과다. 내 작업의 시간·비용·성공률을 보장하지 않는다.</li>
+<li>보기 좋은 클론, 특정 파일 읽기 성공, 원본 내부 구조 이해는 각각 다른 성과다.</li>
+</ul>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section>
+<section class="chapter" id="chapter-2" data-chapter="02"><h2>02 · 영상 1 — 앱을 분석하고 다시 만들기</h2>
+<p><a href="https://youtu.be/F0p9SX9T6As">단테랩스 영상 열기</a></p>
+<p><strong>질문:</strong> 원본 소스를 보지 못하는 에이전트가 패키징된 자료 관리 앱을 얼마나 이해하고 재구현할 수 있을까?</p>
+<p>영상 설명에 따르면 제작자는 자신이 소스를 가진 Serpent 포크를 대상으로 준비·분석·평가 역할을 나눴다. 분석 담당의 원본 소스·웹 검색·GitHub 조회를 막고 REA로 조사하도록 했으며, 평가 담당은 원본 소스와 대조했다.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>구간</th>
+<th>설명글 기준 내용</th>
+<th>실무에서 가져올 점</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://youtu.be/F0p9SX9T6As?t=139">02:19</a></td>
+<td>REA와 기존 분석 도구의 차이</td>
+<td>에이전트·연결 도구·분석 엔진을 구분한다</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/F0p9SX9T6As?t=329">05:29</a></td>
+<td>실험 앱 선정 이유</td>
+<td>처음에는 직접 만든 작고 권리가 명확한 앱을 쓴다</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/F0p9SX9T6As?t=437">07:17</a></td>
+<td>준비·분석·평가의 역할 분리</td>
+<td>분석 담당에게 정답이 새어 들어가지 않게 한다</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/F0p9SX9T6As?t=594">09:54</a></td>
+<td>분석에서 알아낸 내용</td>
+<td>결론마다 파일 위치·함수·바이트 등 근거를 남긴다</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/F0p9SX9T6As?t=795">13:15</a></td>
+<td>약 23분 만에 클론 생성</td>
+<td>실행되는 결과와 내부 이해를 별도로 평가한다</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/F0p9SX9T6As?t=877">14:37</a></td>
+<td>100점 중 74점, Evidence 24건 중 22건 일치</td>
+<td>근거 일부의 오류도 설계 전체에 영향을 줄 수 있다</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/F0p9SX9T6As?t=1034">17:14</a></td>
+<td>분석 구조에 약 6분 만에 기능 추가</td>
+<td>이해한 부분부터 작은 확장 기능을 붙인다</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/F0p9SX9T6As?t=1122">18:42</a></td>
+<td>활용 분야와 비판</td>
+<td>시연 성공을 모든 앱으로 일반화하지 않는다</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/F0p9SX9T6As?t=1297">21:37</a></td>
+<td>저작권·약관</td>
+<td>분석 허용 범위와 재배포 권리를 따로 확인한다</td>
+</tr>
+</tbody></table></div>
+<p><strong>숫자 읽는 법:</strong> 22/24는 약 91.7%지만, 이것은 설명글에 나온 근거 항목의 일치 비율이다. 앱 전체 정확도 91.7%라는 뜻이 아니며 74점과 같은 지표도 아니다. 전체 평가 항목·가중치·실험 파일은 이번에 확보하지 못했다. 어떤 근거를 잘못 읽었는지와 추가한 기능의 정확한 내용도 설명글만으로 확정할 수 없다.</p>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section>
+<section class="chapter" id="chapter-3" data-chapter="03"><h2>03 · 영상 2 — REA가 없어도 가능할까?</h2>
+<p><a href="https://youtu.be/rwCDPZP_Zk4">개발동생 영상 열기</a></p>
+<p><strong>질문:</strong> 같은 조건에서 REA를 붙이면 코딩 에이전트의 파일 분석 결과가 더 좋아질까?</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>비교 조건</th>
+<th>영상 설명 기준</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>대상</td>
+<td>직접 만든 macOS 노트 앱 NoteVault. C++ 파일 엔진과 AppKit 화면</td>
+</tr>
+<tr>
+<td>과제</td>
+<td>원본 앱 없이 .nvlt 파일을 읽는 Python 함수 작성</td>
+</tr>
+<tr>
+<td>모델·시간</td>
+<td>양쪽 모두 GPT-6.1 Sol, 각 10분. 모델명은 설명글 표기를 보존한 것</td>
+</tr>
+<tr>
+<td>입력</td>
+<td>같은 앱과 파일, 원본 소스 미제공</td>
+</tr>
+<tr>
+<td>평가</td>
+<td>미리 만든 정상 파일 8개·손상 파일 8개</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>REA 사용·미사용 양쪽 모두 16개 통과</td>
+</tr>
+<tr>
+<td>관찰</td>
+<td>REA 미사용 쪽도 Ghidra를 직접 실행하여 분석</td>
+</tr>
+</tbody></table></div>
+<p><strong>핵심:</strong> REA 미사용은 “역공학 도구 없이”라는 뜻이 아니다. 두 조건 모두 분석 엔진을 사용할 수 있었다. 따라서 이 실험은 REA만이 역공학을 가능하게 한다는 주장을 뒷받침하지 않는다. 반대로 두 조건이 같은 정확도를 냈다는 이유만으로 설치 편의·작업 반복성·근거 관리 측면까지 동등하다고 단정할 수도 없다. 비용·토큰·반복 실행 통계는 제공된 설명에서 확인되지 않았다.</p>
+<h3>다시 볼 구간</h3>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>구간</th>
+<th>학습 주제</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://youtu.be/rwCDPZP_Zk4?t=0">00:00</a> · <a href="https://youtu.be/rwCDPZP_Zk4?t=74">01:14</a></td>
+<td>도구 개요, 웹 화면 복제와 앱 내부 조사 차이</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/rwCDPZP_Zk4?t=130">02:10</a> · <a href="https://youtu.be/rwCDPZP_Zk4?t=188">03:08</a> · <a href="https://youtu.be/rwCDPZP_Zk4?t=234">03:54</a></td>
+<td>Steam·DX-Ball·Notion·TradingView 사례 소개</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/rwCDPZP_Zk4?t=281">04:41</a></td>
+<td>설치와 분석 엔진</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/rwCDPZP_Zk4?t=338">05:38</a> · <a href="https://youtu.be/rwCDPZP_Zk4?t=390">06:30</a></td>
+<td>NoteVault와 대조 실험 조건</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/rwCDPZP_Zk4?t=461">07:41</a> · <a href="https://youtu.be/rwCDPZP_Zk4?t=497">08:17</a></td>
+<td>노트 읽기와 손상 파일 평가</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/rwCDPZP_Zk4?t=528">08:48</a> · <a href="https://youtu.be/rwCDPZP_Zk4?t=578">09:38</a></td>
+<td>미사용 쪽의 Ghidra 활용, REA의 도움 범위</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/rwCDPZP_Zk4?t=650">10:50</a></td>
+<td>AI 래퍼와 제품 경쟁력에 관한 제작자 의견</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/rwCDPZP_Zk4?t=760">12:40</a> · <a href="https://youtu.be/rwCDPZP_Zk4?t=834">13:54</a> · <a href="https://youtu.be/rwCDPZP_Zk4?t=915">15:15</a></td>
+<td>권리, 과열된 관심, 데이터·신뢰</td>
+</tr>
+</tbody></table></div>
+<p>외부 사례 소개는 이 영상의 NoteVault 실험과 별개다. Steam·TradingView의 성과를 독립 재현했다고 간주하지 않는다. 공식 Notion 사례 역시 특정 Electron 복사 경로의 추적이지 Notion 서버 전체 복구를 뜻하지 않는다.</p>
+<h3>두 영상을 함께 읽으면</h3>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>영상 1의 교훈</th>
+<th>영상 2의 교훈</th>
+<th>내 작업 원칙</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>그럴듯한 구현에도 해석 오류가 남는다</td>
+<td>REA 없이도 다른 도구로 성공할 수 있다</td>
+<td>도구 이름보다 근거와 시험 결과를 본다</td>
+</tr>
+<tr>
+<td>역할을 분리하면 검증이 쉬워진다</td>
+<td>같은 조건의 비교가 중요하다</td>
+<td>정답을 분리하고 동일 입력으로 평가한다</td>
+</tr>
+<tr>
+<td>이해한 부분에 기능을 추가할 수 있다</td>
+<td>작은 실험만으로 전체 성능을 말할 수 없다</td>
+<td>기능 하나씩 좁혀 반복한다</td>
+</tr>
+</tbody></table></div>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section>
+<section class="chapter" id="chapter-4" data-chapter="04"><h2>04 · 무엇부터 적용하면 좋을까?</h2>
+<p>다음은 영상의 주장이 아닌 <strong>이 가이드의 실무 제안</strong>이다.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>내 상황</th>
+<th>먼저 할 일</th>
+<th>REA가 필요한 지점</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>내가 만든 웹사이트의 소스가 있음</td>
+<td>저장소 코드와 실행 화면을 직접 조사</td>
+<td>소스만으로 풀리면 불필요</td>
+</tr>
+<tr>
+<td>랜딩페이지의 배치·모션만 참고</td>
+<td>허용된 화면 관찰과 내 디자인 구현</td>
+<td>바이너리 역분석은 대개 불필요</td>
+</tr>
+<tr>
+<td>권한 있는 Electron 앱의 CSV 내보내기 이해</td>
+<td>패키지와 기능 경로 정적 분석</td>
+<td>REA 입문에 적합</td>
+</tr>
+<tr>
+<td>오래된 자체 도구의 전용 파일을 변환</td>
+<td>샘플 파일·읽기 함수·경계조건 조사</td>
+<td>포맷 규칙과 오류 처리 검증</td>
+</tr>
+<tr>
+<td>네이티브 앱 기능을 조사</td>
+<td>OS·CPU·엔진 호환성부터 확인</td>
+<td>Ghidra 등 추가 분석 엔진 필요</td>
+</tr>
+<tr>
+<td>클라우드 서비스의 서버 기능을 만들고 싶음</td>
+<td>요구사항·공개 API·허용된 동작 관찰</td>
+<td>클라이언트 분석만으로 서버 내부 복구 불가</td>
+</tr>
+</tbody></table></div>
+<p><strong>추천 첫 과제:</strong> 연습용 Electron 앱의 “노트 CSV 내보내기” 경로를 읽고, 한글·줄바꿈·쉼표가 있는 입력을 처리하는 내 함수로 구현한다. 이 과제는 사용자의 마케팅 자료 정리·콘텐츠 관리 도구 개발에도 연결하기 쉽다. 고객·환자 데이터 대신 가짜 자료를 사용한다.</p>
+<div class="diagram" role="img" aria-label="소스가 있으면 소스 조사. 소스가 없으면 JavaScript 정적 분석 또는 네이티브 엔진 분석. 근거 대조와 시험을 통과하면 독립 구현."><p class="diagram-title">분석 경로를 고르는 지도</p><div class="flow-root flow-node emphasis">필요한 기능 하나 선택</div><span class="flow-arrow" aria-hidden="true">↓</span><div class="flow-branches"><div class="flow-branch"><small>원본 소스가 있으면</small><div class="flow-node">소스를 먼저 조사</div></div><div class="flow-branch"><small>소스가 없으면 · 유형 확인</small><div class="flow-node">JS / Electron → 정적 분석<br>네이티브 → 엔진 연결</div></div></div><span class="flow-arrow" aria-hidden="true">↓</span><div class="flow-root flow-node">근거 대조 + 입출력 시험</div><span class="flow-arrow" aria-hidden="true">↓</span><div class="flow-root flow-node emphasis">검증한 동작을 독립 구현</div><p class="flow-note">미확인 항목은 다시 조사 · 실패한 근거의 영향도 재검토</p></div>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section>
+<section class="chapter" id="chapter-5" data-chapter="05"><h2>05 · 설치 — Windows에서 시작하기</h2>
+<p>아래는 실행 가이드다. 이 문서를 읽는 것만으로 설치되지는 않는다. 명령은 PowerShell에, 자연어 프롬프트는 코딩 에이전트 대화창에 넣는다.</p>
+<h3>5-1. 준비물과 버전 확인</h3>
+<ul>
+<li>분석할 파일이 있는 PC에서 실행하는 코딩 에이전트.</li>
+<li>Node.js와 npm. 조회한 REA 문서는 Node 22.19 이상 22.x, 24.11 이상 24.x 또는 26 이상을 지원한다고 명시한다. 23·25·프리릴리스는 제외한다.</li>
+<li>권한이 명확한 작은 테스트 앱 또는 공식 예제.</li>
+<li>원본과 분리된 작업 폴더. 예시 경로는 실제 자신의 경로로 교체한다.</li>
+</ul>
+<div class="code-wrap"><div class="code-toolbar"><span>터미널 · POWERSHELL</span><button class="copy" type="button" aria-label="명령어 복사">복사</button></div><pre><code># PowerShell에 입력. REA 설치 전에 현재 버전을 확인한다.
+node --version
+npm --version
+</code></pre></div>
+<h3>5-2. 에이전트 연결</h3>
+<div class="code-wrap"><div class="code-toolbar"><span>터미널 · POWERSHELL</span><button class="copy" type="button" aria-label="명령어 복사">복사</button></div><pre><code># 다운로드 승인과 REA 설정 변경 승인은 서로 별개다.
+npx rea-agents@latest setup
+</code></pre></div>
+<p>사용 중인 에이전트를 선택하고 표시된 변경 경로를 읽은 뒤 승인한다. 완료 메시지에서 지정한 에이전트를 다시 시작한다. JavaScript 정적 분석부터 할 때는 Hopper 설치가 필수는 아니다.</p>
+<div class="code-wrap"><div class="code-toolbar"><span>터미널 · POWERSHELL</span><button class="copy" type="button" aria-label="명령어 복사">복사</button></div><pre><code># Codex 연결만 진단하는 예. 실제 사용하는 클라이언트에 맞춘다.
+npx rea-agents@latest doctor --client codex --json
+
+# 사용할 명령 목록 확인. 문서와 설치판의 옵션이 다를 때 기준이 된다.
+npx rea-agents@latest --help
+</code></pre></div>
+<p>정상 판단은 “설치 명령이 끝남”이 아니라 <strong>선택한 에이전트가 REA 도구를 인식하고 실제 테스트 요청을 처리함</strong>이다. <a href="https://github.com/morluto/rea/blob/main/docs/installation.md">설치 공식 문서</a></p>
+<h3>5-3. 네이티브 앱만 — Ghidra 추가 준비</h3>
+<p>처음에는 이 단계를 건너뛰고 다음 장의 JavaScript 예제로 시작해도 된다. Ghidra는 <a href="https://github.com/NationalSecurityAgency/ghidra/releases">공식 배포 저장소</a>에서 받는다. 조회한 REA Windows 가이드는 <strong>실험적 Windows 10 이상 x64, 로컬 고정 NTFS, Ghidra 12.1.x, 호환되는 64비트 full JDK</strong>를 명시하며 12.1.4로 검증했다고 설명한다. JDK에는 <code>javac</code>도 있어야 한다. Ghidra 자체의 최신 버전과 REA가 검증한 버전은 같지 않을 수 있다.</p>
+<div class="code-wrap"><div class="code-toolbar"><span>터미널 · POWERSHELL</span><button class="copy" type="button" aria-label="명령어 복사">복사</button></div><pre><code># 아래 두 경로는 예시. 실제 압축 해제·설치 위치로 바꾼다.
+$env:GHIDRA_INSTALL_DIR = &quot;C:\tools\ghidra_12.1.4_PUBLIC&quot;
+$env:JAVA_HOME = &quot;C:\tools\jdk-21&quot;
+$env:REA_ANALYSIS_PROVIDER = &quot;ghidra&quot;
+
+# 선택한 JDK가 실행되고 컴파일러도 있는지 확인한다.
+&amp; &quot;$env:JAVA_HOME\bin\java.exe&quot; -version
+&amp; &quot;$env:JAVA_HOME\bin\javac.exe&quot; -version
+npx rea-agents@latest doctor --provider ghidra --json
+
+# 같은 PowerShell에서 설정을 갱신하고 에이전트를 다시 시작한다.
+npx rea-agents@latest setup
+</code></pre></div>
+<p>위 환경변수는 현재 PowerShell 세션에 설정된다. 이미 실행 중인 GUI 에이전트에 자동 반영된다고 생각하면 안 된다. 설정 결과에서 엔진 경로가 에이전트 연결에 반영됐는지 확인한다. 32비트 대상·특수 파일 시스템 등은 설치판 지원을 별도로 판정한다. <a href="https://github.com/morluto/rea/blob/main/docs/windows-ghidra-p0.md">Windows 지원 범위</a></p>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section>
+<section class="chapter" id="chapter-6" data-chapter="06"><h2>06 · 첫 실습 — 파일 내보내기 경로 읽기</h2>
+<p>REA 공식 JavaScript 가이드에는 작은 노트 앱 예제가 있다. <strong>원본 소스가 포함된 연습 자료</strong>이므로 블라인드 역공학 성능 시험은 아니다. 연결과 근거 읽는 법을 익히는 용도다. 정적 분석에는 Electron을 실행할 필요가 없다. <a href="https://rea.tools/guides/javascript/">공식 예제 설명</a> · <a href="https://rea.tools/examples/notes-example.zip">예제 ZIP</a></p>
+<ol>
+<li>ZIP을 풀고 실제 <code>notes-example</code> 폴더 경로를 확인한다.</li>
+<li>아래 경로를 그 위치로 바꾼다.</li>
+<li>JSON이 나오면 입력 폴더·모듈·IPC 근거 위치를 확인한다.</li>
+<li>다음 장 프롬프트로 원리 설명과 재검증을 요청한다.</li>
+</ol>
+<div class="code-wrap"><div class="code-toolbar"><span>터미널 · POWERSHELL</span><button class="copy" type="button" aria-label="명령어 복사">복사</button></div><pre><code># 실제 폴더로 교체한다. 실행 파일 대신 폴더를 지정하는 연습이다.
+npx rea-agents@latest analyze-javascript-application &quot;C:\REA-Lab\notes-example&quot; --json
+</code></pre></div>
+<p>공식 예제의 관찰 경로는 화면의 <code>notes.exportCsv()</code> → preload → <code>notes:export</code> IPC → main 처리기 → CSV 작성이다. 정적 분석은 코드상 연결을 보여준다. 실제 클릭 시 실행되는지 확인하는 동적 관찰과는 다르다. 예제 안내의 기준 결과는 IPC 채널 1개와 대응 처리기 1개다. 버전이 달라지면 실제 파일과 결과 구조를 우선한다.</p>
+<h3>원본 보호용 작업 구분</h3>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>폴더</th>
+<th>담을 것</th>
+<th>원칙</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>input</td>
+<td>분석 대상 복사본·시험 데이터</td>
+<td>분석 중 수정하지 않는다</td>
+</tr>
+<tr>
+<td>evidence</td>
+<td>근거 JSON·관찰 기록</td>
+<td>결론의 출처와 연결한다</td>
+</tr>
+<tr>
+<td>implementation</td>
+<td>내가 만드는 코드</td>
+<td>원본과 분리한다</td>
+</tr>
+<tr>
+<td>tests</td>
+<td>입력·정답·시험 결과</td>
+<td>구현을 보고 정답을 바꾸지 않는다</td>
+</tr>
+<tr>
+<td>report</td>
+<td>명세·검수표</td>
+<td>확인·추론·미확인을 표시한다</td>
+</tr>
+</tbody></table></div>
+<p>이 폴더 구성은 실무 제안이며 REA가 자동 생성하는 표준 구조는 아니다.</p>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section>
+<section class="chapter" id="chapter-7" data-chapter="07"><h2>07 · 순서대로 복붙하는 프롬프트 10개</h2>
+<p><strong>사용법:</strong> 대괄호 값을 먼저 바꾸고 한 단계씩 입력한다. 앞 단계의 결과를 확인한 뒤 다음 단계로 간다. 전부 한꺼번에 붙여 넣지 않는다. 아래 프롬프트는 영상 원문이 아니라 이 가이드에서 만든 실무 템플릿이다.</p>
+<h3>P01 · 환경 점검</h3>
+<div class="code-wrap"><div class="code-toolbar"><span>에이전트 대화창 · 복붙 프롬프트</span><button class="copy" type="button" aria-label="프롬프트 복사">복사</button></div><pre><code>REA 분석을 준비해줘. 이번 단계는 점검만 한다.
+작업 PC: [Windows/macOS/Linux 및 CPU]
+분석 대상 절대 경로: [경로]
+작업 폴더: [경로]
+사용 에이전트: [이름]
+분석 목적: [기능 하나]
+
+OS·CPU·Node·npm·REA 버전과 MCP 연결 상태를 확인해줘.
+대상이 Electron/JavaScript, 네이티브, .NET 중 무엇인지 실제 파일 근거로 구분해줘.
+공식 문서와 설치판 help를 대조해서 필요한 도구만 제시해줘.
+지금 단계에서 설치·설정 변경·앱 실행은 하지 마.
+결과를 준비됨/부족함/확인불가로 나누고 다음에 실행할 정확한 명령을 적어줘.
+</code></pre></div>
+<p><strong>통과 기준:</strong> 파일 유형, 실제 경로, 필요한 엔진이 식별됐다. “아마 Electron”만으로는 통과가 아니다.</p>
+<h3>P02 · 권한·범위·정답 분리</h3>
+<div class="code-wrap"><div class="code-toolbar"><span>에이전트 대화창 · 복붙 프롬프트</span><button class="copy" type="button" aria-label="프롬프트 복사">복사</button></div><pre><code>분석 범위를 다음으로 고정해줘.
+대상: [내가 만든 앱 또는 분석 권한이 확인된 앱]
+권한 근거: [자체 제작/허용 라이선스/분석 승인]
+입력 폴더: [절대 경로]
+출력 폴더: [절대 경로]
+이번에 이해할 기능: [예: 노트 CSV 내보내기]
+성공 조건: [예: 한글·쉼표·줄바꿈이 있는 노트를 정확히 내보냄]
+
+원본을 수정하지 않고 입력 복사본으로 조사해줘.
+블라인드 실험이면 원본 소스·정답 폴더·웹의 동일 소스를 분석 과정에서 읽지 마.
+일반 실무 조사이면 공개 문서 사용 여부를 기록해줘.
+허용 파일, 제외 파일, 실행이 필요한 작업을 표로 정리하고 분석계획.md에 저장해줘.
+범위를 벗어난 변경은 먼저 설명하고 멈춰줘.
+</code></pre></div>
+<p><strong>통과 기준:</strong> 입력·출력·목적·제외 범위가 구체적이다. 단순 프롬프트는 보안 격리가 아니므로 엄격한 블라인드 실험은 별도 작업 폴더와 접근 제한도 적용한다.</p>
+<h3>P03 · 정적 구조 지도</h3>
+<div class="code-wrap"><div class="code-toolbar"><span>에이전트 대화창 · 복붙 프롬프트</span><button class="copy" type="button" aria-label="프롬프트 복사">복사</button></div><pre><code>승인한 대상의 정적 구조를 REA로 조사해줘. 대상 앱은 실행하지 마.
+입력: [절대 경로]
+출력: [evidence 폴더]
+
+진입점, 주요 모듈, 파일 읽기·쓰기 지점, 프로세스 경계를 정리해줘.
+Electron이면 renderer/preload/main 및 IPC 연결을 조사해줘.
+네이티브면 파일 형식·CPU와 문자열·심볼·함수 참조를 출발점으로 삼아줘.
+도구가 실제 제공한 결과만 인용하고 존재하지 않는 도구 이름이나 주소를 만들지 마.
+확인 사실/추론/미해결을 나누어 구조지도.md로 저장해줘.
+각 결론에 파일·줄·함수 주소 등 재확인 가능한 근거 위치를 연결해줘.
+</code></pre></div>
+<p><strong>통과 기준:</strong> 전체 덤프 대신 이번 기능에 필요한 진입점이 좁혀졌다.</p>
+<h3>P04 · 기능 하나 끝까지 추적</h3>
+<div class="code-wrap"><div class="code-toolbar"><span>에이전트 대화창 · 복붙 프롬프트</span><button class="copy" type="button" aria-label="프롬프트 복사">복사</button></div><pre><code>이번 기능만 끝까지 추적해줘: [기능명]
+시작 동작 또는 입력: [버튼/메뉴/파일]
+기대 출력: [파일/화면/반환값]
+
+입력 → 변환 → 저장 또는 통신 → 반환의 실제 연결을 근거로 설명해줘.
+동명 함수·중복 처리기가 있으면 각각 구분하고 연결 근거가 약한 곳은 미확인으로 남겨줘.
+서버에만 있는 로직을 클라이언트 코드에서 발견한 것처럼 쓰지 마.
+결론/근거 위치/반대 가능성/추가 확인 방법의 표를 만들어줘.
+작동 원리를 쉬운 한국어로 먼저 설명한 뒤 기술 명세를 작성해줘.
+</code></pre></div>
+<p><strong>통과 기준:</strong> 이름이 비슷해서 연결했다는 추측이 아니라 호출·참조 근거가 있다.</p>
+<h3>P05 · 틀렸을 가능성부터 검증</h3>
+<div class="code-wrap"><div class="code-toolbar"><span>에이전트 대화창 · 복붙 프롬프트</span><button class="copy" type="button" aria-label="프롬프트 복사">복사</button></div><pre><code>앞선 분석을 반박하는 검수 역할로 바꿔줘.
+핵심 결론마다 독립적인 두 번째 근거 또는 재현 시험을 찾아줘.
+의사코드 하나만으로 확정한 내용은 명령어·원시 데이터·호출자·입출력 중 다른 근거와 대조해줘.
+확인된 오류가 있으면 그 오류에 의존한 결론과 설계까지 다시 점검해줘.
+실행 관찰이 필요하면 어떤 앱을 어떤 입력으로 실행하며 어떤 파일·네트워크 부작용이 있는지 먼저 제시해줘.
+실행 승인이 없으면 정적 검수까지만 진행해줘.
+최종 상태는 확인/유력한 추론/미확인/반증으로 표시해줘.
+</code></pre></div>
+<p><strong>통과 기준:</strong> 중요한 미확인 사항이 숨겨지지 않았고, 틀린 근거의 영향 범위가 정리됐다.</p>
+<h3>P06 · 독립 구현용 명세</h3>
+<div class="code-wrap"><div class="code-toolbar"><span>에이전트 대화창 · 복붙 프롬프트</span><button class="copy" type="button" aria-label="프롬프트 복사">복사</button></div><pre><code>검증된 동작만으로 새 구현 명세를 작성해줘. 아직 코드는 작성하지 마.
+목표: [내 프로젝트에서 필요한 기능]
+기술 환경: [예: Python / HTML·CSS·JavaScript / 기존 프로젝트]
+
+입력 형식, 출력 형식, 한글 처리, 빈 값, 길이 제한, 오류 처리, 저장 위치를 명시해줘.
+원본 고유 로고·문구·이미지·소스 표현을 복사하는 지시를 넣지 마.
+확인되지 않은 암호화·압축·체크섬 규칙을 추정 사실로 넣지 마.
+각 요구사항에 근거 ID와 검증 방법을 연결해줘.
+미확인 부분을 포함하지 않는 최소 기능과 향후 확장으로 나눠줘.
+</code></pre></div>
+<p><strong>통과 기준:</strong> 구현 담당이 분석 원문 없이도 입력·출력·시험 기준을 이해할 수 있다. 명세 분리만으로 모든 권리 문제가 해결되는 것은 아니다.</p>
+<h3>P07 · 최소 기능 구현</h3>
+<div class="code-wrap"><div class="code-toolbar"><span>에이전트 대화창 · 복붙 프롬프트</span><button class="copy" type="button" aria-label="프롬프트 복사">복사</button></div><pre><code>확정한 명세를 구현해줘.
+명세 경로: [경로]
+작업 경로: [implementation 폴더]
+사용 기술: [기술]
+
+이번에는 [기능 하나]만 구현하고 원본 앱과 입력 파일을 수정하지 마.
+의존성은 필요한 것만 추가하고 실행 명령과 예시 입력을 README에 적어줘.
+오류 상황을 정상 결과로 숨기지 말고 사용자가 구분할 수 있게 반환해줘.
+미확인 동작은 구현 완료로 표시하지 마.
+실제 실행한 검증, 실행하지 못한 검증, 남은 제약을 구분해서 보고해줘.
+</code></pre></div>
+<p><strong>통과 기준:</strong> 내가 실행할 명령·예시·실패 처리까지 갖춰졌다.</p>
+<h3>P08 · 독립 시험과 점수표</h3>
+<div class="code-wrap"><div class="code-toolbar"><span>에이전트 대화창 · 복붙 프롬프트</span><button class="copy" type="button" aria-label="프롬프트 복사">복사</button></div><pre><code>평가 담당으로서 구현을 검수해줘.
+명세: [경로]
+구현: [경로]
+고정한 시험 입력과 정답: [tests 경로]
+
+구현 결과에 맞춰 정답을 바꾸지 마.
+정상 입력뿐 아니라 빈 값·한글·줄바꿈·손상·잘린 파일·경계값 등 명세에 맞는 항목을 시험해줘.
+동작 일치, 오류 처리, 데이터 무결성, 근거 신뢰성을 별도로 보고해줘.
+실행한 시험 수/통과/실패/미실행과 실패 입력을 기록해줘.
+미실행은 성공으로 계산하지 마. 부분 성공을 전체 앱 복제로 표현하지 마.
+</code></pre></div>
+<p><strong>통과 기준:</strong> 실제 실행 결과가 있으며, 미실행 항목이 분리되어 있다.</p>
+<h3>P09 · 내 업무 기능 하나 추가</h3>
+<div class="code-wrap"><div class="code-toolbar"><span>에이전트 대화창 · 복붙 프롬프트</span><button class="copy" type="button" aria-label="프롬프트 복사">복사</button></div><pre><code>검증이 끝난 구현에 기능 하나를 추가해줘.
+추가 기능: [예: 제목·태그·원본 링크를 포함한 Markdown 내보내기]
+기존 동작 중 반드시 유지할 것: [목록]
+완료 조건: [측정 가능한 조건]
+
+먼저 영향을 받는 모듈과 데이터 형식을 짚어줘.
+원본 자산을 복사하지 않고 내 프로젝트 방식으로 구현해줘.
+기존 시험과 신규 시험을 실행하여 회귀 여부를 확인해줘.
+변경 파일, 실행 방법, 확인된 결과, 남은 제약을 정리해줘.
+</code></pre></div>
+<p><strong>통과 기준:</strong> 신규 기능뿐 아니라 기존 기능도 계속 작동한다.</p>
+<h3>P10 · 실패할 때 진단</h3>
+<div class="code-wrap"><div class="code-toolbar"><span>에이전트 대화창 · 복붙 프롬프트</span><button class="copy" type="button" aria-label="프롬프트 복사">복사</button></div><pre><code>REA 작업 실패를 진단해줘. 무작정 재설치하지 마.
+실행한 명령: [명령]
+오류 전문: [토큰·개인정보를 제거한 로그]
+대상 유형과 경로: [정보]
+OS·CPU·Node·REA·분석 엔진 버전: [확인값]
+
+MCP 연결 문제, 엔진 준비 문제, 대상 미지원, 경로·권한 문제, 분석 시간 초과를 구분해줘.
+선택한 client/provider에 한정한 doctor 결과와 설치판 help를 확인해줘.
+읽기 전용 점검부터 수행하고 가장 작은 수정안을 제시해줘.
+수정 후 동일 입력으로 다시 확인하며, 보안 설정이나 승인 절차를 임의로 해제하지 마.
+</code></pre></div>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section>
+<section class="chapter" id="chapter-8" data-chapter="08"><h2>08 · 검수표 — 믿어도 되는 결과인지 보기</h2>
+<h3>Evidence 기록 양식</h3>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>결론</th>
+<th>근거 위치</th>
+<th>상태</th>
+<th>독립 확인</th>
+<th>구현 영향</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>E01</td>
+<td>[결론]</td>
+<td>[파일·줄·주소]</td>
+<td>확인/추론/미확인/반증</td>
+<td>[관찰 또는 시험]</td>
+<td>[영향 기능]</td>
+</tr>
+</tbody></table></div>
+<p>예를 들어 함수 이름에 <code>encrypt</code>가 있다고 해서 실제로 안전한 암호화를 사용한다고 확정하면 안 된다. 함수 본문·호출 경로·입출력의 대응이 필요하다. 문자열이 있다는 것과 그 코드가 실행된다는 것도 다르다.</p>
+<h3>점수보다 먼저 볼 체크리스트</h3>
+<ul>
+<li>분석 대상 파일·버전·해시가 기록됐는가?</li>
+<li>원본 소스와 정답이 분석 담당에게 유출되지 않았는가? 블라인드 실험일 때 확인한다.</li>
+<li>중요한 결론마다 실제 근거 위치가 있는가?</li>
+<li>입력과 출력을 같은 기준으로 비교했는가?</li>
+<li>빈 값·한글·큰 입력·손상 입력 등 관련 경계조건을 시험했는가?</li>
+<li>오류를 정상 데이터로 처리하지 않는가?</li>
+<li>분석하지 못한 기능이 목록으로 남아 있는가?</li>
+<li>실행 시간과 비용을 측정했다면 그 측정 범위를 명시했는가?</li>
+</ul>
+<h3>선택형 100점 평가안</h3>
+<p>아래 배점은 <strong>이 가이드의 제안</strong>이며 영상 1의 원래 채점표가 아니다.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>영역</th>
+<th>배점</th>
+<th>기준</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>핵심 동작</td>
+<td>40</td>
+<td>미리 정한 정상 사례와 동작 일치</td>
+</tr>
+<tr>
+<td>오류·경계조건</td>
+<td>25</td>
+<td>손상·빈 값·한계 상황을 명세대로 처리</td>
+</tr>
+<tr>
+<td>근거 품질</td>
+<td>20</td>
+<td>위치 추적 가능, 추론 분리, 반증 검토</td>
+</tr>
+<tr>
+<td>재현 가능성</td>
+<td>15</td>
+<td>버전·입력·실행 명령·시험 결과 제공</td>
+</tr>
+</tbody></table></div>
+<p>심각한 데이터 손실이나 권한 범위 위반은 높은 합계 점수로 상쇄하지 않는다. “데모 가능”과 “실서비스 투입 가능”은 별도 판단한다.</p>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section>
+<section class="chapter" id="chapter-9" data-chapter="09"><h2>09 · 용어 사전 — 읽는 법과 쉬운 뜻</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>용어·읽는 법</th>
+<th>쉬운 뜻</th>
+<th>이번 작업에서의 역할</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>REA · 알이 에이</td>
+<td>Reverse Engineer Anything</td>
+<td>에이전트가 분석 도구를 쓰도록 연결</td>
+</tr>
+<tr>
+<td>Reverse engineering · 리버스 엔지니어링</td>
+<td>완성된 결과에서 원리를 거꾸로 조사</td>
+<td>소스 없는 기능을 이해</td>
+</tr>
+<tr>
+<td>Agent · 에이전트</td>
+<td>도구를 써서 여러 작업을 수행하는 AI 시스템</td>
+<td>조사·구현·검증 진행</td>
+</tr>
+<tr>
+<td>MCP · 엠씨피</td>
+<td>AI 앱과 외부 도구가 대화하는 연결 규약</td>
+<td>REA 도구 호출</td>
+</tr>
+<tr>
+<td>CLI · 씨엘아이</td>
+<td>터미널에 글자로 명령하는 방식</td>
+<td>npx 명령 실행</td>
+</tr>
+<tr>
+<td>Skill · 스킬</td>
+<td>에이전트용 절차·지침 묶음</td>
+<td>어떤 순서로 조사할지 안내</td>
+</tr>
+<tr>
+<td>Node.js · 노드 제이에스</td>
+<td>JavaScript 실행 환경</td>
+<td>REA 실행 기반</td>
+</tr>
+<tr>
+<td>npm · 엔피엠</td>
+<td>Node 패키지 관리 도구</td>
+<td>패키지 설치·조회</td>
+</tr>
+<tr>
+<td>npx · 엔피엑스</td>
+<td>패키지 명령 실행 도구</td>
+<td>REA 실행. 필요하면 다운로드함</td>
+</tr>
+<tr>
+<td>Provider · 프로바이더</td>
+<td>실제 분석을 수행하는 엔진 제공자</td>
+<td>Ghidra·Hopper·IDA 선택</td>
+</tr>
+<tr>
+<td>Ghidra · 기드라</td>
+<td>역공학 분석 도구</td>
+<td>네이티브 코드 구조 조사</td>
+</tr>
+<tr>
+<td>Binary · 바이너리</td>
+<td>컴퓨터용 이진 형식 파일</td>
+<td>.exe 등 분석 대상</td>
+</tr>
+<tr>
+<td>Native · 네이티브</td>
+<td>특정 OS·CPU용으로 빌드된 프로그램</td>
+<td>별도 분석 엔진이 필요할 수 있음</td>
+</tr>
+<tr>
+<td>Electron · 일렉트론</td>
+<td>웹 기술로 데스크톱 앱을 만드는 기반</td>
+<td>JavaScript와 네이티브 부분이 섞일 수 있음</td>
+</tr>
+<tr>
+<td>ASAR · 에이사</td>
+<td>Electron 파일을 묶은 아카이브</td>
+<td>일반적으로 암호화와 같은 뜻은 아님</td>
+</tr>
+<tr>
+<td>Renderer · 렌더러</td>
+<td>화면을 담당하는 프로세스</td>
+<td>버튼·화면 동작의 출발점</td>
+</tr>
+<tr>
+<td>Preload · 프리로드</td>
+<td>화면에 제한된 API를 연결하는 스크립트</td>
+<td>renderer와 main 사이 연결</td>
+</tr>
+<tr>
+<td>Main process · 메인 프로세스</td>
+<td>앱의 주요 시스템 작업 담당</td>
+<td>파일 저장·창 관리 등</td>
+</tr>
+<tr>
+<td>IPC · 아이피씨</td>
+<td>프로세스 사이의 메시지 통신</td>
+<td>화면 요청을 파일 처리로 전달</td>
+</tr>
+<tr>
+<td>Static analysis · 정적 분석</td>
+<td>앱을 실행하지 않고 파일을 조사</td>
+<td>첫 조사에 사용</td>
+</tr>
+<tr>
+<td>Dynamic analysis · 동적 분석</td>
+<td>실행 중 동작을 관찰</td>
+<td>실제 실행 경로 확인</td>
+</tr>
+<tr>
+<td>Decompile · 디컴파일</td>
+<td>기계용 코드에서 읽기 쉬운 코드를 추정</td>
+<td>원래 소스를 그대로 복구하는 것은 아님</td>
+</tr>
+<tr>
+<td>Pseudocode · 슈도코드</td>
+<td>로직을 보여주는 의사코드</td>
+<td>오류·누락 가능성을 고려해 읽음</td>
+</tr>
+<tr>
+<td>Assembly · 어셈블리</td>
+<td>CPU 명령을 사람이 읽을 수 있게 표시</td>
+<td>의사코드와 교차 검증</td>
+</tr>
+<tr>
+<td>Symbol · 심볼</td>
+<td>함수·변수 등의 이름 정보</td>
+<td>분석 단서. 제거됐을 수도 있음</td>
+</tr>
+<tr>
+<td>Xref · 엑스레프</td>
+<td>다른 위치가 참조하는 관계</td>
+<td>누가 함수·데이터를 쓰는지 조사</td>
+</tr>
+<tr>
+<td>Evidence · 에비던스</td>
+<td>결론의 근거와 관련 기록</td>
+<td>사실과 추론을 구분</td>
+</tr>
+<tr>
+<td>Hash · 해시</td>
+<td>파일 내용의 지문 같은 값</td>
+<td>동일한 대상인지 확인</td>
+</tr>
+<tr>
+<td>Parser · 파서</td>
+<td>파일·문장을 규칙대로 읽는 코드</td>
+<td>.nvlt 등 형식 해석</td>
+</tr>
+<tr>
+<td>Fixture · 픽스처</td>
+<td>미리 정한 시험 입력 자료</td>
+<td>반복 평가에 같은 데이터 사용</td>
+</tr>
+<tr>
+<td>Regression · 리그레션</td>
+<td>수정 뒤 기존 기능이 망가지는 현상</td>
+<td>기능 추가 후 재검증</td>
+</tr>
+<tr>
+<td>Interoperability · 인터오퍼러빌리티</td>
+<td>프로그램 간 호환·상호운용</td>
+<td>전용 파일을 다른 프로그램에서 읽기</td>
+</tr>
+<tr>
+<td>MIT license · 엠아이티 라이선스</td>
+<td>조건을 지키면 폭넓게 이용 가능한 라이선스</td>
+<td>REA 자체와 대상 앱의 권리는 별개</td>
+</tr>
+<tr>
+<td>Clean-room · 클린룸</td>
+<td>분석 명세와 구현을 분리하는 접근</td>
+<td>권리 보장을 자동으로 주는 면책 수단은 아님</td>
+</tr>
+</tbody></table></div>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section>
+<section class="chapter" id="chapter-10" data-chapter="10"><h2>10 · 오류가 났을 때</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>증상</th>
+<th>먼저 확인할 것</th>
+<th>다음 행동</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>node/npx 명령을 못 찾음</td>
+<td>설치 여부·PATH·터미널 재시작</td>
+<td>Node와 npm이 보이는 터미널에서 버전 재확인</td>
+</tr>
+<tr>
+<td>에이전트에 REA가 안 보임</td>
+<td>선택한 client·설정 경로·재시작 여부</td>
+<td>해당 client만 doctor로 진단</td>
+</tr>
+<tr>
+<td>분석 엔진이 없다고 나옴</td>
+<td>대상이 실제 네이티브인지</td>
+<td>JavaScript면 정적 경로, 네이티브면 엔진 준비</td>
+</tr>
+<tr>
+<td>Ghidra가 실행되지 않음</td>
+<td>설치 폴더·full JDK·CPU·지원판</td>
+<td>provider 진단에서 실패한 항목만 수정</td>
+</tr>
+<tr>
+<td>여러 provider 때문에 선택 불가</td>
+<td>실제 가용 엔진 목록</td>
+<td>지원되는 엔진을 명시적으로 선택</td>
+</tr>
+<tr>
+<td>Windows 네이티브 분석 실패</td>
+<td>x64 호스트·NTFS·대상 형식·npm 판</td>
+<td>실험적 지원 범위와 대조</td>
+</tr>
+<tr>
+<td>분석이 오래 걸림</td>
+<td>대상 크기·엔진 초기 분석·클라이언트 제한</td>
+<td>작업 범위를 줄이고 실제 timeout 원인 확인</td>
+</tr>
+<tr>
+<td>JSON이 너무 큼</td>
+<td>전체 결과를 대화에 넣었는지</td>
+<td>파일로 보관하고 필요한 모듈·요약만 읽기</td>
+</tr>
+<tr>
+<td>그럴듯한 설명인데 근거가 없음</td>
+<td>코드 위치·호출 관계·시험 기록</td>
+<td>P05로 반증 검수, 미확인은 그대로 표시</td>
+</tr>
+</tbody></table></div>
+<p>CLI는 호출마다 별도 프로세스이므로 큰 앱을 여러 번 전체 분석하면 낭비가 생길 수 있다. 결과 파일·지원되는 분석 뷰·세션을 활용하되, 설치판 기능을 먼저 확인한다. <a href="https://github.com/morluto/rea/blob/main/docs/cli.md">CLI·Evidence 공식 문서</a></p>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section>
+<section class="chapter" id="chapter-11" data-chapter="11"><h2>11 · 저작권·약관·데이터에서 꼭 구분할 것</h2>
+<p><strong>REA의 MIT 라이선스는 분석 대상 앱의 코드·이미지·상표까지 사용할 권리를 주지 않는다.</strong> 자체 제작 앱 또는 명확하게 허용된 대상부터 실습한다.</p>
+<p>공식 생활법령 안내는 제101조의3의 조사·연구·시험을 위한 복제와 제101조의4의 호환 목적 코드 역분석을 구분한다. 제101조의4는 정당한 이용 권한, 호환 정보 획득의 필요성, 필요한 범위 제한을 전제로 하며, 얻은 정보의 다른 목적 사용이나 실질적으로 유사한 표현의 프로그램 제작 등에 제한이 있다. “구매했으니 아무렇게나 복제·배포 가능”이라는 해석은 맞지 않는다. <a href="https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=3&cciNo=2&cnpClsNo=8&csmSeq=695">공식 안내</a></p>
+<p>해당 안내 페이지에는 2026-10-29 시행 예정 개정 관련 고지가 있다. 이 문서는 2026-10-13에 작성됐으므로 예정된 개정을 이미 시행 중인 규정처럼 설명하지 않는다. 구체적인 상용 앱 적용은 대상의 이용약관과 적용 시점의 법 조문을 함께 검토해야 한다.</p>
+<ul>
+<li>프로그램 이용 권한, 코드 분석 허용 범위, 결과물 배포 권한은 따로 기록한다.</li>
+<li>상표·로고·유료 이미지·문구·자산은 별도 권리 대상일 수 있다.</li>
+<li>라이선스 인증·결제·접근통제 해제를 이 실습 과제에 섞지 않는다.</li>
+<li>REA 분석이 로컬에서 이루어져도 에이전트가 받는 결과는 사용하는 모델 서비스에 전달될 수 있다. 로컬 분석과 데이터 외부 전송 없음은 같은 뜻이 아니다. <a href="https://github.com/morluto/rea#faq">REA FAQ</a></li>
+<li>고객 정보·환자 자료·로그인 쿠키·토큰 대신 합성 데이터와 테스트 계정을 사용한다.</li>
+</ul>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section>
+<section class="chapter" id="chapter-12" data-chapter="12"><h2>12 · 출퇴근 학습 순서와 출처</h2>
+<h3>세 번 나눠 공부하기</h3>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>순서</th>
+<th>읽을 내용</th>
+<th>이해했는지 스스로 확인</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>첫 번째</td>
+<td>01~04장</td>
+<td>REA와 Ghidra 차이를 내 말로 설명할 수 있나?</td>
+</tr>
+<tr>
+<td>두 번째</td>
+<td>05<del>07장 P01</del>P05</td>
+<td>내 대상 유형·환경·근거를 구분할 수 있나?</td>
+</tr>
+<tr>
+<td>세 번째</td>
+<td>07장 P06<del>P10, 08</del>11장</td>
+<td>구현 결과를 독립적으로 검증할 수 있나?</td>
+</tr>
+</tbody></table></div>
+<p>실제 PC 앞에서는 <strong>환경 점검 → 공식 작은 예제 → 기능 하나 추적 → 검수 → 독립 구현</strong> 순서로 진행한다. 처음부터 앱 전체 복제를 목표로 삼지 않는다.</p>
+<h3>출처 목록</h3>
+<div class="table-wrap" tabindex="0" role="region" aria-label="비교표, 좁은 화면에서는 옆으로 스크롤"><table>
+<thead>
+<tr>
+<th>자료</th>
+<th>사용한 범위</th>
+<th>확인 상태</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://youtu.be/F0p9SX9T6As">영상 1</a></td>
+<td>실험 설계·수치·타임라인</td>
+<td>사용자 제공 설명 기준</td>
+</tr>
+<tr>
+<td><a href="https://youtu.be/rwCDPZP_Zk4">영상 2</a></td>
+<td>NoteVault 비교 실험·수치·타임라인</td>
+<td>사용자 제공 설명 기준</td>
+</tr>
+<tr>
+<td><a href="https://github.com/morluto/rea">REA 저장소</a></td>
+<td>도구 역할·지원 대상·데이터 처리·라이선스</td>
+<td>공식 문서 확인</td>
+</tr>
+<tr>
+<td><a href="https://github.com/morluto/rea/blob/main/README_ko.md">REA 한국어 README</a></td>
+<td>한국어 추가 학습 링크</td>
+<td>별도 번역본 정합성 검수는 하지 않음</td>
+</tr>
+<tr>
+<td><a href="https://github.com/morluto/rea/blob/main/docs/installation.md">설치 문서</a></td>
+<td>setup·doctor·Node 조건</td>
+<td>공식 문서 확인</td>
+</tr>
+<tr>
+<td><a href="https://github.com/morluto/rea/blob/main/docs/windows-ghidra-p0.md">Windows Ghidra</a></td>
+<td>실험적 Windows 지원 조건</td>
+<td>main 문서 확인, 배포판 차이 주의</td>
+</tr>
+<tr>
+<td><a href="https://rea.tools/guides/javascript/">JavaScript 예제</a></td>
+<td>노트 CSV·IPC 실습</td>
+<td>공식 문서 확인</td>
+</tr>
+<tr>
+<td><a href="https://rea.tools/guides/native/">네이티브 분석 예제</a></td>
+<td>의사코드·명령어·호출·바이트 교차 확인</td>
+<td>공식 문서 확인</td>
+</tr>
+<tr>
+<td><a href="https://github.com/morluto/rea/blob/main/docs/cli.md">CLI·Evidence</a></td>
+<td>명령·결과 보관·분석 범위</td>
+<td>공식 문서 확인</td>
+</tr>
+<tr>
+<td><a href="https://github.com/NationalSecurityAgency/ghidra">Ghidra 공식 저장소</a></td>
+<td>분석 엔진 공식 배포 경로</td>
+<td>공식 저장소 확인</td>
+</tr>
+<tr>
+<td><a href="https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=3&cciNo=2&cnpClsNo=8&csmSeq=695">생활법령정보</a></td>
+<td>제101조의3·제101조의4 요건</td>
+<td>공식 안내 확인</td>
+</tr>
+<tr>
+<td><a href="https://dante-labs.com/">단테랩스</a></td>
+<td>영상 게시 확인</td>
+<td>홈페이지 확인, 설명글의 생략된 실험 자료 URL은 미확보</td>
+</tr>
+</tbody></table></div>
+<p>이 가이드는 두 영상의 설명을 요약하고 공식 자료를 보충한 학습 문서다. 실제 실험을 재현해 얻은 성능 보고서가 아니다.</p>
+<div class="chapter-footer"><button class="complete" aria-pressed="false" type="button">○ 이 장 학습 완료</button></div></section></div></div></main><footer class="footer"><span>CODING NOTEBOOK · REA FIELD GUIDE<br>본문은 외부 라이브러리 없이 열립니다. 검색어와 진도는 서버로 전송하지 않습니다.</span><span><a href="REA-실사용-가이드.md" download>Markdown 다운로드</a> · <a href="https://drive.google.com/file/d/1ft_AcWubrrmflXtiO1nsyclN-kUwHsPs/view">Drive 문서</a> · <a href="https://github.com/byeonghoyoo/motion-reference-notebook/tree/main/coding/rea">GitHub 소스</a></span></footer><div class="toast" id="toast" role="status" aria-live="polite" hidden></div><script>(() => {
+  'use strict';
+  const chapters = [...document.querySelectorAll('.chapter')];
+  const search = document.querySelector('#search');
+  const filters = [...document.querySelectorAll('[data-mode]')];
+  const key = 'rea-learning-v1';
+  let mode = 'all';
+  let completed = new Set();
+  let available = true;
+  try { const saved=JSON.parse(localStorage.getItem(key)||'[]'); if(Array.isArray(saved)) completed=new Set(saved.filter(x=>chapters.some(c=>c.id===x))); } catch { available=false; }
+  let toastTimer;
+  function toast(message) { const el=document.querySelector('#toast');el.textContent=message;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>{el.hidden=true;},2300); }
+  function save() { try {localStorage.setItem(key,JSON.stringify([...completed]));}catch{available=false;}updateProgress(); }
+  function updateProgress() {
+    document.querySelector('#progress-label').textContent=`${completed.size} / ${chapters.length}장`;
+    const p=document.querySelector('#progress');p.style.width=`${completed.size/chapters.length*100}%`;
+    document.querySelector('#progress-track').setAttribute('aria-valuenow',String(completed.size));
+    document.querySelector('#storage-note').textContent=available?'체크한 진도는 이 브라우저에만 저장돼요.':'저장 공간을 사용할 수 없어 이번 화면에서만 진도를 표시해요.';
+    chapters.forEach(c=>{const done=completed.has(c.id);const b=c.querySelector('.complete');b.setAttribute('aria-pressed',String(done));b.textContent=done?'✓ 학습 완료':'○ 이 장 학습 완료';document.querySelector(`a[href="#${c.id}"]`)?.classList.toggle('done',done);});
+  }
+  function applyFilter() {
+    const terms=search.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    let count=0;
+    chapters.forEach(c=>{const ok=(mode==='all'||c.dataset.chapter==='07')&&terms.every(t=>c.textContent.toLocaleLowerCase().includes(t));c.hidden=!ok;if(ok)count++;});
+    document.querySelector('#empty').hidden=count!==0;
+    document.querySelector('#result-count').textContent=terms.length?`${count}개 장에서 검색됨`:mode==='prompts'?'단계별 프롬프트 10개':'전체 가이드 · 12개 장';
+  }
+  search.addEventListener('input',applyFilter);
+  filters.forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;filters.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));applyFilter();}));
+  document.querySelectorAll('.complete').forEach(b=>b.addEventListener('click',()=>{const id=b.closest('.chapter').id;if(completed.has(id))completed.delete(id);else completed.add(id);save();}));
+  document.querySelector('#reset').addEventListener('click',()=>{completed.clear();save();toast('학습 체크를 초기화했어요.');});
+  document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+    const code=b.closest('.code-wrap').querySelector('code'); const value=code.textContent;
+    try { await navigator.clipboard.writeText(value);toast('복사 완료. 대괄호 값을 바꿔 사용하세요.'); }
+    catch { const ta=document.createElement('textarea');ta.value=value;ta.style.position='fixed';ta.style.top='-9999px';document.body.append(ta);ta.select();let ok=false;try{ok=document.execCommand('copy');}catch{}ta.remove();if(ok)toast('복사했어요.');else{const r=document.createRange();r.selectNodeContents(code);const s=window.getSelection();s.removeAllRanges();s.addRange(r);toast('텍스트를 선택했어요. 길게 눌러 복사하세요.');} }
+  }));
+  function reveal(id) {search.value='';mode='all';filters.forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.mode==='all')));applyFilter();document.querySelector(id)?.scrollIntoView({behavior:'auto',block:'start'});}
+  document.querySelectorAll('.nav-list a,.hero-actions a[href^="#"]').forEach(a=>a.addEventListener('click',()=>reveal(a.getAttribute('href'))));
+  document.querySelector('#menu').addEventListener('click',()=>{const nav=document.querySelector('#chapters-nav');const closed=nav.classList.toggle('closed');document.querySelector('#menu').setAttribute('aria-expanded',String(!closed));});
+  const observer=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){document.querySelectorAll('.nav-list a').forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id));}}},{rootMargin:'-10% 0px -70% 0px'});
+  chapters.forEach(c=>observer.observe(c));
+  if(matchMedia('(max-width:850px)').matches){document.querySelector('#chapters-nav').classList.add('closed');document.querySelector('#menu').setAttribute('aria-expanded','false');}
+  updateProgress();applyFilter();
+  if(/^#chapter-\d+$/.test(location.hash))reveal(location.hash);
+})();
+</script></body></html>
