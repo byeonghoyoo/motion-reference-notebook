@@ -1,0 +1,47 @@
+name: Extract study video stills
+on:
+  push:
+    paths:
+      - '.github/workflows/extract-study-stills.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: true
+      - name: Install yt-dlp
+        run: python -m pip install --user --upgrade yt-dlp
+      - name: Download reference video
+        shell: bash
+        run: |
+          set -euo pipefail
+          yt-dlp --js-runtimes node --retries 2 --fragment-retries 2 -f "bv*[height<=720]+ba/b[height<=720]" --merge-output-format mp4 -o "/tmp/study_source.%(ext)s" "https://www.youtube.com/watch?v=mlhKEy-2bgI"
+          find /tmp -maxdepth 1 -name 'study_source.*' -type f -printf '%p\n'
+      - name: Extract stills
+        shell: bash
+        run: |
+          set -euo pipefail
+          VIDEO=$(find /tmp -maxdepth 1 -name 'study_source.*' -type f | head -1)
+          test -s "$VIDEO"
+          mkdir -p study/vibe-coding/01-ui-terms/frames
+          TIMES=(91 118 141 164 186 213 230 268 286 310 342 372 389 408 431 452 479 494 517 536 552 567 596 615)
+          for i in "${!TIMES[@]}"; do
+            n=$(printf '%02d' "$((i+1))")
+            ffmpeg -nostdin -hide_banner -loglevel error -ss "${TIMES[$i]}" -i "$VIDEO" -frames:v 1 -vf "scale='min(960,iw)':-2" -q:v 3 -y "study/vibe-coding/01-ui-terms/frames/scene-${n}.jpg"
+            test -s "study/vibe-coding/01-ui-terms/frames/scene-${n}.jpg"
+          done
+      - name: Commit actual video frames
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add study/vibe-coding/01-ui-terms/frames
+          if ! git diff --cached --quiet; then
+            git commit -m "Add original 24 YouTube teaching-frame stills"
+            git push
+          fi
