@@ -35,7 +35,7 @@ jobs:
                 let info=await frame.evaluate(()=>{const v=document.querySelector('video');return {video:!!v,width:v?.videoWidth||0,height:v?.videoHeight||0,readyState:v?.readyState||0,paused:v?.paused,currentTime:v?.currentTime||0,text:document.body?.innerText?.slice(0,600)}})
                 console.log('TEST',cfg.name,JSON.stringify(info));
                 if(info.video&&info.width<100){
-                  try{await frame.evaluate(async()=>{const v=document.querySelector('video');try{await v.play()}catch(e){console.log(e.message)}});await page.waitForTimeout(6000)}catch(e){console.log('PLAY_FAIL',e.message)}
+                  try{await frame.evaluate(async()=>{const v=document.querySelector('video');try{await Promise.race([v.play(),new Promise((_,reject)=>setTimeout(()=>reject(Error("play timeout after 3s")),3000))])}catch(e){console.log(e.message)}});await page.waitForTimeout(6000)}catch(e){console.log('PLAY_FAIL',e.message)}
                   info=await frame.evaluate(()=>{const v=document.querySelector('video');return {width:v?.videoWidth||0,height:v?.videoHeight||0,readyState:v?.readyState||0,paused:v?.paused,currentTime:v?.currentTime||0,text:document.body?.innerText?.slice(0,600)}})
                   console.log('AFTER_PLAY',cfg.name,JSON.stringify(info));
                 }
@@ -51,7 +51,7 @@ jobs:
                       await frame.locator('video').screenshot({path:dest,type:'jpeg',quality:84,timeout:15000});
                       console.log('SAVED',n,fs.statSync(dest).size);
                       saved++;
-                    }catch(e){console.log('SAVED_FAILED',n,String(e).slice(0,150))}
+                    }catch(e){console.log('SAVED_FAILED',n,String(e).slice(0,150));if(i===1&&saved===0)break;}
                   }
                   console.log('SAVED_TOTAL',saved,'method',cfg.name);
                   if(saved>0)break;
