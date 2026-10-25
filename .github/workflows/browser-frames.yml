@@ -1,0 +1,62 @@
+name: Capture real YouTube video frames in browser
+on:
+  push:
+    paths: ['.github/workflows/browser-frames.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.58.2
+          npx playwright install chromium
+      - name: Capture and verify 24 frames
+        run: |
+          node <<'JS'
+          const { chromium } = require('playwright');
+          const fs=require('fs');
+          (async()=>{
+           const browser=await chromium.launch({headless:true,args:['--no-sandbox','--autoplay-policy=no-user-gesture-required']});
+           const page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1});
+           page.on('console', msg=>{if(/error|youtube/i.test(msg.text()))console.log('console',msg.type(),msg.text().slice(0,180))});
+           const url='https://www.youtube-nocookie.com/embed/mlhKEy-2bgI?start=210&autoplay=1&mute=1&controls=0&playsinline=1';
+           console.log('NAVIGATE',url);
+           await page.goto(url,{waitUntil:'domcontentloaded',timeout:45000});
+           await page.waitForTimeout(12500);
+           const info=await page.evaluate(()=>{
+             const v=document.querySelector('video');
+             return {video:!!v,videoWidth:v?.videoWidth||0,videoHeight:v?.videoHeight||0,currentTime:v?.currentTime||0,paused:v?.paused,readyState:v?.readyState,text:document.body?.innerText?.slice(0,1200)}
+           });
+           console.log('VIDEOINFO',JSON.stringify(info));
+           if(info.videoWidth>0&&info.videoHeight>0&&info.currentTime>=1){
+             const times=[91,118,141,164,186,213,230,268,286,310,342,372,389,408,431,452,479,494,517,536,552,567,596,615];
+             const dir='study/vibe-coding/01-ui-terms/frames';
+             fs.mkdirSync(dir,{recursive:true});
+             let saved=0;
+             for(let i=0;i<times.length;i++){
+               const sec=times[i],file=dir+'/scene-'+String(i+1).padStart(2,'0')+'.jpg';
+               try{
+                 await page.evaluate((n)=>{const v=document.querySelector('video');v.pause();v.currentTime=n;},sec);
+                 await page.waitForFunction((n)=>{const v=document.querySelector('video');return v&&v.readyState>=2&&Math.abs(v.currentTime-n)<1.5},sec,{timeout:12000});
+                 await page.locator('video').screenshot({path:file,type:'jpeg',quality:83,timeout:12000});
+                 console.log('CAPTURE',sec,file,fs.statSync(file).size);saved++;
+               }catch(e){console.log('CAPTURE_FAIL',sec,e.message.slice(0,170))}
+             }
+             console.log('CAPTURE_COUNT',saved)
+           }
+           await browser.close();
+          })().catch(e=>{console.error('FATAL',e.stack);process.exit(1)});
+          JS
+      - name: Commit verified video screenshots
+        run: |
+          if test -f study/vibe-coding/01-ui-terms/frames/scene-01.jpg; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add study/vibe-coding/01-ui-terms/frames/
+            git diff --cached --quiet || (git commit -m "Capture actual YouTube teaching video screenshots" && git push)
+          fi
