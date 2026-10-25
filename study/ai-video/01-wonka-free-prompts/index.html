@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071522">
+<meta name="description" content="원카AI 무료 AI 영상 프롬프트 3가지 출처 활용법. 25가지 감정 연기, 46가지 카메라 무빙, Prompt Motion의 모션그래픽 제작 가이드와 복사 가능한 실전 프롬프트.">
+<title>AI 영상 프롬프트 3가지 실전 가이드 | STUDY</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+:root{--bg:#071522;--bg2:#0d2132;--card:#12293a;--line:#284558;--ink:#edf9fb;--sub:#aac3d0;--mint:#7bf4c4;--cyan:#7bd5f5;--orange:#ffc68a}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans','Noto Sans KR',system-ui,sans-serif;font-size:15px;line-height:1.7}a{color:inherit}a:hover{color:var(--mint)}
+.top{position:sticky;z-index:20;top:0;background:#071522ed;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.bar{max-width:1180px;margin:auto;padding:0 24px;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:800;letter-spacing:.1px;text-decoration:none;font-size:17px}.brand b{color:var(--mint)}.nav{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--sub)}.wrap{max-width:1180px;margin:auto;padding:0 24px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--mint)}.hero{padding:68px 0 44px;display:grid;grid-template-columns:1.06fr .94fr;gap:42px;align-items:center}.hero h1{font-size:clamp(37px,5.2vw,66px);line-height:1.15;letter-spacing:-2.2px;margin:15px 0 20px}.hero h1 span{color:var(--mint)}.desc{color:var(--sub);font-size:15px;line-height:1.95}.tags{display:flex;gap:8px;flex-wrap:wrap;margin:23px 0}.tag{font-size:12px;padding:7px 11px;border:1px solid #396375;border-radius:999px;color:#bce6e4}.actions{display:flex;gap:10px;flex-wrap:wrap}.button{background:var(--mint);color:#06241c;display:inline-block;text-decoration:none;font-weight:800;padding:12px 17px;border-radius:10px;font-size:13px}.button.alt{background:#16344a;color:#d7f1f5}
+.poster{border-radius:19px;overflow:hidden;background:#112637;border:1px solid #37586d;box-shadow:0 18px 55px #0004}.poster img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}.poster .meta{color:var(--sub);padding:16px;font-size:12px;line-height:1.8}.origin{background:#112738;border:1px solid #31596e;border-radius:14px;padding:18px 20px;margin:0 0 43px;color:#c1d8de;font-size:13px}.origin strong{color:var(--mint)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 58px}.stat{border:1px solid var(--line);border-radius:15px;padding:24px;background:#112636}.stat b{font-size:35px;display:block;line-height:1.1;color:var(--mint)}.stat span{display:block;font-size:12px;color:var(--sub);margin-top:10px}
+.section{padding:36px 0 45px;border-top:1px solid #233c4e}.sectitle{display:flex;align-items:end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:0 0 24px}.sectitle h2{font-size:clamp(26px,3.3vw,37px);margin:4px 0 0;line-height:1.3}.sectitle p{margin:0;color:var(--sub);font-size:13px}.sitegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.site{display:flex;flex-direction:column;border:1px solid #34516a;background:#10273a;border-radius:17px;padding:22px;min-height:295px}.site .num{font-size:12px;font-weight:800;color:var(--cyan)}.site h3{font-size:20px;margin:9px 0 5px}.site p{color:var(--sub);font-size:13px;line-height:1.8;margin:8px 0}.site small{color:#8eacbe;margin-top:auto;line-height:1.7}.link{display:block;background:#1c4551;color:#b6fff1;text-decoration:none;font-size:12px;font-weight:800;margin:15px 0 12px;padding:10px 12px;border-radius:8px;text-align:center}
+.lesson{display:grid;grid-template-columns:250px minmax(0,1fr);gap:30px}.aside{position:sticky;top:94px;align-self:start;display:grid;gap:8px}.aside a{display:block;padding:9px 12px;border-radius:8px;background:#112b3d;text-decoration:none;color:#b5d0d8;font-size:13px}.bodycopy{min-width:0}.bodycopy h3{font-size:23px;margin:0 0 12px}.bodycopy h4{font-size:17px;margin:24px 0 8px}.bodycopy p{color:var(--sub);margin:6px 0 15px;line-height:1.95}.step{border:1px solid var(--line);border-radius:13px;background:#10283a;padding:18px 20px;margin:12px 0}.step strong{color:var(--mint)}.step p{margin:6px 0 0}
+.timeline{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 20px}.timeline a{text-decoration:none;font-size:12px;font-weight:700;background:#183b4d;border:1px solid #32617a;border-radius:9px;padding:8px 11px;color:#c3eff6}.timeline a:hover{background:#235b70}
+.prompt-card{background:#0e2435;border:1px solid #2d556a;border-radius:15px;margin:16px 0;overflow:hidden}.prompthead{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#19394a;padding:12px 16px;border-bottom:1px solid #2c5767}.prompthead span{font-size:13px;font-weight:800}.copy{border:1px solid #569f9a;background:#1d4c52;color:#c7fff1;border-radius:8px;padding:8px 13px;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}.prompt-body{white-space:pre-wrap;padding:17px 19px;color:#e4f5ef;font-family:inherit;font-size:13px;line-height:1.95;word-break:keep-all}.note{border-left:3px solid var(--orange);background:#493a2a37;border-radius:7px;padding:13px 16px;font-size:13px;color:#f0dac2;margin:19px 0;line-height:1.8}.terms{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.term{background:#11293b;border:1px solid #2c4c60;border-radius:12px;padding:14px}.term b{font-size:14px;color:#e8fff8}.term p{font-size:12px;margin:5px 0 0;line-height:1.7}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin:16px 0 20px}.check{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:15px;background:#122a3b;cursor:pointer}.check input{accent-color:#67e2b8;margin-top:5px}.check span{font-size:13px;color:#d1e8e5}.footer{border-top:1px solid var(--line);padding:32px 0 68px;color:var(--sub);font-size:12px;line-height:2}.footer a{color:var(--mint)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;gap:23px;padding:42px 0 30px}.sitegrid{grid-template-columns:1fr}.site{min-height:0}.lesson{grid-template-columns:1fr}.aside{position:static;display:flex;flex-wrap:wrap}.aside a{font-size:12px}.hero h1{letter-spacing:-1.5px}.stats{grid-template-columns:repeat(3,1fr)}.stat{padding:15px}.stat b{font-size:29px}}
+@media(max-width:580px){.wrap{padding:0 17px}.bar{padding:0 17px;min-height:60px}.nav{gap:9px}.nav a{font-size:11px}.hero h1{font-size:39px}.stats{gap:7px}.stat{padding:12px 11px}.stat b{font-size:25px}.stat span{font-size:10px}.terms,.checklist{grid-template-columns:1fr}.prompt-body{font-size:12px;padding:15px}.section{padding-top:30px}.sectitle h2{font-size:25px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="bar"><a class="brand" href="../../../">STUDY<b>.</b> / AI VIDEO</a><nav class="nav"><a href="#sites">3개 사이트</a><a href="#emotions">연기</a><a href="#camera">카메라</a><a href="#motion">모션</a><a href="#practice">실습</a></nav></div></header>
+<main class="wrap">
+<section class="hero"><div><div class="eyebrow">STUDY / AI VIDEO / LESSON 01</div><h1>연기부터 카메라,<br><span>모션까지.</span><br>무료 프롬프트 실전 가이드</h1><p class="desc">원카AI 영상과 네이버 카페 공유글을 바탕으로, 참고 자료를 찾아내고 <strong>직접 프롬프트에 적용하는 방법</strong>을 단계별로 정리했어. 휴대폰에서도 3개의 자료실과 실습 프롬프트를 바로 열고 복사할 수 있어.</p><div class="tags"><span class="tag">감정 연기 25종</span><span class="tag">카메라 무빙 46종</span><span class="tag">Claude 모션 레퍼런스</span></div><div class="actions"><a class="button" href="#sites">학습 시작</a><a class="button alt" href="https://cafe.naver.com/wonkalab/1293" target="_blank" rel="noopener">네이버 카페 원문 ↗</a></div></div><div class="poster"><a href="https://www.youtube.com/watch?v=LUMer9IQx3w" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/LUMer9IQx3w/hqdefault.jpg" alt="원카AI 원본 유튜브 영상 대표 썸네일" loading="lazy"></a><div class="meta">원카AI Wonka · 2026-10-25 · 21:22<br>원본 영상의 대표 썸네일이며 구간별 스틸컷은 아님.<br><a href="https://www.youtube.com/watch?v=LUMer9IQx3w" target="_blank" rel="noopener">유튜브 원본 열기 ↗</a></div></div></section>
+<div class="origin"><strong>자료 검증 메모</strong> — 카페 글의 본문은 웹 접근 환경에서 직접 추출되지 않아, 같은 제목으로 연결된 원카AI 영상의 실제 설명과 공개된 프롬프트 자료실을 기준으로 재구성했어. 영상에서 말한 25종·46종과 구성에 부합하는 자료 링크를 확인했지만, 카페 본문의 <em>고정 댓글에 게시한 원본 URL 3개</em>까지 일치하는지는 검증되지 않았어. 아래 실습 프롬프트는 <strong>가이드북용 독자 작성 예시</strong>이며 원본 사이트 문구의 전재본이 아냐.</div>
+<div class="stats"><div class="stat"><b>03</b><span>프롬프트 참고 자료실</span></div><div class="stat"><b>21:22</b><span>원본 강의 시간</span></div><div class="stat"><b>08</b><span>복사 가능한 실전 예시</span></div></div>
+<section class="section" id="sites"><div class="sectitle"><div><div class="eyebrow">REFERENCE LIBRARY</div><h2>핵심 프롬프트 사이트 3곳</h2></div><p>연기 → 카메라 → 모션</p></div><div class="sitegrid">
+<article class="site"><div class="num">01 · ACTING</div><h3>Emotion Direction</h3><p>25가지 감정·표정의 시각적 연기를 지시하는 문장 모음. 감정 이름보다 <strong>눈썹·눈·입·호흡·고개</strong> 같은 물리적 행동을 구체화하는 데 사용.</p><a class="link" href="https://seedance-emotion-direction.vercel.app/" target="_blank" rel="noopener">25가지 감정 프롬프트 사이트 ↗</a><small>공개 사이트에서 “25 emotions” 확인. 영상에서 쓰인 정확히 같은 URL인지 미확인.</small></article>
+<article class="site"><div class="num">02 · CAMERA</div><h3>Camera Movements</h3><p>영상 예시와 프롬프트를 함께 살펴보는 <strong>46개 카메라 움직임</strong> 참고표. 팬·틸트·돌리·트래킹·크레인 등의 방향을 명시할 때 유용.</p><a class="link" href="https://docs.veo3ai.io/ko/camera-movements" target="_blank" rel="noopener">46개 카메라 무빙 사이트 ↗</a><small>공개 페이지에서 46개 카메라 움직임 확인. 영상 속 사이트와 동일 URL인지 미확인.</small></article>
+<article class="site"><div class="num">03 · MOTION</div><h3>Prompt Motion</h3><p>Claude로 제작한 모션그래픽 작업물과 그에 사용된 <strong>프롬프트·스킬</strong>을 모은 갤러리. 원하는 연출을 골라 자신의 브랜드·영상으로 재해석.</p><a class="link" href="https://prompt-motion.com/" target="_blank" rel="noopener">Prompt Motion 열기 ↗</a><small>영상에서 “프롬프트 모션” 이름 언급, 공개 사이트 실재 확인.</small></article>
+</div></section>
+<section class="section" id="emotions"><div class="sectitle"><div><div class="eyebrow">PART 01 · ACTING DIRECTION</div><h2>감정은 표정의 움직임으로 쓰기</h2></div><p>영상 01:52부터</p></div>
+<div class="lesson"><nav class="aside"><a href="#emotions">1. 감정 연기</a><a href="#camera">2. 카메라 움직임</a><a href="#motion">3. 모션그래픽</a><a href="#practice">4. 실습 워크플로</a><a href="#terms">5. 용어 사전</a><a href="#checklist">6. 학습 체크</a></nav><div class="bodycopy">
+<div class="timeline"><a href="https://www.youtube.com/watch?v=LUMer9IQx3w&t=112s" target="_blank" rel="noopener">01:52 연기 설명</a><a href="https://www.youtube.com/watch?v=LUMer9IQx3w&t=432s" target="_blank" rel="noopener">07:12 Seedance 2.5 실습</a></div>
+<h3>“불안해 보이게”보다 “아랫입술을 깨물고 시선을 피한다”</h3><p>AI 영상의 연기가 어색할 때 감정 명칭을 더 강조하기보다, 화면에서 관찰 가능한 신체 반응을 지시하는 편이 구체적이야. 영상은 혼란스러운 표정, 불안을 숨기는 입술 움직임, 합격 소식에 놀라는 반응, 고양이 룸메이트와 벌어지는 시트콤 등을 예시로 보여줘.</p>
+<div class="step"><strong>STEP 01 · 상황 구성</strong><p>누가, 어디서, 무엇을 보고, 어떤 변화를 겪는지 먼저 정해.</p></div>
+<div class="step"><strong>STEP 02 · 표정 프롬프트 복사</strong><p>25가지 감정 중 필요한 표정만 골라. 눈썹·눈동자·입·고개·호흡의 순서로 구체화해.</p></div>
+<div class="step"><strong>STEP 03 · 시간표로 연결</strong><p>놀람 → 의심 → 안도처럼 2~3단계로 나누고 각 구간의 시간을 지정해.</p></div>
+<div class="prompt-card"><div class="prompthead"><span>EXAMPLE 01 · 합격 통보를 받은 주인공</span><button class="copy">프롬프트 복사</button></div><div class="prompt-body">세로 9:16, 현실적인 8초 단일 장면. 조용한 원룸에서 20대 인물이 스마트폰의 합격 문자를 읽는다.
+0–2초: 눈이 화면에 고정되고 눈썹이 빠르게 올라간다. 입술이 아주 조금 벌어진다.
+2–4초: 눈동자가 빠르게 움직이고 한 손이 입가를 가린다. 숨을 짧게 들이쉰다.
+4–8초: 긴장이 풀리며 어깨가 내려가고 작은 미소가 천천히 번진다. 눈가에 가벼운 촉촉함.
+카메라는 안정적인 미디엄 클로즈업. 동일 인물·의상·휴대전화·배경 유지. 과장된 얼굴 변형, 자막, 갑작스러운 컷 전환 금지.</div></div>
+<div class="prompt-card"><div class="prompthead"><span>EXAMPLE 02 · 무언가 숨기는 듯한 불안감</span><button class="copy">프롬프트 복사</button></div><div class="prompt-body">8초 동안 주인공은 사실을 숨기려 애쓴다. 입술을 꽉 다문 뒤 아랫입술을 이 사이로 살짝 깨문다. 눈이 상대의 얼굴에서 잠시 벗어나고, 작은 삼킴 동작이 목에서 보인다. 억지 미소를 만들지만 눈가는 긴장되어 있다. 눈·입·목의 변화는 작고 자연스럽게 유지한다. 같은 얼굴·광원·의상을 유지하고 표정을 과도하게 비틀지 않는다.</div></div>
+<div class="note">영상 속 25개 표정 원문 전체를 복제한 것이 아니라, 강의 방식에 따라 새로 작성한 예시야. 원문의 개별 연기 지시문은 사이트에서 확인할 수 있어.</div>
+</div></div></section>
+<section class="section" id="camera"><div class="sectitle"><div><div class="eyebrow">PART 02 · CAMERA DIRECTION</div><h2>카메라도 ‘어떻게’ 움직이는지 설명</h2></div><p>영상 11:24부터</p></div><div class="bodycopy">
+<div class="timeline"><a href="https://www.youtube.com/watch?v=LUMer9IQx3w&t=684s" target="_blank" rel="noopener">11:24 카메라 강의 보기</a></div>
+<p>카메라 지시문에는 <strong>움직임 이름 + 피사체와의 관계 + 방향 + 속도 + 끝 구도</strong>를 써. 영상에서는 인물이 기지를 둘러보는 예시와 달리는 주인공을 따라가는 트래킹 샷을 보여줘.</p>
+<div class="terms">
+<div class="term"><b>Tracking Shot · 트래킹 샷</b><p>이동하는 인물의 속도·방향에 맞춰 카메라가 함께 이동.</p></div>
+<div class="term"><b>Dolly In · 돌리 인</b><p>카메라 몸체가 피사체를 향해 접근. 감정·정보 강조.</p></div>
+<div class="term"><b>Orbit · 오빗</b><p>피사체를 중심으로 원호를 그리며 카메라가 회전.</p></div>
+<div class="term"><b>Pan · 팬</b><p>카메라는 제자리에 두고 좌우로 렌즈 방향을 회전.</p></div>
+<div class="term"><b>Tilt · 틸트</b><p>카메라를 위아래로 기울여 새로운 높이의 대상을 보여줌.</p></div>
+<div class="term"><b>Crane · 크레인</b><p>카메라 위치 자체를 위아래로 이동해 시야를 확장.</p></div>
+<div class="term"><b>Push-in · 푸시 인</b><p>화면 구도를 천천히 좁혀 피사체와의 심리적 거리를 압축.</p></div>
+<div class="term"><b>Static Shot · 스태틱 샷</b><p>카메라를 고정하고 피사체의 동작만 보여줌.</p></div>
+</div>
+<div class="prompt-card"><div class="prompthead"><span>EXAMPLE 03 · 걷는 인물을 따라가는 트래킹</span><button class="copy">프롬프트 복사</button></div><div class="prompt-body">Cinematic tracking shot, 8 seconds, 16:9. A woman walks confidently down a clean architectural corridor while reviewing information on a tablet. The camera travels alongside her at the same walking speed, maintaining a consistent medium-shot distance and eye-level angle. Smooth gimbal motion, natural parallax in the background, no sudden zoom or orbit. Preserve character appearance, clothing, and corridor geometry in one continuous shot.</div></div>
+<div class="prompt-card"><div class="prompthead"><span>EXAMPLE 04 · 제품 공개용 돌리 인</span><button class="copy">프롬프트 복사</button></div><div class="prompt-body">8초 제품 히어로 영상. 부드러운 아이스 블루 배경 위의 화이트 스킨케어 보틀. 카메라는 약 2.5m 거리의 와이드 구도에서 출발해 8초 동안 천천히 돌리 인 하여 로고가 읽히는 미디엄 클로즈업으로 끝난다. 카메라는 수평을 유지하고 팬·틸트·오빗을 섞지 않는다. 병의 형태·라벨·빛 방향을 보존한다. 고급스러운 자연광, 물리적으로 일관된 그림자와 반사.</div></div>
+<div class="prompt-card"><div class="prompthead"><span>EXAMPLE 05 · 공간 공개용 크레인 업</span><button class="copy">프롬프트 복사</button></div><div class="prompt-body">Single continuous 7-second crane-up shot. Begin at eye level on a beautifully lit entrance, then raise the camera vertically by approximately 3 meters to reveal the complete reception space. Keep the movement slow, stable, and physically plausible. No cuts, no orbit, no abrupt zoom. Preserve room layout, signage, furniture positions, and lighting consistency.</div></div>
+</div></section>
+<section class="section" id="motion"><div class="sectitle"><div><div class="eyebrow">PART 03 · PROMPT MOTION</div><h2>레퍼런스를 내 브랜드의 모션으로 재해석</h2></div><p>영상 14:49부터</p></div><div class="bodycopy">
+<div class="timeline"><a href="https://www.youtube.com/watch?v=LUMer9IQx3w&t=889s" target="_blank" rel="noopener">14:49 모션 강의 보기</a></div>
+<p>Prompt Motion에서 마음에 드는 결과물을 선택해 프롬프트 또는 스킬을 살펴보고, Claude Code에 붙여 넣은 뒤 화면 비율·장면 구성·브랜드 메시지를 새로 지정하는 방식이야. 영상에서는 이후 글래스모피즘(반투명 유리 느낌)을 더해 스타일을 수정해.</p>
+<div class="step"><strong>① 갤러리에서 레퍼런스 고르기</strong><p>로고 오프닝, 키네틱 타이포, 브랜드 쇼릴, 제품 그래픽처럼 용도로 탐색.</p></div>
+<div class="step"><strong>② 핵심 구조만 분석하기</strong><p>몇 초인지, 어떤 장면으로 나뉘는지, 모션의 속도·전환·카메라를 분리.</p></div>
+<div class="step"><strong>③ 브랜드 스타일에 맞게 바꾸기</strong><p>브랜드 이름과 톤, 색상, 폰트, 이미지, CTA를 바꾸고 미리보기 후 수정.</p></div>
+<div class="prompt-card"><div class="prompthead"><span>EXAMPLE 06 · Claude Code용 모션 레퍼런스 분석</span><button class="copy">프롬프트 복사</button></div><div class="prompt-body">아래에 붙여 넣은 모션 레퍼런스 프롬프트를 분석해줘.
+1) 핵심 연출 기법과 타이밍을 0~끝까지 타임라인으로 정리
+2) 키네틱 타이포, 카메라 이동, 씬 전환, 패럴랙스, 깊이감 분리
+3) 동일한 아이디어를 유지하면서 내 브랜드 콘셉트에 맞는 새 연출 3개 제안
+4) 그중 1안을 16:9 HTML/CSS/JS 또는 Remotion으로 구현할 수 있는 개발 명세로 작성
+5) 폰트, 컬러, 모션 속도, 프레임레이트, 자막 안전영역 및 접근성 고려
+주의: 레퍼런스의 로고·고유 텍스트·출처 없는 음악·영상은 그대로 복제하지 마.
+
+[참고 프롬프트 또는 링크]
+[브랜드/상품]
+[타깃]
+[길이 및 비율]</div></div>
+<div class="prompt-card"><div class="prompthead"><span>EXAMPLE 07 · 피부과 브랜드 15초 모션 오프닝</span><button class="copy">프롬프트 복사</button></div><div class="prompt-body">Create a 15-second, 16:9 modern motion graphics opener for a beauty clinic.
+Visual system: midnight navy, ice blue, warm white, and delicate mint accents; elegant Korean sans-serif typography.
+0–3s: bold Korean headline “예뻐지는 알고리즘” appears through precision kinetic typography.
+3–7s: clean geometric lines and luminous glass panels assemble into a dimensional UI composition.
+7–11s: three translucent shapes follow synchronized paths, creating a refined sense of science and beauty.
+11–15s: shapes resolve into a minimal closing card with a brand-name placeholder and understated CTA.
+Smooth easing, consistent light direction, subtle parallax, restrained glow, clean render, generous text margins. No unlicensed logos, celebrity likenesses, or medical treatment-result guarantees.</div></div>
+<div class="prompt-card"><div class="prompthead"><span>EXAMPLE 08 · 글래스모피즘 스타일 재구성</span><button class="copy">프롬프트 복사</button></div><div class="prompt-body">현재 모션 구조와 모든 텍스트 내용은 유지하고, 시각적인 질감만 프리미엄 글래스모피즘으로 바꿔줘. 배경은 짙은 블루에서 시작해 얇고 반투명한 유리 카드가 겹쳐지도록 하고, backdrop blur는 12~20px 범위에서 사용해. 카드 가장자리에는 얇은 하이라이트, 은은한 반사와 자연스러운 그림자를 넣어. 본문 텍스트는 충분한 대비를 유지하고 모바일에서도 읽히도록 해. 전환 시간 0.2~0.6초, 과도한 빛 번짐과 불필요한 입체 회전 금지.</div></div>
+</div></section>
+<section class="section" id="practice"><div class="sectitle"><div><div class="eyebrow">END-TO-END WORKFLOW</div><h2>한 편을 만들 때 이렇게 조합</h2></div><p>감정 + 카메라 + 모션</p></div>
+<div class="step"><strong>1. 8~15초 시나리오</strong><p>인물·제품·장소·변화가 있는 사건을 한 문장으로 정의.</p></div><div class="step"><strong>2. 감정 연기 디렉션</strong><p>25가지 표정 중 1~3개를 사용하고 눈·입·호흡의 물리적 행동으로 분리.</p></div><div class="step"><strong>3. 카메라 무빙 선택</strong><p>46개 레퍼런스 중 1개를 골라 이동 축·속도·시작/끝 구도 지정.</p></div><div class="step"><strong>4. 영상 생성</strong><p>Dreamina 등에서 모델·화면비·길이·참조 이미지를 설정해 시도. 특정 모델 선택 가능 여부와 요금은 계정·시점에 따라 다름.</p></div><div class="step"><strong>5. 후반 모션그래픽</strong><p>Prompt Motion에서 찾은 타이포·인포그래픽 스타일을 별도 모션 씬으로 제작해 편집.</p></div><div class="note">영상에는 Dreamina 첫 달 408원 프로모션과 자동 갱신 취소 경로가 소개되지만, 이는 업로드 시점의 영상 속 설명이야. 현재 구매 가격으로 단정하면 안 돼. 영상에서는 요금제 → 구독 관리 → 자동 갱신 취소 흐름을 안내해.</div><div class="timeline"><a href="https://dreamina.capcut.com/" target="_blank" rel="noopener">Dreamina 공식 서비스 ↗</a><a href="https://www.youtube.com/watch?v=LUMer9IQx3w&t=1183s" target="_blank" rel="noopener">19:43 결제/갱신 설명 ↗</a></div>
+</section>
+<section class="section" id="terms"><div class="sectitle"><div><div class="eyebrow">GLOSSARY</div><h2>핵심 용어 빠르게 이해하기</h2></div></div><div class="terms">
+<div class="term"><b>Performance Prompt · 연기 프롬프트</b><p>감정을 몸짓·표정·호흡처럼 화면에 보이는 행동으로 기술.</p></div>
+<div class="term"><b>Micro-expression · 미세 표정</b><p>눈·입가에서 아주 짧고 약하게 나타나는 표정 변화.</p></div>
+<div class="term"><b>Tracking / Dolly</b><p>카메라 위치가 움직임. 트래킹은 피사체를 따라가고 돌리는 앞뒤로 접근하거나 멀어짐.</p></div>
+<div class="term"><b>Reference Image · 참조 이미지</b><p>인물 외형이나 의상·제품 디자인 일관성을 유지하기 위한 원본 이미지.</p></div>
+<div class="term"><b>Kinetic Typography</b><p>문자를 리듬과 타이밍에 맞춰 이동·확대·회전시키는 디자인.</p></div>
+<div class="term"><b>Glassmorphism</b><p>반투명 유리 질감, 뒤 배경의 흐림, 얇은 경계선을 쓰는 UI 스타일.</p></div>
+<div class="term"><b>Parallax</b><p>앞과 뒤 레이어가 다른 속도로 이동해 깊이를 느끼게 하는 기법.</p></div>
+<div class="term"><b>Omni Reference</b><p>영상 생성 시 인물·대상·동작 등을 참조 자료로 지정하는 기능 범주의 표현. 모델별 입력 방식이 다름.</p></div>
+</div></section>
+<section class="section" id="checklist"><div class="sectitle"><div><div class="eyebrow">LEARNING TRACKER</div><h2>오늘 배운 내용 체크</h2></div><p id="prog">0 / 6 완료</p></div><div class="checklist">
+<label class="check"><input type="checkbox" data-learning="a"><span>감정 이름을 시각적 표정 동작으로 바꿀 수 있다.</span></label>
+<label class="check"><input type="checkbox" data-learning="b"><span>25가지 감정 자료실에서 한 가지 프롬프트를 골랐다.</span></label>
+<label class="check"><input type="checkbox" data-learning="c"><span>트래킹, 돌리 인, 팬·틸트의 차이를 이해했다.</span></label>
+<label class="check"><input type="checkbox" data-learning="d"><span>46개 카메라 움직임 중 하나를 연습했다.</span></label>
+<label class="check"><input type="checkbox" data-learning="e"><span>Prompt Motion에서 레퍼런스와 프롬프트를 비교했다.</span></label>
+<label class="check"><input type="checkbox" data-learning="f"><span>내 브랜드 주제로 8~15초 프롬프트를 작성했다.</span></label>
+</div><p style="color:var(--sub);font-size:12px">체크 상태는 이 기기의 브라우저에 저장됩니다. 다른 기기와 자동 동기화되지는 않습니다.</p></section>
+</main><footer class="footer"><div class="wrap"><strong>ORIGINAL / REFERENCE</strong><div><a href="https://cafe.naver.com/wonkalab/1293" target="_blank" rel="noopener">네이버 카페 공유 게시글</a> · <a href="https://www.youtube.com/watch?v=LUMer9IQx3w" target="_blank" rel="noopener">원카AI 원본 강의</a> · <a href="https://seedance-emotion-direction.vercel.app/" target="_blank" rel="noopener">Emotion Direction</a> · <a href="https://docs.veo3ai.io/ko/camera-movements" target="_blank" rel="noopener">Camera Movements</a> · <a href="https://prompt-motion.com/" target="_blank" rel="noopener">Prompt Motion</a></div><div>정리일 2026-10-25 · STUDY / AI VIDEO · 출처 구분 및 학습용 프롬프트 별도 작성</div><div><a href="../../../">← STUDY 메인으로 돌아가기</a></div></div></footer>
+<script>
+document.querySelectorAll('.copy').forEach(btn=>btn.addEventListener('click',async()=>{
+ const content=btn.closest('.prompt-card').querySelector('.prompt-body').innerText.trim();
+ try{await navigator.clipboard.writeText(content);btn.textContent='복사 완료 ✓'}catch(e){
+ const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(btn.closest('.prompt-card').querySelector('.prompt-body'));selection.removeAllRanges();selection.addRange(range);btn.textContent='텍스트 선택됨'
+ }
+ setTimeout(()=>btn.textContent='프롬프트 복사',1800);
+}));
+const storageKey='study-wonka-free-prompts-v1';
+function loadChecks(){let val={};try{val=JSON.parse(localStorage.getItem(storageKey)||'{}')}catch(e){}document.querySelectorAll('[data-learning]').forEach(el=>el.checked=!!val[el.dataset.learning]);refresh();}
+function refresh(){let vals={};let count=0;document.querySelectorAll('[data-learning]').forEach(el=>{vals[el.dataset.learning]=el.checked;if(el.checked)count++});document.getElementById('prog').textContent=count+' / 6 완료';try{localStorage.setItem(storageKey,JSON.stringify(vals))}catch(e){}}
+document.querySelectorAll('[data-learning]').forEach(el=>el.addEventListener('change',refresh));loadChecks();
+</script></body></html>
