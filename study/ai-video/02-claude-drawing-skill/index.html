@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071522">
+<meta name="description" content="Claude Drawing 스킬 가이드: 이미지 생성 모델 없이 파이썬 코드로 77가지 화풍을 그리고, 한 획씩 그려지는 draw-on 애니메이션 mp4까지 만드는 설치·사용법·샘플 프롬프트.">
+<title>Claude Drawing 스킬 77가지 화풍 가이드 | STUDY</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+:root{--bg:#071522;--bg2:#0d2132;--card:#12293a;--line:#284558;--ink:#edf9fb;--sub:#aac3d0;--mint:#7bf4c4;--cyan:#7bd5f5;--orange:#ffc68a}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans','Noto Sans KR',system-ui,sans-serif;font-size:15px;line-height:1.7}a{color:inherit}a:hover{color:var(--mint)}
+.top{position:sticky;z-index:20;top:0;background:#071522ed;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.bar{max-width:1180px;margin:auto;padding:0 24px;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:800;letter-spacing:.1px;text-decoration:none;font-size:17px}.brand b{color:var(--mint)}.nav{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--sub)}.wrap{max-width:1180px;margin:auto;padding:0 24px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--mint)}.hero{padding:68px 0 44px;display:grid;grid-template-columns:1.06fr .94fr;gap:42px;align-items:center}.hero h1{font-size:clamp(37px,5.2vw,66px);line-height:1.15;letter-spacing:-2.2px;margin:15px 0 20px}.hero h1 span{color:var(--mint)}.desc{color:var(--sub);font-size:15px;line-height:1.95}.tags{display:flex;gap:8px;flex-wrap:wrap;margin:23px 0}.tag{font-size:12px;padding:7px 11px;border:1px solid #396375;border-radius:999px;color:#bce6e4}.actions{display:flex;gap:10px;flex-wrap:wrap}.button{background:var(--mint);color:#06241c;display:inline-block;text-decoration:none;font-weight:800;padding:12px 17px;border-radius:10px;font-size:13px}.button.alt{background:#16344a;color:#d7f1f5}
+.poster{border-radius:19px;overflow:hidden;background:#112637;border:1px solid #37586d;box-shadow:0 18px 55px #0004}.poster img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}.poster .meta{color:var(--sub);padding:16px;font-size:12px;line-height:1.8}.origin{background:#112738;border:1px solid #31596e;border-radius:14px;padding:18px 20px;margin:0 0 43px;color:#c1d8de;font-size:13px}.origin strong{color:var(--mint)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 58px}.stat{border:1px solid var(--line);border-radius:15px;padding:24px;background:#112636}.stat b{font-size:35px;display:block;line-height:1.1;color:var(--mint)}.stat span{display:block;font-size:12px;color:var(--sub);margin-top:10px}
+.section{padding:36px 0 45px;border-top:1px solid #233c4e}.sectitle{display:flex;align-items:end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:0 0 24px}.sectitle h2{font-size:clamp(26px,3.3vw,37px);margin:4px 0 0;line-height:1.3}.sectitle p{margin:0;color:var(--sub);font-size:13px}.sitegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.site{display:flex;flex-direction:column;border:1px solid #34516a;background:#10273a;border-radius:17px;padding:22px;min-height:295px}.site .num{font-size:12px;font-weight:800;color:var(--cyan)}.site h3{font-size:20px;margin:9px 0 5px}.site p{color:var(--sub);font-size:13px;line-height:1.8;margin:8px 0}.site small{color:#8eacbe;margin-top:auto;line-height:1.7}.link{display:block;background:#1c4551;color:#b6fff1;text-decoration:none;font-size:12px;font-weight:800;margin:15px 0 12px;padding:10px 12px;border-radius:8px;text-align:center}
+.lesson{display:grid;grid-template-columns:250px minmax(0,1fr);gap:30px}.aside{position:sticky;top:94px;align-self:start;display:grid;gap:8px}.aside a{display:block;padding:9px 12px;border-radius:8px;background:#112b3d;text-decoration:none;color:#b5d0d8;font-size:13px}.bodycopy{min-width:0}.bodycopy h3{font-size:23px;margin:0 0 12px}.bodycopy h4{font-size:17px;margin:24px 0 8px}.bodycopy p{color:var(--sub);margin:6px 0 15px;line-height:1.95}.step{border:1px solid var(--line);border-radius:13px;background:#10283a;padding:18px 20px;margin:12px 0}.step strong{color:var(--mint)}.step p{margin:6px 0 0}
+.timeline{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 20px}.timeline a{text-decoration:none;font-size:12px;font-weight:700;background:#183b4d;border:1px solid #32617a;border-radius:9px;padding:8px 11px;color:#c3eff6}.timeline a:hover{background:#235b70}
+.prompt-card{background:#0e2435;border:1px solid #2d556a;border-radius:15px;margin:16px 0;overflow:hidden}.prompthead{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#19394a;padding:12px 16px;border-bottom:1px solid #2c5767}.prompthead span{font-size:13px;font-weight:800}.copy{border:1px solid #569f9a;background:#1d4c52;color:#c7fff1;border-radius:8px;padding:8px 13px;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}.prompt-body{white-space:pre-wrap;padding:17px 19px;color:#e4f5ef;font-family:inherit;font-size:13px;line-height:1.95;word-break:keep-all}.note{border-left:3px solid var(--orange);background:#493a2a37;border-radius:7px;padding:13px 16px;font-size:13px;color:#f0dac2;margin:19px 0;line-height:1.8}.terms{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.term{background:#11293b;border:1px solid #2c4c60;border-radius:12px;padding:14px}.term b{font-size:14px;color:#e8fff8}.term p{font-size:12px;margin:5px 0 0;line-height:1.7}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin:16px 0 20px}.check{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:15px;background:#122a3b;cursor:pointer}.check input{accent-color:#67e2b8;margin-top:5px}.check span{font-size:13px;color:#d1e8e5}.footer{border-top:1px solid var(--line);padding:32px 0 68px;color:var(--sub);font-size:12px;line-height:2}.footer a{color:var(--mint)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;gap:23px;padding:42px 0 30px}.sitegrid{grid-template-columns:1fr}.site{min-height:0}.lesson{grid-template-columns:1fr}.aside{position:static;display:flex;flex-wrap:wrap}.aside a{font-size:12px}.hero h1{letter-spacing:-1.5px}.stats{grid-template-columns:repeat(3,1fr)}.stat{padding:15px}.stat b{font-size:29px}}
+@media(max-width:580px){.wrap{padding:0 17px}.bar{padding:0 17px;min-height:60px}.nav{gap:9px}.nav a{font-size:11px}.hero h1{font-size:39px}.stats{gap:7px}.stat{padding:12px 11px}.stat b{font-size:25px}.stat span{font-size:10px}.terms,.checklist{grid-template-columns:1fr}.prompt-body{font-size:12px;padding:15px}.section{padding-top:30px}.sectitle h2{font-size:25px}}
+</style>
+<style>
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 22px}.chip{border:1px solid #34516a;background:#10273a;color:#cfe9ef;border-radius:999px;padding:6px 11px;font:12px/1.4 ui-monospace,Consolas,monospace;cursor:pointer}.chip:hover{border-color:var(--mint);color:var(--mint)}.chip.done{background:#1d4c52;color:#c7fff1}
+.code{white-space:pre-wrap;word-break:break-all;font:12.5px/1.85 ui-monospace,Consolas,monospace;color:#d4ecff;padding:16px 18px}
+.samplegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.sample{border:1px solid #34516a;background:#10273a;border-radius:17px;padding:20px;min-width:0}.sample h3{margin:6px 0 4px;font-size:19px}.sample .num{font-size:12px;font-weight:800;color:var(--cyan)}.sample .file{font:12px ui-monospace,Consolas,monospace;color:var(--orange)}.sample p{color:var(--sub);font-size:13px;line-height:1.85;margin:8px 0 0}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 18px}.bad,.good{border-radius:11px;padding:13px 14px;font-size:13px;line-height:1.8}.bad{background:#3a1f2a66;border:1px solid #6a3a48;color:#f3c9cf}.good{background:#173d3566;border:1px solid #2f6f5f;color:#c9f5e4}
+table.ratio{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 16px}table.ratio td,table.ratio th{border-bottom:1px solid var(--line);padding:9px 6px;text-align:left}table.ratio th{color:var(--mint);font-size:12px}
+@media(max-width:900px){.samplegrid{grid-template-columns:1fr}}@media(max-width:580px){.vs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="bar"><a class="brand" href="../../">STUDY<b>.</b> / AI VIDEO</a><nav class="nav"><a href="#what">개념</a><a href="#install">설치</a><a href="#usage">사용법</a><a href="#samples">샘플</a><a href="#tips">퀄리티</a><a href="#styles">화풍 79</a><a href="#checklist">체크</a></nav></div></header>
+<main class="wrap">
+<section class="hero"><div>
+<div class="eyebrow">STUDY / AI VIDEO / LESSON 02</div>
+<h1>이미지 AI 없이,<br><span>코드로 그린다.</span><br>Claude Drawing 스킬</h1>
+<p class="desc">Claude Code에 스킬 하나 설치하면 수묵·수채·사이버펑크·만화·픽셀 등 <strong>77가지 화풍</strong>을 파이썬 코드로 그려줘. 완성 이미지는 물론, <strong>한 획씩 그려지는 과정 영상</strong>까지 뽑아서 릴스·쇼츠 소스로 쓸 수 있어.</p>
+<div class="tags"><span class="tag">77가지 화풍</span><span class="tag">예제 코드 79개</span><span class="tag">draw-on 애니</span><span class="tag">GPU·API 키 불필요</span></div>
+<div class="actions"><a class="button" href="#install">설치부터 시작</a><a class="button alt" href="https://github.com/cloveric/claude-drawing-skill" target="_blank" rel="noopener">GitHub 저장소 ↗</a></div>
+</div>
+<div class="poster"><div style="padding:22px"><div class="eyebrow">HOW IT WORKS</div>
+<p class="desc" style="margin:10px 0 0">장면 묘사 → Claude가 <code>examples/&lt;화풍&gt;.py</code>를 복제·수정 → 파이썬이 붓질·물감·종이 질감을 단계별로 그림 → <code>--stages</code> 스냅샷 → ffmpeg로 mp4 조립</p></div>
+<div class="meta">저장소: cloveric/claude-drawing-skill · MIT 라이선스<br>기준: 2026-10-30 커밋 README·예제 폴더 직접 확인</div></div>
+</section>
+<div class="origin"><strong>자료 검증 메모</strong> — 공유받은 노션 가이드를 광고 문구 없이 재정리하고, 저장소 원본과 교차 확인해 차이를 바로잡았어. ① 공식 설치는 <code>git clone</code> 뒤 <code>pip install -r requirements.txt</code>(numpy, Pillow)까지 해야 함 ② 예제 파일은 80개가 아니라 <b>79개</b>(README 기준 화풍 77종) ③ 노션 샘플의 <code>paris_seine_morning(_colortown)</code> 파일은 현재 저장소에 없어서, 같은 수채 타운 계열인 <code>colortown_festival_steps</code>로 교체 ④ 한글 제목·메모를 그리려면 CJK 폰트 필요(맥·리눅스·윈도우 기본 폰트 자동 탐색) ⑤ <code>--stages</code> 결과물은 <code>00_이름.png</code> 형식이라 노션의 ffmpeg 명령(<code>%03d.jpg</code>)은 그대로는 안 돌아가서 동작하는 명령으로 고쳤어.</div>
+<div class="stats"><div class="stat"><b>77</b><span>화풍 (README 기준)</span></div><div class="stat"><b>79</b><span>바로 실행되는 예제 .py</span></div><div class="stat"><b>2</b><span>의존성 · numpy, Pillow</span></div></div>
+
+<section class="section" id="what"><div class="sectitle"><div><div class="eyebrow">01 · CONCEPT</div><h2>뭐가 되는 거야?</h2></div><p>이미지 생성 모델이 아니라 '그림 그리는 코드'</p></div>
+<div class="terms">
+<div class="term"><b>완성 이미지</b><p>77가지 화풍 중 하나로 장면을 그려 JPG/PNG로 저장.</p></div>
+<div class="term"><b>draw-on 애니메이션</b><p>그리는 중간 단계를 프레임으로 저장 → 한 획씩 그려지는 영상.</p></div>
+<div class="term"><b>장면 교체</b><p>화풍 코드는 그대로 두고 장면(scene)만 바꾸면 파리·강남·북촌 무엇이든 같은 화풍으로.</p></div>
+<div class="term"><b>왜 코드로?</b><p>구도·여백을 정확히 지정 가능, 같은 seed면 같은 결과(재현성), 그리는 과정 애니메이션 가능, 오프라인·CPU만으로 동작.</p></div>
+</div>
+<div class="note">저작권 메모 · 이미지 생성 모델을 쓰지 않으니 학습 데이터 논란에서는 자유로운 편이고, 스킬 코드는 MIT 라이선스야. 다만 실존 브랜드 로고·캐릭터·건물 디자인을 그대로 그리게 하면 그건 별개 문제라 상업 소재에선 피하는 게 안전해.</div>
+</section>
+
+<section class="section" id="install"><div class="sectitle"><div><div class="eyebrow">02 · INSTALL</div><h2>설치 (3분)</h2></div><p>Claude Code가 이미 있다는 전제</p></div>
+<div class="lesson"><div class="aside"><a href="#install">1. 스킬 클론</a><a href="#install">2. 의존성 설치</a><a href="#install">3. 재시작</a></div><div class="bodycopy">
+<div class="step"><strong>STEP 1 · 스킬 클론</strong><p>터미널에서 Claude Code 스킬 폴더로 받아와.</p></div>
+<div class="prompt-card"><div class="prompthead"><span>터미널 · 스킬 클론</span><button class="copy">복사</button></div><div class="prompt-body code">git clone https://github.com/cloveric/claude-drawing-skill.git ~/.claude/skills/claude-drawing</div></div>
+<div class="step"><strong>STEP 2 · 파이썬 의존성</strong><p>노션 글엔 빠져 있는 단계. 안 하면 첫 실행에서 모듈 에러가 나.</p></div>
+<div class="prompt-card"><div class="prompthead"><span>터미널 · 의존성 설치</span><button class="copy">복사</button></div><div class="prompt-body code">pip install -r ~/.claude/skills/claude-drawing/requirements.txt   # numpy, Pillow</div></div>
+<div class="step"><strong>STEP 3 · Claude Code 재시작</strong><p>재시작하면 스킬을 자동 인식. <code>~/.claude/skills/claude-drawing/examples/</code>에 화풍별 완성형 코드 79개가 들어와 있어. 하나 = 한 화풍·한 장면.</p></div>
+<div class="note">폴더 이름은 자유야. 노션처럼 <code>claude-drawing-skill</code>로 받아도 동작하고, 아래 경로만 그 이름으로 바꿔 읽으면 돼. 한글 글씨가 깨지면 <code>INKPAINT_FONT=/폰트/경로.ttf</code> 환경변수로 폰트를 지정.</div>
+<div class="prompt-card"><div class="prompthead"><span>첫 실행 테스트 · Claude Code에 입력</span><button class="copy">복사</button></div><div class="prompt-body">claude-drawing 스킬로 colortown_festival_steps 돌려서 완성 이미지 뽑아줘.</div></div>
+</div></div>
+</section>
+
+<section class="section" id="usage"><div class="sectitle"><div><div class="eyebrow">03 · USAGE</div><h2>사용법 3가지 패턴</h2></div><p>파일명만 바꾸면 어느 화풍이든 동일</p></div>
+<div class="bodycopy">
+<h4>① 완성 이미지만 뽑기</h4>
+<div class="prompt-card"><div class="prompthead"><span>PROMPT · 완성 이미지</span><button class="copy">복사</button></div><div class="prompt-body">claude-drawing 스킬에서 cyberpunk_neon_street 돌려서 완성 이미지 뽑아줘. 세로 1080×1350으로.</div></div>
+<h4>② 한 획씩 그려지는 애니 (추천)</h4>
+<div class="prompt-card"><div class="prompthead"><span>PROMPT · draw-on 애니 mp4</span><button class="copy">복사</button></div><div class="prompt-body">cyberpunk_neon_street 화풍으로 한 획씩 그려지는 draw-on 애니 영상 만들어줘.
+--stages 옵션으로 중간 프레임 전부 뽑고, ffmpeg로 6초짜리 세로 1080×1350 mp4로 조립해줘. 인스타 릴스에 바로 올릴 수 있게.</div></div>
+<p>뒤에 자유롭게 덧붙이면 돼 · 길이: "4초로", "10초로" · 비율: "가로 1920×1080", "정사각 1080×1080" · 속도: "천천히 그려지게", "빠르게 그리고 마지막 2초 멈춤".</p>
+<h4>③ 화풍은 유지, 장면만 바꾸기</h4>
+<div class="prompt-card"><div class="prompthead"><span>PROMPT · 장면 교체</span><button class="copy">복사</button></div><div class="prompt-body">jiangnan_spring_water.py를 복사해서 장면만 내가 말하는 대로 바꿔줘. 붓·먹·색감 같은 화풍 요소는 그대로 유지.
+장면: (위치 · 사물 · 인물 · 시간대 · 날씨를 한 문장으로)</div></div>
+<h4>직접 터미널로 돌릴 때</h4>
+<div class="prompt-card"><div class="prompthead"><span>터미널 · 이미지 + 단계 프레임 → MP4</span><button class="copy">복사</button></div><div class="prompt-body code">cd ~/.claude/skills/claude-drawing
+
+# 1. 완성 이미지 + 그리는 중간 단계 저장
+#    stages 폴더에 00_newsprint.png, 01_key_setting.png … NN_final.png 식으로 쌓임
+python3 examples/comic_rocket.py out.jpg --stages ./stages
+
+# 2. 단계 PNG → 세로 1080×1350 MP4
+#    -framerate = 초당 몇 장 넘길지 (단계가 보통 7~20장이라 1~3 추천, 낮을수록 천천히)
+#    tpad = 마지막 완성 장면을 2초 더 보여줌
+ffmpeg -framerate 2 -pattern_type glob -i &#x27;stages/*.png&#x27; \
+  -vf &quot;scale=1080:1350:force_original_aspect_ratio=decrease,pad=1080:1350:(ow-iw)/2:(oh-ih)/2,tpad=stop_mode=clone:stop_duration=2,fps=30&quot; \
+  -pix_fmt yuv420p draw.mp4
+
+# (선택) GIF가 필요하면
+ffmpeg -framerate 2 -pattern_type glob -i &#x27;stages/*.png&#x27; -vf &quot;scale=720:-1&quot; draw.gif</div></div>
+<div class="note">노션 원문의 <code>stages/%03d.jpg</code> 패턴은 실제 파일명(<code>00_이름.png</code>)과 안 맞아서 그대로 치면 에러가 나. 위처럼 <code>-pattern_type glob -i 'stages/*.png'</code>로 받으면 이름 순서대로 정렬돼. 또 단계 수가 화풍마다 7~20장 정도라, "6초"를 맞추려면 framerate를 <b>단계 수 ÷ 원하는 초</b>로 계산하면 돼. Claude에게 맡기면 이것까지 알아서 맞춰줘.</div>
+</div>
+</section>
+
+<section class="section" id="samples"><div class="sectitle"><div><div class="eyebrow">04 · SAMPLES</div><h2>샘플 프롬프트 4종</h2></div><p>기본 장면 → 이미지 / 애니 / 장면 교체</p></div>
+<div class="samplegrid"><div class="sample"><div class="num">SAMPLE 01 · COLORTOWN</div><h3>알록달록 수채 마을 축제 계단</h3><div class="file">colortown_festival_steps.py</div><p><b style="color:#e8fff8">기본 장면</b> · 비 갠 축제날 아침, 언덕 마을 돌계단 골목(세로 3:4). 토마토·머스터드·민트색 좁은 집들, 골목 위 아치형 다리집, 양파 돔 시계탑, 네 겹으로 걸린 축제 깃발, 장미 담장과 빵집·꽃집, 계단 위 고양이, 빨간 풍선 든 아이, 젖은 광장에 비친 반영.</p><div class="prompt-card"><div class="prompthead"><span>이미지</span><button class="copy">복사</button></div><div class="prompt-body">claude-drawing 스킬에서 colortown_festival_steps.py 돌려서 완성 이미지 뽑아줘.</div></div><div class="prompt-card"><div class="prompthead"><span>draw-on 애니</span><button class="copy">복사</button></div><div class="prompt-body">colortown_festival_steps 화풍으로 한 획씩 그려지는 draw-on 애니 만들어줘. --stages로 전 프레임 뽑고 ffmpeg로 6초 세로 1080×1350 mp4로.</div></div><div class="prompt-card"><div class="prompthead"><span>장면 교체</span><button class="copy">복사</button></div><div class="prompt-body">colortown_festival_steps.py를 복사해서 장면만 바꿔줘. 화풍(붓 터치·질감·빛)은 그대로 유지.
+장면: 아침 7시 한강 서래섬, 노란 유채꽃 사이 산책로, 강 건너 반포대교 무지개 분수, 자전거 탄 커플 한 쌍</div></div></div><div class="sample"><div class="num">SAMPLE 02 · CYBERPUNK</div><h3>네온 비 내리는 밤거리</h3><div class="file">cyberpunk_neon_street.py</div><p><b style="color:#e8fff8">기본 장면</b> · 비 내리는 밤의 빌딩 협곡, 깜빡이거나 꺼진 네온관, 홀로그램 광고, 날아다니는 차의 빛 궤적, 맨홀 증기, 투명 우산을 든 인물, 젖은 아스팔트의 네온 반사와 블룸·그레인·스캔라인.</p><div class="prompt-card"><div class="prompthead"><span>이미지</span><button class="copy">복사</button></div><div class="prompt-body">claude-drawing 스킬에서 cyberpunk_neon_street.py 돌려서 완성 이미지 뽑아줘.</div></div><div class="prompt-card"><div class="prompthead"><span>draw-on 애니</span><button class="copy">복사</button></div><div class="prompt-body">cyberpunk_neon_street 화풍으로 한 획씩 그려지는 draw-on 애니 만들어줘. --stages로 전 프레임 뽑고 ffmpeg로 6초 세로 1080×1350 mp4로.</div></div><div class="prompt-card"><div class="prompthead"><span>장면 교체</span><button class="copy">복사</button></div><div class="prompt-body">cyberpunk_neon_street.py를 복사해서 장면만 바꿔줘. 화풍(붓 터치·질감·빛)은 그대로 유지.
+장면: 강남역 10번 출구의 밤, 편의점·노래방·고깃집 간판이 겹친 골목, 택시 2대, 우산 쓴 직장인 한 명</div></div></div><div class="sample"><div class="num">SAMPLE 03 · JIANGNAN 수묵</div><h3>강남(江南) 봄물 정원</h3><div class="file">jiangnan_spring_water.py</div><p><b style="color:#e8fff8">기본 장면</b> · 분홍 복숭아꽃과 늘어진 버들가지 프레임, 옥빛 호수와 반영, 지그재그 돌다리, 둥근 월문(月門) 너머 정원, 회색 기와 찻집, 연꽃 위 백로, 돌계단에 묶인 작은 배.</p><div class="prompt-card"><div class="prompthead"><span>이미지</span><button class="copy">복사</button></div><div class="prompt-body">claude-drawing 스킬에서 jiangnan_spring_water.py 돌려서 완성 이미지 뽑아줘.</div></div><div class="prompt-card"><div class="prompthead"><span>draw-on 애니</span><button class="copy">복사</button></div><div class="prompt-body">jiangnan_spring_water 화풍으로 한 획씩 그려지는 draw-on 애니 만들어줘. --stages로 전 프레임 뽑고 ffmpeg로 6초 세로 1080×1350 mp4로.</div></div><div class="prompt-card"><div class="prompthead"><span>장면 교체</span><button class="copy">복사</button></div><div class="prompt-body">jiangnan_spring_water.py를 복사해서 장면만 바꿔줘. 화풍(붓 터치·질감·빛)은 그대로 유지.
+장면: 북촌 한옥마을의 달밤, 기와지붕과 정자, 돌다리, 복숭아꽃 대신 감나무, 연꽃 대신 호롱불 여러 개, 담장 너머 북악산 실루엣</div></div></div><div class="sample"><div class="num">SAMPLE 04 · GOLDEN-AGE COMIC</div><h3>1940년대 만화 표지 · 로켓 발사</h3><div class="file">comic_rocket.py</div><p><b style="color:#e8fff8">기본 장면</b> · 붓 잉크 선 + 4색 Ben-Day 망점 + 인쇄 어긋남 + 누렇게 바랜 신문지. 노을 하늘 로켓 발사, 달을 가리키는 주인공, 사다리에 매달려 외치는 정비공, 발사탑·연기·사막.</p><div class="prompt-card"><div class="prompthead"><span>이미지</span><button class="copy">복사</button></div><div class="prompt-body">claude-drawing 스킬에서 comic_rocket.py 돌려서 완성 이미지 뽑아줘.</div></div><div class="prompt-card"><div class="prompthead"><span>draw-on 애니</span><button class="copy">복사</button></div><div class="prompt-body">comic_rocket 화풍으로 한 획씩 그려지는 draw-on 애니 만들어줘. --stages로 전 프레임 뽑고 ffmpeg로 6초 세로 1080×1350 mp4로.</div></div><div class="prompt-card"><div class="prompthead"><span>장면 교체</span><button class="copy">복사</button></div><div class="prompt-body">comic_rocket.py를 복사해서 장면만 바꿔줘. 화풍(붓 터치·질감·빛)은 그대로 유지.
+장면: &quot;한국 매운맛 정복기&quot; 표지: 닭갈비를 들고 &quot;하나도 안 매워!&quot; 외치는 주인공, 김밥과 음료를 들고 뒤따르는 친구, 배경에 포장마차·지하철 출구·한글 간판</div></div></div></div></section>
+
+<section class="section" id="tips"><div class="sectitle"><div><div class="eyebrow">05 · QUALITY</div><h2>퀄리티 올리는 4가지</h2></div><p>기본값만 돌리면 샘플과 똑같이 나옴</p></div>
+<div class="bodycopy">
+<h4>① 장면 묘사는 아주 구체적으로</h4>
+<div class="vs"><div class="bad">✕ "파리 거리 그려줘"</div><div class="good">✓ "몽마르트르 언덕 계단 옆 노천카페, 계단에 앉아 크루아상 먹는 커플, 멀리 사크레쾨르 성당과 에펠탑, 해 지기 30분 전 황금빛"</div></div>
+<p>키워드 3개보다 구체적인 문장 1개가 훨씬 잘 나와. <b>위치 · 사물 · 인물 · 시간대 · 날씨</b>를 다 넣어.</p>
+<h4>② 화풍 요소는 건드리지 말 것</h4>
+<div class="vs"><div class="bad">✕ "수채화는 더 부드럽게, 선은 연하게"</div><div class="good">✓ 화풍은 샘플 그대로, 장면 묘사만 바꾸기</div></div>
+<p>각 화풍은 종이·붓·물감 규칙이 코드로 이미 잡혀 있어서, 화풍을 손대면 오히려 '그 재질답게' 보이는 느낌이 깨져. 한 번에 한 화풍만 쓰고 섞지 마.</p>
+<h4>③ 비율·구도 명시</h4>
+<table class="ratio"><tr><th>용도</th><th>크기</th></tr><tr><td>인스타 릴스·캐러셀(세로)</td><td>1080×1350</td></tr><tr><td>쇼츠·릴스 풀세로</td><td>1080×1920</td></tr><tr><td>유튜브(가로)</td><td>1920×1080</td></tr><tr><td>인스타 단일(정사각)</td><td>1080×1080</td></tr></table>
+<p>구도도 말로 지정하면 더 잘 나와 · 예: "주인공은 화면 왼쪽 1/3, 포인트 조명은 오른쪽 위". 예제마다 원래 크기가 달라(예: cyberpunk 1920×1080 가로, colortown 1500×2000 세로). 좌표가 원래 크기 기준으로 짜여 있어서 숫자만 바꾸면 구도가 틀어질 수 있으니, "1080×1350에 맞게 구도까지 다시 배치해줘"라고 요청하거나 ffmpeg 단계에서 여백(pad)·크롭으로 맞추는 게 안전해.</p>
+<h4>④ 부분 수정 요청하기</h4>
+<p>첫 결과 보고 "하늘이 너무 파래, 더 흐리게" 처럼 말하면 Claude가 .py에서 해당 줄을 찾아 고쳐줘. 같은 seed라 나머지는 그대로 유지돼.</p>
+</div>
+</section>
+
+<section class="section" id="styles"><div class="sectitle"><div><div class="eyebrow">06 · ALL STYLES</div><h2>예제 파일 79개 전체</h2></div><p>이름을 누르면 파일명이 복사돼</p></div>
+<h4 style="margin:18px 0 4px">수채·파스텔 <small style="color:var(--sub);font-weight:500">· 10</small></h4><div class="chips"><button class="chip" type="button">watercolor_autumn</button><button class="chip" type="button">watercolor_washes</button><button class="chip" type="button">gouache_rainy_day</button><button class="chip" type="button">pastelvignette_marmalade_scarf</button><button class="chip" type="button">pastelui_packing</button><button class="chip" type="button">penwash_neighbours</button><button class="chip" type="button">aurora_morning</button><button class="chip" type="button">moon_river</button><button class="chip" type="button">soft3d_rise</button><button class="chip" type="button">twilight_paper_kite</button></div><h4 style="margin:18px 0 4px">연필·펜·만화 <small style="color:var(--sub);font-weight:500">· 11</small></h4><div class="chips"><button class="chip" type="button">pencilbook_tortoise_crossing</button><button class="chip" type="button">ballpoint_board_game</button><button class="chip" type="button">colorpencil_dessert</button><button class="chip" type="button">crayon_picnic</button><button class="chip" type="button">chalk_lesson</button><button class="chip" type="button">graphite_bicycle</button><button class="chip" type="button">lineart_paper_plane</button><button class="chip" type="button">comic_rocket</button><button class="chip" type="button">cartoon_toaster</button><button class="chip" type="button">rubberhose_morning</button><button class="chip" type="button">popart_cat_moods</button></div><h4 style="margin:18px 0 4px">수묵·동양·고대 <small style="color:var(--sub);font-weight:500">· 10</small></h4><div class="chips"><button class="chip" type="button">jiangnan_spring_water</button><button class="chip" type="button">ukiyoe_fuji</button><button class="chip" type="button">bawansiqian</button><button class="chip" type="button">shadowpuppet_cuju</button><button class="chip" type="button">petroglyph_migration</button><button class="chip" type="button">tomb_harvest</button><button class="chip" type="button">illuminated_starchart</button><button class="chip" type="button">anime_summer</button><button class="chip" type="button">blackfigure_games</button><button class="chip" type="button">cave_hunt</button></div><h4 style="margin:18px 0 4px">픽셀·레트로 UI <small style="color:var(--sub);font-weight:500">· 9</small></h4><div class="chips"><button class="chip" type="button">pixel_rainy_cafe</button><button class="chip" type="button">macpaint_garden</button><button class="chip" type="button">crt_weather</button><button class="chip" type="button">vhs_birthday</button><button class="chip" type="button">obsidianui_reading_notes</button><button class="chip" type="button">flexoki_pour_over</button><button class="chip" type="button">panel_radio</button><button class="chip" type="button">lineprinter_launch</button><button class="chip" type="button">codex_ornithopter</button></div><h4 style="margin:18px 0 4px">디자인·편집 <small style="color:var(--sub);font-weight:500">· 9</small></h4><div class="chips"><button class="chip" type="button">bauhaus_form_colour</button><button class="chip" type="button">constructivism_radio</button><button class="chip" type="button">artdeco_express</button><button class="chip" type="button">editorial_ideas</button><button class="chip" type="button">overlay_city_map</button><button class="chip" type="button">newscollage_curiosity</button><button class="chip" type="button">morph_water_cycle</button><button class="chip" type="button">grading_math_quiz</button><button class="chip" type="button">notebook_brewing</button></div><h4 style="margin:18px 0 4px">타운·건축 <small style="color:var(--sub);font-weight:500">· 6</small></h4><div class="chips"><button class="chip" type="button">colortown_festival_steps</button><button class="chip" type="button">delft_canal</button><button class="chip" type="button">linocut_snowy_village</button><button class="chip" type="button">mosaic_harbor</button><button class="chip" type="button">blueprint_lighthouse</button><button class="chip" type="button">clay_lighthouse</button></div><h4 style="margin:18px 0 4px">그 외 재질·기법 <small style="color:var(--sub);font-weight:500">· 24</small></h4><div class="chips"><button class="chip" type="button">bluebook_shared_umbrella</button><button class="chip" type="button">canvasboard_moving_plan</button><button class="chip" type="button">cyanotype_botanicals</button><button class="chip" type="button">cyberpunk_neon_street</button><button class="chip" type="button">drybrush_noodle_counter</button><button class="chip" type="button">flatvector_night_camp</button><button class="chip" type="button">isometric_weather_island</button><button class="chip" type="button">letterpress_circus</button><button class="chip" type="button">lowpoly_canyon</button><button class="chip" type="button">nocturne_lava_sea</button><button class="chip" type="button">oil_wheatfield</button><button class="chip" type="button">papercut_balloons</button><button class="chip" type="button">patch_camping</button><button class="chip" type="button">perler_strawberry_coaster</button><button class="chip" type="button">poetichalloween_ghost_jar</button><button class="chip" type="button">silhouette_family</button><button class="chip" type="button">stainedglass_seasons</button><button class="chip" type="button">stencil_kite</button><button class="chip" type="button">sticker_market</button><button class="chip" type="button">stitch_sampler</button><button class="chip" type="button">storybook_acorn</button><button class="chip" type="button">synthwave_coastline</button><button class="chip" type="button">thermal_kitchen</button><button class="chip" type="button">xray_luggage</button></div></section>
+<section class="section" id="checklist"><div class="sectitle"><div><div class="eyebrow">07 · CHECK</div><h2>실습 체크리스트</h2></div><p id="prog">0 / 6 완료</p></div>
+<div class="checklist"><label class="check"><input type="checkbox" data-learning="c0"><span>스킬 설치 + pip 의존성 설치</span></label><label class="check"><input type="checkbox" data-learning="c1"><span>샘플 1개 완성 이미지 뽑기</span></label><label class="check"><input type="checkbox" data-learning="c2"><span>draw-on 애니 mp4 1개 만들기</span></label><label class="check"><input type="checkbox" data-learning="c3"><span>장면만 바꿔 내 버전 1개 만들기</span></label><label class="check"><input type="checkbox" data-learning="c4"><span>세로·가로·정사각 비율 바꿔보기</span></label><label class="check"><input type="checkbox" data-learning="c5"><span>마음에 안 드는 부분 수정 요청해보기</span></label></div></section>
+<footer class="footer"><a href="../">← AI 영상·모션 스터디 목록</a> · <a href="https://github.com/cloveric/claude-drawing-skill" target="_blank" rel="noopener">claude-drawing-skill 저장소 ↗</a><br>STUDY / AI VIDEO / LESSON 02 · 공유받은 노션 가이드를 광고 문구 없이 재구성하고 저장소 원본과 교차 확인한 학습 노트.</footer>
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(btn=>btn.addEventListener('click',async()=>{
+ const body=btn.closest('.prompt-card').querySelector('.prompt-body');const content=body.innerText.trim();
+ try{await navigator.clipboard.writeText(content);btn.textContent='복사 완료 ✓'}catch(e){const s=window.getSelection();const r=document.createRange();r.selectNodeContents(body);s.removeAllRanges();s.addRange(r);btn.textContent='텍스트 선택됨'}
+ setTimeout(()=>btn.textContent='복사',1800);
+}));
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',async()=>{
+ try{await navigator.clipboard.writeText(c.textContent);c.classList.add('done');setTimeout(()=>c.classList.remove('done'),1200)}catch(e){}
+}));
+const storageKey='study-claude-drawing-v1';
+function refresh(){let vals={},count=0;document.querySelectorAll('[data-learning]').forEach(el=>{vals[el.dataset.learning]=el.checked;if(el.checked)count++});document.getElementById('prog').textContent=count+' / 6 완료';try{localStorage.setItem(storageKey,JSON.stringify(vals))}catch(e){}}
+(function(){let val={};try{val=JSON.parse(localStorage.getItem(storageKey)||'{}')}catch(e){}document.querySelectorAll('[data-learning]').forEach(el=>{el.checked=!!val[el.dataset.learning];el.addEventListener('change',refresh)});refresh()})();
+</script>
+</body>
+</html>
