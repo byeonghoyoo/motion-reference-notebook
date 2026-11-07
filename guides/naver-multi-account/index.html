@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>네이버 다계정 운영계획안</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+:root{
+  --paper:#f3f2ec;--card:#fffefa;--ink:#252721;--muted:#6e7267;--line:#d9dbcf;
+  --lime:#d6ed89;--green:#526238;--soft:#e9eede;--warn-bg:#fbf1e2;--warn:#8a5a1e;
+  --bad-bg:#f8e6e2;--bad:#9a3b2c;--good-bg:#e7f0d6;--good:#46612a;
+  --font:"Pretendard Variable","Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#151713;--card:#1d201a;--ink:#ecefe4;--muted:#a2a898;--line:#33382d;
+  --lime:#c3dc72;--green:#b6cc8a;--soft:#232a1d;--warn-bg:#2d2416;--warn:#e8b878;
+  --bad-bg:#2e1b17;--bad:#f0a090;--good-bg:#1f2a17;--good:#b6d48a}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;line-height:1.75;word-break:keep-all;overflow-wrap:anywhere}
+a{color:var(--green);text-underline-offset:3px}
+.wrap{max-width:920px;margin:0 auto;padding:0 16px}
+header.top{border-bottom:1px solid var(--line);padding:40px 0 32px}
+.eyebrow{font-size:11px;letter-spacing:2px;font-weight:700;color:var(--muted);margin:0 0 14px;text-transform:uppercase}
+.eyebrow i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:7px;vertical-align:1px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.3;letter-spacing:-1.5px;margin:0 0 14px;font-weight:800}
+.lede{color:var(--muted);font-size:15px;margin:0;max-width:640px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{font-size:12px;border:1px solid var(--line);border-radius:30px;padding:5px 12px;background:var(--card);color:var(--muted)}
+
+nav.toc{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:8px;padding-bottom:8px}
+nav.toc .wrap::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;font-size:13px;text-decoration:none;color:var(--muted);padding:7px 11px;border-radius:8px;white-space:nowrap}
+nav.toc a:hover{background:var(--soft);color:var(--ink)}
+
+section{padding:44px 0 8px;scroll-margin-top:56px}
+section h2{font-size:24px;letter-spacing:-.8px;margin:0 0 6px;font-weight:750;display:flex;gap:10px;align-items:baseline}
+section h2 .n{font-size:12px;font-family:ui-monospace,Consolas,monospace;color:var(--green);letter-spacing:1px}
+.sub{color:var(--muted);font-size:14px;margin:0 0 22px}
+h3{font-size:17px;margin:26px 0 10px;letter-spacing:-.4px}
+p{margin:10px 0}
+
+.tldr{background:var(--ink);color:var(--paper);border-radius:18px;padding:26px 24px;margin-top:32px}
+.tldr h2{color:var(--paper);font-size:18px;margin:0 0 14px}
+.tldr ol{margin:0;padding-left:20px}
+.tldr li{margin:7px 0;font-size:15px}
+.tldr b{color:var(--lime)}
+@media (prefers-color-scheme:dark){.tldr{background:#e8ecdf;color:#1b1e17}.tldr h2{color:#1b1e17}.tldr b{color:#4a5d25}}
+
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px}
+.card h4{margin:0 0 6px;font-size:15px;letter-spacing:-.3px}
+.card p{margin:0;font-size:13.5px;color:var(--muted)}
+.lvl{display:inline-block;font-size:11px;font-weight:700;border-radius:20px;padding:2px 9px;margin-bottom:9px}
+.lvl.h{background:var(--bad-bg);color:var(--bad)}
+.lvl.m{background:var(--warn-bg);color:var(--warn)}
+.lvl.l{background:var(--good-bg);color:var(--good)}
+
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card);margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-size:12.5px;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td b{white-space:nowrap}
+
+.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0}
+.steps li{counter-increment:s;position:relative;padding:14px 16px 14px 58px;background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:8px;font-size:14.5px}
+.steps li::before{content:counter(s);position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:50%;background:var(--lime);color:#253014;font-weight:800;font-size:13px;display:grid;place-items:center}
+.steps li small{display:block;color:var(--muted);font-size:12.5px;margin-top:3px}
+
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.do-dont>div{border-radius:14px;padding:16px 18px;border:1px solid var(--line)}
+.do-dont .do{background:var(--good-bg)}
+.do-dont .dont{background:var(--bad-bg)}
+.do-dont h4{margin:0 0 8px;font-size:14px}
+.do-dont .do h4{color:var(--good)}
+.do-dont .dont h4{color:var(--bad)}
+.do-dont ul{margin:0;padding-left:18px;font-size:13.5px}
+.do-dont li{margin:5px 0}
+
+.note{border-left:3px solid var(--green);background:var(--soft);padding:12px 16px;border-radius:0 10px 10px 0;font-size:14px;margin:16px 0}
+.warn{border-left-color:var(--warn);background:var(--warn-bg)}
+
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:8px;overflow:hidden}
+summary{cursor:pointer;padding:15px 44px 15px 16px;font-weight:650;font-size:14.5px;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:16px;top:12px;font-size:20px;color:var(--muted);font-weight:300;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details[open] summary{border-bottom:1px solid var(--line)}
+.ans{padding:12px 16px 16px;font-size:14px}
+.ans p{margin:6px 0}
+.ans ul{margin:6px 0;padding-left:18px}
+.tag{display:inline-block;font-size:10.5px;font-weight:700;color:var(--green);border:1px solid var(--line);border-radius:5px;padding:1px 6px;margin-right:6px;vertical-align:1px}
+
+.check{list-style:none;padding:0;margin:12px 0}
+.check li{margin:0 0 6px}
+.check label{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px;cursor:pointer}
+.check input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--green);flex:none}
+.check input:checked+span{color:var(--muted);text-decoration:line-through}
+
+.plan{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:14px 0}
+.plan .card{padding:16px}
+.plan .wk{font-size:11px;font-family:ui-monospace,monospace;color:var(--green);letter-spacing:1px}
+.plan ul{margin:6px 0 0;padding-left:16px;font-size:13px;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);margin-top:56px;padding:24px 0 48px;font-size:12px;color:var(--muted)}
+footer ul{padding-left:16px;margin:8px 0}
+
+@media (max-width:640px){
+  .do-dont{grid-template-columns:1fr}
+  header.top{padding:30px 0 24px}
+  section{padding-top:36px}
+  section h2{font-size:21px}
+  .tldr{padding:22px 18px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="top">
+  <p class="eyebrow"><i></i>Operation Plan · Naver Blog</p>
+  <h1>네이버 다계정 운영계획안</h1>
+  <p class="lede">노트북 한 대 + 모바일 IP로 네이버 블로그 계정 여러 개를 서로 안 엮이게 굴리는 세팅, 전환 루틴, 상황별 대처까지 한 장에 정리.</p>
+  <div class="meta">
+    <span class="chip">기준일 2026.11.07</span>
+    <span class="chip">노트북 1대 기준</span>
+    <span class="chip">폰 핫스팟 / 에그</span>
+  </div>
+</header>
+</div>
+
+<nav class="toc" aria-label="목차">
+  <div class="wrap">
+    <a href="#tldr">요약</a>
+    <a href="#signals">엮이는 신호</a>
+    <a href="#accounts">계정 확보</a>
+    <a href="#network">네트워크</a>
+    <a href="#browser">브라우저 분리</a>
+    <a href="#routine">전환 루틴</a>
+    <a href="#rules">운영 규칙</a>
+    <a href="#cases">상황별 Q&amp;A</a>
+    <a href="#schedule">초기 4주</a>
+    <a href="#checklist">체크리스트</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<div class="tldr" id="tldr">
+  <h2>한 줄씩 요약</h2>
+  <ol>
+    <li><b>에그 필수 아님.</b> 폰 핫스팟 + 비행기모드 토글로 IP 교체 가능.</li>
+    <li><b>로그인 저장 끄기만으론 부족.</b> 쿠키·브라우저 정보가 남아서 계정끼리 엮일 수 있음.</li>
+    <li><b>1계정 = 1브라우저 프로필 = 1IP 세션.</b> 이 공식만 지키면 기본은 됨.</li>
+    <li><b>명의 1개당 아이디 최대 3개.</b> 네이버페이는 2026.8.1부터 신규 1인 1아이디.</li>
+    <li><b>세팅보다 운영 패턴이 더 위험.</b> 계정끼리 공감·댓글 품앗이, 같은 글·사진 재사용이 제일 먼저 잡힘.</li>
+  </ol>
+</div>
+
+<section id="signals">
+  <h2><span class="n">01</span>계정이 엮이는 신호</h2>
+  <p class="sub">네이버가 정확히 뭘 보는지는 공개 안 됨. 아래는 플랫폼들이 일반적으로 쓰는 연결 신호고, 위험도는 실무 체감 기준.</p>
+  <div class="grid">
+    <div class="card"><span class="lvl h">위험 높음</span><h4>쿠키 · 로그인 세션</h4><p>같은 브라우저에서 A 로그아웃 → B 로그인. 로그인 저장을 꺼도 쿠키·로컬스토리지는 남음.</p></div>
+    <div class="card"><span class="lvl h">위험 높음</span><h4>계정 간 상호작용</h4><p>내 계정끼리 공감·댓글·이웃추가·스크랩. 세팅 아무리 잘해도 이걸로 묶임.</p></div>
+    <div class="card"><span class="lvl h">위험 높음</span><h4>콘텐츠 중복</h4><p>같은 문장 구조, 같은 사진, 같은 외부링크를 여러 계정에 반복. 유사문서 판정 대상.</p></div>
+    <div class="card"><span class="lvl m">위험 중간</span><h4>IP 주소</h4><p>집·회사 고정 와이파이로 여러 계정 접속. 모바일 IP는 여러 사람이 같이 쓰는 대역이라 상대적으로 안전.</p></div>
+    <div class="card"><span class="lvl m">위험 중간</span><h4>브라우저 지문</h4><p>화면 해상도, 폰트, 그래픽카드, 시간대 등 조합. 크롬 프로필을 나눠도 이건 동일하게 찍힘.</p></div>
+    <div class="card"><span class="lvl m">위험 중간</span><h4>행동 패턴</h4><p>매일 같은 시각에 계정 3개가 연달아 발행, 같은 키워드 동시 공략.</p></div>
+    <div class="card"><span class="lvl l">위험 낮음</span><h4>같은 명의 · 같은 번호</h4><p>명의당 3개까지는 정책상 허용 범위. 다만 명의가 같으면 한 계정 제재가 나머지에 영향 갈 여지는 있음.</p></div>
+  </div>
+</section>
+
+<section id="accounts">
+  <h2><span class="n">02</span>계정 확보 기준</h2>
+  <p class="sub">세팅 전에 계정 구조부터 정리.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>항목</th><th>기준</th><th>운영 팁</th></tr></thead>
+    <tbody>
+      <tr><td><b>명의당 아이디</b></td><td>최대 3개</td><td>3개 꽉 채웠으면 안 쓰는 계정 탈퇴해야 신규 생성 가능</td></tr>
+      <tr><td><b>네이버페이</b></td><td>2026.8.1부터 신규 가입은 1인 1아이디. 기존 계정은 아직 유지</td><td>페이는 메인 계정 하나에만 연결. 블로그용 서브 계정엔 연결 안 해도 운영 지장 없음</td></tr>
+      <tr><td><b>다른 명의</b></td><td>가족 등 실제 본인 동의 받은 명의</td><td>본인인증·2차인증 때마다 그 사람 폰이 필요함. 인증 동선 미리 합의</td></tr>
+      <tr><td><b>계정 구매</b></td><td>약관 위반</td><td>원주인이 비번 찾기로 회수하면 끝. 쓰지 말 것</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note">계정마다 <b>블로그 주제를 다르게</b> 잡아두면 키워드 겹침도 줄고 계정별 성격도 자연스럽게 분리됨. 예: A 피부관리 정보 / B 지역 일상·맛집 / C 리뷰·체험.</div>
+</section>
+
+<section id="network">
+  <h2><span class="n">03</span>네트워크(IP) 세팅</h2>
+  <p class="sub">핵심은 "계정 바꿀 때 IP도 바뀐다". 방법별 비교.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>방법</th><th>IP 교체</th><th>장점</th><th>단점</th><th>추천 상황</th></tr></thead>
+    <tbody>
+      <tr><td><b>폰 핫스팟</b></td><td>비행기모드 on/off</td><td>추가 비용 0, 바로 시작</td><td>테더링 제공량 제한, 배터리·발열, 핫스팟 다시 켜야 할 때 있음</td><td>계정 2~3개, 하루 발행 적을 때</td></tr>
+      <tr><td><b>USB 테더링</b></td><td>비행기모드 on/off</td><td>폰 충전하면서 사용, 연결 안정적</td><td>케이블 필요, 데이터 제한은 동일</td><td>오래 작업할 때</td></tr>
+      <tr><td><b>에그(LTE 라우터)</b></td><td>전원 껐다 켜기 / 재접속</td><td>폰과 회선 분리, 데이터 넉넉한 요금제 선택 가능</td><td>기기값 + 월 요금</td><td>테더링 제공량 부족, 매일 작업</td></tr>
+      <tr><td><b>집·회사 와이파이</b></td><td>거의 안 바뀜</td><td>빠름</td><td>모든 계정이 같은 IP로 찍힘</td><td>메인 계정 1개만</td></tr>
+      <tr><td><b>VPN</b></td><td>서버 변경</td><td>클릭 한 번</td><td>VPN 대역은 네이버가 의심 트래픽으로 보기 쉬움. 해외 IP는 보호조치 유발</td><td>비추천</td></tr>
+    </tbody>
+  </table></div>
+  <h3>IP 바뀌었는지 확인</h3>
+  <ol class="steps">
+    <li>비행기모드 켜고 10초 대기 후 끄기<small>모바일 데이터가 다시 잡힐 때까지 기다림</small></li>
+    <li>핫스팟 꺼졌으면 다시 켜고 노트북 재연결</li>
+    <li>네이버에서 <b>"내 아이피"</b> 검색 → 직전 IP와 다른지 확인<small>같으면 비행기모드를 좀 더 길게(30초) 켜두고 재시도</small></li>
+  </ol>
+  <div class="note">노트북은 <b>집 와이파이 자동연결 꺼두기</b>. 핫스팟 끊기는 순간 집 와이파이로 붙어서 IP가 섞이는 경우가 제일 흔한 실수.</div>
+</section>
+
+<section id="browser">
+  <h2><span class="n">04</span>브라우저 분리</h2>
+  <p class="sub">쿠키를 계정별로 완전히 갈라놓는 단계.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>방식</th><th>쿠키 분리</th><th>지문 분리</th><th>비용</th><th>판단</th></tr></thead>
+    <tbody>
+      <tr><td><b>크롬 프로필</b></td><td>O</td><td>X</td><td>무료</td><td>계정 2~3개면 이걸로 충분</td></tr>
+      <tr><td><b>브라우저 따로</b>(크롬/엣지/웨일)</td><td>O</td><td>일부 다름</td><td>무료</td><td>프로필 대신 써도 됨. 웨일은 네이버 브라우저라 메인 계정용으로</td></tr>
+      <tr><td><b>시크릿 창</b></td><td>창 닫으면 삭제</td><td>X</td><td>무료</td><td>매번 로그인 + 2차인증 귀찮음. 임시용</td></tr>
+      <tr><td><b>안티디텍트 브라우저</b><br>(AdsPower, Multilogin, GoLogin 등)</td><td>O</td><td>O</td><td>무료 플랜(프로필 수 제한) ~ 유료</td><td>계정 4개 이상이거나 확실하게 가고 싶을 때</td></tr>
+    </tbody>
+  </table></div>
+  <h3>크롬 프로필 만들 때 주의</h3>
+  <div class="do-dont">
+    <div class="do"><h4>이렇게</h4><ul>
+      <li>프로필 이름을 계정명으로 (예: 블로그A)</li>
+      <li>프로필마다 테마 색 다르게 해서 헷갈림 방지</li>
+      <li>구글 계정 로그인 없이 "로그인 안 하고 계속"</li>
+      <li>확장 프로그램은 꼭 필요한 것만</li>
+    </ul></div>
+    <div class="dont"><h4>이건 금지</h4><ul>
+      <li>프로필마다 같은 구글 계정으로 동기화</li>
+      <li>비번 관리자에 여러 네이버 계정 몰아 저장</li>
+      <li>한 프로필에서 다른 네이버 계정 로그인</li>
+      <li>프로필 2개 띄워놓고 동시에 작업</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="routine">
+  <h2><span class="n">05</span>계정 전환 루틴</h2>
+  <p class="sub">A 작업 끝내고 B로 넘어갈 때 매번 이 순서.</p>
+  <ol class="steps">
+    <li>A 프로필에서 발행·예약 마무리 후 <b>프로필 창 완전히 닫기</b><small>로그아웃은 안 해도 됨. 로그인 상태는 그 프로필 안에만 남음</small></li>
+    <li>폰 <b>비행기모드 on → 10~30초 → off</b></li>
+    <li>핫스팟 재연결, 네이버 "내 아이피"로 변경 확인</li>
+    <li><b>최소 10~20분 텀</b> 두기<small>이 사이에 다른 일 하기. 계정 연달아 발행이 패턴으로 찍히는 걸 피함</small></li>
+    <li>B 프로필 열어서 작업</li>
+  </ol>
+</section>
+
+<section id="rules">
+  <h2><span class="n">06</span>운영 규칙</h2>
+  <p class="sub">세팅보다 이쪽에서 더 많이 걸림.</p>
+  <div class="do-dont">
+    <div class="do"><h4>지킬 것</h4><ul>
+      <li>계정마다 주제·말투·발행 시간대 다르게</li>
+      <li>사진은 계정별로 따로 촬영하거나 최소한 다른 컷 사용</li>
+      <li>같은 원고 돌려쓸 거면 구조부터 새로 써서 리라이트</li>
+      <li>신규 계정은 2~3주 일상·정보 글로 워밍업 후 목적 글</li>
+      <li>발행은 하루 1~2개 정도 꾸준히</li>
+    </ul></div>
+    <div class="dont"><h4>하지 말 것</h4><ul>
+      <li>내 계정끼리 공감·댓글·이웃·스크랩</li>
+      <li>같은 외부 링크(예약 링크 등)를 여러 계정에 동시 삽입</li>
+      <li>같은 키워드로 여러 계정 같은 날 발행</li>
+      <li>품앗이·공감 교환 카페/단톡 참여</li>
+      <li>글 발행 직후 대량 수정·삭제 반복</li>
+    </ul></div>
+  </div>
+  <div class="note warn"><b>병원 관련 글을 쓸 계정이면</b> 의료광고법 기준이 그대로 적용됨. 치료경험담·전후사진·비교 표현 금지, 대가 받은 글이면 경제적 대가 표기 필수. 다계정은 "누가 운영하는지"가 드러났을 때 리스크가 커지니 계정별 원고 검수 기준을 같게 유지.</div>
+</section>
+
+<section id="cases">
+  <h2><span class="n">07</span>상황별 Q&amp;A</h2>
+  <p class="sub">안 물어봤지만 운영하다 보면 무조건 마주치는 상황들.</p>
+
+  <details><summary><span class="tag">실수</span>회사·집 와이파이로 서브 계정 로그인해버렸어</summary><div class="ans">
+    <p>한 번 정도는 크게 문제 안 됨. 바로 로그아웃하고, 그 뒤로 반복만 안 하면 됨.</p>
+    <p>당분간 그 계정은 상호작용(이웃추가·댓글) 줄이고 평소대로 발행만.</p>
+  </div></details>
+
+  <details><summary><span class="tag">실수</span>폰 네이버 앱에 계정 여러 개 로그인해뒀어</summary><div class="ans">
+    <p>앱 하나에 여러 계정 = 같은 기기에서 계정 전환. 앱에는 <b>메인 계정 하나만</b> 남기고 나머지 로그아웃.</p>
+    <p>서브 계정 알림(댓글 등) 확인이 필요하면 노트북 해당 프로필에서 확인.</p>
+  </div></details>
+
+  <details><summary><span class="tag">보안</span>"새로운 환경에서 로그인" 알림 / 보호조치 걸렸어</summary><div class="ans">
+    <p>모바일 IP는 자주 바뀌니까 이 알림 자주 뜸. 정상 동작이고 본인 확인하면 끝.</p>
+    <ul>
+      <li>각 계정 <b>2단계 인증</b> 켜두기. 보호조치 풀 때 훨씬 편함</li>
+      <li><b>해외 로그인 차단</b> 켜두기. VPN 안 쓰면 손해 없음</li>
+      <li>보호조치 해제 후 바로 대량 발행하지 말고 하루 정도 평소처럼</li>
+    </ul>
+  </div></details>
+
+  <details><summary><span class="tag">인증</span>계정 3개 다 내 번호로 인증해도 돼?</summary><div class="ans">
+    <p>돼. 명의 1개에 3개까지가 원래 허용 범위라 같은 번호로 묶이는 건 정상.</p>
+    <p>대신 같은 명의 계정은 "같은 사람"으로 인식된다고 보고 운영 규칙(상호작용 금지)을 더 철저히.</p>
+  </div></details>
+
+  <details><summary><span class="tag">데이터</span>핫스팟 데이터 얼마나 써?</summary><div class="ans">
+    <p>사진 많은 포스팅 1건 업로드에 보통 수십 MB 수준. 글쓰기 자체보다 사진 업로드·미리보기에서 대부분 씀.</p>
+    <ul>
+      <li>사진은 업로드 전에 리사이즈(가로 1500~2000px)하면 크게 줄어듦</li>
+      <li>자료조사·유튜브 시청은 와이파이에서, <b>로그인·작성·발행만 핫스팟</b>에서</li>
+      <li>요금제 테더링 제공량 다 쓰면 그때 에그 고려</li>
+    </ul>
+  </div></details>
+
+  <details><summary><span class="tag">데이터</span>자료조사는 와이파이, 발행은 핫스팟으로 나눠도 돼?</summary><div class="ans">
+    <p>돼. 단, <b>로그인된 프로필은 와이파이에서 열지 말 것.</b> 자료조사는 로그인 안 된 별도 프로필(예: "리서치" 프로필)에서.</p>
+  </div></details>
+
+  <details><summary><span class="tag">장비</span>노트북 말고 회사 PC에서도 작업해야 해</summary><div class="ans">
+    <p>회사 PC에서는 <b>메인 계정 1개만</b> 고정. 서브 계정은 노트북 + 핫스팟 조합에서만.</p>
+    <p>한 계정을 여러 기기에서 쓰는 것보다, 한 기기에서 여러 계정 쓰는 게 더 위험.</p>
+  </div></details>
+
+  <details><summary><span class="tag">이미지</span>같은 사진 크롭·필터만 바꿔서 쓰면?</summary><div class="ans">
+    <p>비추. 유사 이미지 판별은 크롭·필터 정도로는 잘 안 피해짐. 같은 촬영 현장이라도 <b>다른 컷</b>을 쓰는 게 기본.</p>
+    <p>휴대폰 사진은 위치정보(EXIF)가 남으니 카메라 설정에서 위치 태그 끄고 찍기.</p>
+  </div></details>
+
+  <details><summary><span class="tag">원고</span>원고 하나로 계정 3개 다 쓰고 싶어</summary><div class="ans">
+    <p>문장 바꾸기 수준으론 안 됨. 계정마다 <b>도입부 상황, 소제목 구조, 결론 방향</b>까지 바꿔야 다른 글로 봄.</p>
+    <p>같은 주제를 세 계정에 쓸 거면 발행일을 최소 며칠씩 띄우기.</p>
+  </div></details>
+
+  <details><summary><span class="tag">링크</span>예약·상담 링크를 계정마다 넣어야 해</summary><div class="ans">
+    <p>같은 URL이 여러 계정에 반복되면 연결 고리가 됨.</p>
+    <ul>
+      <li>계정별로 다른 경로(UTM 다르게, 다른 랜딩 페이지) 사용</li>
+      <li>모든 글에 링크 넣지 말고, 계정당 일부 글에만</li>
+      <li>단축 URL 서비스는 스팸 이력이 있는 도메인이면 오히려 불리</li>
+    </ul>
+  </div></details>
+
+  <details><summary><span class="tag">누락</span>글이 검색에 안 떠 (누락·저품질 의심)</summary><div class="ans">
+    <ul>
+      <li>네이버에서 글 제목 그대로 검색 → 블로그 탭에 안 나오면 누락</li>
+      <li>최근 글 몇 개 연속 누락이면 그 계정 발행 멈추고 며칠 쉬기</li>
+      <li>원인 후보: 중복 원고/사진, 금칙어, 외부링크 과다, 짧은 시간 대량 수정</li>
+      <li>한 계정 문제 생겼을 때 <b>다른 계정에서 그 글 공유·링크하지 말 것</b> (연결 고리 생김)</li>
+    </ul>
+  </div></details>
+
+  <details><summary><span class="tag">확장</span>계정 4개 이상으로 늘리고 싶어</summary><div class="ans">
+    <p>이 시점부터 크롬 프로필로는 관리가 어려워짐. 안티디텍트 브라우저로 넘어가고, IP도 에그나 유심 추가로 회선을 늘리는 게 현실적.</p>
+    <p>명의가 추가로 필요하니 인증 동선(누구 폰으로 받을지)부터 정리.</p>
+  </div></details>
+
+  <details><summary><span class="tag">관리</span>비번·인증 정보는 어디에 저장해?</summary><div class="ans">
+    <p>브라우저 비번 저장 X. 별도 비밀번호 관리 앱(1Password, Bitwarden 등)에 계정별로 아이디/비번/연결 명의/2차인증 방법/프로필명 정리.</p>
+  </div></details>
+
+  <details><summary><span class="tag">팀</span>팀원이 같이 운영해야 하면?</summary><div class="ans">
+    <p>계정마다 <b>담당자 1명 + 접속 기기 1대</b> 고정. 여러 사람이 각자 집에서 같은 계정에 들어가면 IP·기기가 계속 바뀌어서 보호조치 자주 걸림.</p>
+  </div></details>
+
+  <details><summary><span class="tag">에그</span>에그 사면 뭘 확인해야 해?</summary><div class="ans">
+    <ul>
+      <li>데이터 요금제 용량 (발행만이면 대용량까진 불필요)</li>
+      <li>전원 껐다 켜거나 재접속으로 IP 바뀌는지 첫날 "내 아이피"로 확인</li>
+      <li>통신사를 폰과 다르게 하면 IP 대역도 분리됨</li>
+    </ul>
+  </div></details>
+</section>
+
+<section id="schedule">
+  <h2><span class="n">08</span>초기 4주 운영 흐름</h2>
+  <p class="sub">신규·휴면 계정 기준.</p>
+  <div class="plan">
+    <div class="card"><span class="wk">WEEK 1</span><h4>세팅</h4><ul><li>프로필·IP 루틴 고정</li><li>2단계 인증</li><li>블로그 이름·카테고리·프로필</li><li>일상 글 2~3개</li></ul></div>
+    <div class="card"><span class="wk">WEEK 2</span><h4>워밍업</h4><ul><li>주제 정보성 글 주 3~4개</li><li>외부링크 없이</li><li>다른 블로그 정상 이웃 활동(내 계정 X)</li></ul></div>
+    <div class="card"><span class="wk">WEEK 3</span><h4>키워드 진입</h4><ul><li>경쟁 낮은 키워드부터</li><li>누락 여부 매일 확인</li></ul></div>
+    <div class="card"><span class="wk">WEEK 4~</span><h4>목적 글</h4><ul><li>목적 글은 전체의 30~40% 이하</li><li>링크는 일부 글에만</li><li>계정별 성과 비교 후 비중 조절</li></ul></div>
+  </div>
+</section>
+
+<section id="checklist">
+  <h2><span class="n">09</span>작업 전 체크리스트</h2>
+  <p class="sub">매 세션 시작할 때.</p>
+  <ul class="check">
+    <li><label><input type="checkbox"><span>노트북이 핫스팟(또는 에그)에 붙어 있음, 집 와이파이 아님</span></label></li>
+    <li><label><input type="checkbox"><span>지금 열려 있는 프로필 = 작업할 계정 하나뿐</span></label></li>
+    <li><label><input type="checkbox"><span>직전 계정 작업 후 비행기모드로 IP 교체함</span></label></li>
+    <li><label><input type="checkbox"><span>"내 아이피"로 변경 확인함</span></label></li>
+    <li><label><input type="checkbox"><span>직전 계정 발행과 10~20분 이상 텀 있음</span></label></li>
+    <li><label><input type="checkbox"><span>이 글의 사진·원고·링크가 다른 계정과 겹치지 않음</span></label></li>
+    <li><label><input type="checkbox"><span>오늘 같은 키워드를 다른 계정이 발행하지 않았음</span></label></li>
+    <li><label><input type="checkbox"><span>(병원 글이면) 의료광고 금지 표현 검수함</span></label></li>
+  </ul>
+</section>
+
+</main>
+
+<div class="wrap">
+<footer>
+  <p>참고 자료</p>
+  <ul>
+    <li><a href="https://news.mtn.co.kr/news-detail/2026063011552084601" rel="noopener" target="_blank">머니투데이방송 · 네이버페이, 1인 1아이디 예고 (2026.06)</a></li>
+  </ul>
+  <p>네이버의 계정 판별 기준은 비공개라, 이 문서의 위험도는 실무 경험 기반 추정치임.</p>
+</footer>
+</div>
+
+</body>
+</html>
