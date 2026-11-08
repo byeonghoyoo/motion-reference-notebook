@@ -17,6 +17,7 @@ const motionDemos = [
  {id:'parallax',num:'14',name:'Parallax',kind:'깊이감 있는 레이어',icon:'◉',usage:'웹 히어로·제품 소개 배경에 깊이 주기',css:'layer speeds 3 levels',time:'1.8s · layered',prompt:'[히어로 배경]에 전경·중경·후경 3레이어 Parallax를 구현해. 각 레이어의 이동량을 다르게 하되 움직임이 CTA나 본문 가독성을 방해하지 않게 해. 모바일에서는 이동량을 줄이고 reduced-motion 시 모두 정지해. 스크롤과 LCP·CLS 영향을 검증해.',html:'<div class="motion-parallax"><span class="parallax-layer back"></span><span class="parallax-layer mid"></span><span class="parallax-layer front"></span><b>DEPTH</b></div>'}
 ];
 const motionRunning=new Map();
+const motionStatusTimers=new WeakMap();
 function motionEscape(v){return String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function renderMotionLab(){
  const root=document.querySelector('#motion-grid');
@@ -24,10 +25,10 @@ function renderMotionLab(){
  root.innerHTML=motionDemos.map(d=>
  '<article class="motion-demo-card" data-motion-card="'+d.id+'">'+
  '<div class="motion-demo-top"><span class="motion-num">'+d.num+' / '+motionEscape(d.kind)+'</span><span class="motion-mark">'+motionEscape(d.icon)+'</span></div>'+
- '<div class="motion-stage" data-motion-stage="'+d.id+'" style="--motion-speed:1">'+d.html+'</div>'+
+ '<div class="motion-stage" data-motion-stage="'+d.id+'" style="--motion-speed:2">'+d.html+'<div class="motion-play-indicator" aria-hidden="true">▶ 버튼을 눌러 재생</div><div class="motion-play-progress" aria-hidden="true"><i></i></div></div>'+
  '<div class="motion-demo-details"><div class="motion-name-row"><h3>'+motionEscape(d.name)+'</h3><span class="motion-time">'+motionEscape(d.time)+'</span></div>'+
  '<p>'+motionEscape(d.usage)+'</p><small class="motion-css-hint">'+motionEscape(d.css)+'</small>'+
- '<div class="motion-demo-actions"><button type="button" data-motion-play="'+d.id+'" aria-label="'+motionEscape(d.name)+' 효과 재생"><span aria-hidden="true">↻</span> 재생</button>'+
+ '<div class="motion-demo-actions"><button type="button" data-motion-play="'+d.id+'" aria-label="'+motionEscape(d.name)+' 효과 재생"><span aria-hidden="true">▶</span> 효과 재생</button>'+
  '<button type="button" data-value="'+motionEscape(d.prompt)+'" aria-label="'+motionEscape(d.name)+' 프롬프트 복사">프롬프트 복사 ⧉</button></div></div></article>'
  ).join('');
 }
@@ -39,15 +40,19 @@ function stopMotionTicker(stage){
 function playMotion(id){
  const card=document.querySelector('[data-motion-card="'+id+'"]');if(!card)return;
  const stage=card.querySelector('.motion-stage');stopMotionTicker(stage);
- const speed=Number(document.querySelector('#motion-speed')?.value||'1')||1;
+ const speed=Number(document.querySelector('#motion-speed')?.value||'2')||2;
  stage.style.setProperty('--motion-speed',String(speed));stage.classList.remove('playing');void stage.offsetWidth;
- const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- stage.classList.toggle('playing',!reduce);
- if(reduce){
-  const sc=stage.querySelector('[data-final]');if(sc)sc.textContent=sc.dataset.final||'';
-  const count=stage.querySelector('[data-count]');if(count)count.textContent=count.dataset.count||'';
-  return;
- }
+ // Playback is explicitly user-triggered; do not silently suppress demos because
+ // a mobile OS prefers reduced motion. No passive animation starts automatically.
+ stage.classList.add('playing');
+ const indicator=stage.querySelector('.motion-play-indicator');
+ if(indicator)indicator.textContent='▶ 재생 중';
+ const btn=card.querySelector('[data-motion-play]');
+ if(btn)btn.setAttribute('aria-label', id+' 모션 다시 재생');
+ const oldTimer=motionStatusTimers.get(stage);
+ if(oldTimer)clearTimeout(oldTimer);
+ const timer=setTimeout(()=>{if(indicator)indicator.textContent='✓ 재생 완료';}, 1900*speed);
+ motionStatusTimers.set(stage,timer);
  if(id==='scramble'){
   const el=stage.querySelector('[data-final]');if(!el)return;
   const final=el.dataset.final||'',chars='01ABCDEFGHJKLMNPQRSTUVWXYZ',started=performance.now(),duration=1100*speed,state={};
