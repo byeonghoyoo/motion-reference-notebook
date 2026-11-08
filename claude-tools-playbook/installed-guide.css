@@ -1,0 +1,45 @@
+/* Prioritized guide to tools actually installed on the hospital Mac. */
+.installed-section{background:radial-gradient(circle at 84% 5%,rgba(185,255,220,.09),transparent 35%),#101b29;border-block:1px solid rgba(185,255,220,.16)}
+.installed-section .section-heading h2 em{color:#b9ffdc}
+.skill-status-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:#99adbb;font-size:11px;margin-bottom:17px}
+.skill-status-row span:first-child{color:#b9ffdc}
+.skill-dot{display:inline-block;background:#b9ffdc;width:7px;height:7px;border-radius:50%;vertical-align:middle;margin-right:6px;box-shadow:0 0 10px rgba(185,255,220,.7)}
+#installed-guide-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+#installed-guide-tabs [role=tab]{display:inline-flex;align-items:center;gap:8px;color:#b9cce2;background:#1b2b40;border:1px solid rgba(198,230,249,.15);border-radius:11px;padding:11px 14px;font-size:12px;font-weight:800;transition:background .18s}
+#installed-guide-tabs [role=tab] span{font-size:19px;line-height:1;color:#b9ffdc}
+#installed-guide-tabs [role=tab][aria-selected=true]{background:#b9ffdc;color:#0e2e22;border-color:#b9ffdc}
+#installed-guide-tabs [role=tab][aria-selected=true] span{color:#0e3b28}
+#installed-guide-body{border-radius:18px;border:1px solid rgba(185,255,220,.22);background:linear-gradient(150deg,#182b3d,#172435);padding:25px 26px}
+.skill-focus-intro{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:19px}
+.skill-overline{font:600 11px 'DM Mono','Noto Sans KR',monospace;color:#b9ffdc;letter-spacing:.05em}
+.skill-focus-intro h3{font-size:clamp(20px,2.7vw,28px);margin:4px 0 7px;letter-spacing:-.04em}
+.skill-focus-intro p{color:#aec0cf;font-size:12px;margin:0}
+.skill-verified{display:inline-flex;border:1px solid rgba(185,255,220,.4);border-radius:40px;padding:6px 12px;color:#d3ffe6;font-size:10px;white-space:nowrap}
+.skill-focus-cols{display:grid;grid-template-columns:1fr 1.1fr;gap:13px}
+.skill-pane{background:#0f2032;border:1px solid rgba(207,237,244,.11);border-radius:12px;padding:20px}
+.skill-pane h4{font-size:14px;margin:0 0 7px}
+.skill-pane p{font-size:12px;color:#b3c5d2;margin-bottom:11px}
+.skill-pane strong{color:#ddffe9}
+.skill-pane ol{margin:8px 0 0;padding-left:21px}
+.skill-pane li{font-size:12px;color:#b6c7d4;line-height:1.9;margin-bottom:6px}
+.skill-pane pre{font:12px/1.9 'Noto Sans KR',sans-serif;overflow-wrap:anywhere;white-space:pre-wrap;color:#e1f1ff;margin:11px 0 18px}
+.skill-copyline{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px;border:1px solid rgba(185,255,220,.14);border-radius:9px;margin:10px 0 23px;background:#071827}
+.skill-copyline code{font:11px 'DM Mono','Noto Sans KR',monospace;color:#b9ffdc;overflow-wrap:anywhere;line-height:1.8}
+.skill-copyline button,.skill-big-copy{background:#b9ffdc;color:#123c28;border:0;border-radius:8px;font-size:11px;font-weight:900;padding:9px 12px;white-space:nowrap}
+.skill-big-copy{width:100%}
+.skill-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.skill-bottom>div{border-radius:10px;background:rgba(185,255,220,.05);border:1px solid rgba(185,255,220,.12);padding:13px}
+.skill-bottom>div:nth-child(2){background:rgba(255,213,162,.05);border-color:rgba(255,213,162,.15)}
+.skill-bottom strong{font-size:12px;color:#b9ffdc}.skill-bottom>div:nth-child(2) strong{color:#ffdda5}
+.skill-bottom p{font-size:11px;color:#b5c7d4;margin:6px 0 0}
+.skill-bottom-links{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:14px;margin-top:16px}
+.skill-bottom-links a,.skill-bottom-links button{color:#b9ffdc;font-size:12px;background:none;border:0;padding:6px 0;font-weight:800;text-decoration:underline;text-underline-offset:4px}
+.craft-video-reference{display:flex;justify-content:space-between;gap:18px;align-items:center;border:1px solid rgba(201,183,255,.25);border-radius:16px;margin-top:18px;padding:20px;background:linear-gradient(125deg,rgba(171,147,246,.13),rgba(60,77,113,.18))}
+.craft-video-reference span{font:11px 'DM Mono',monospace;color:#c5bdff}
+.craft-video-reference h3{font-size:17px;margin:5px 0}
+.craft-video-reference p{margin:0;color:#bcc8db;font-size:12px;line-height:1.9;max-width:800px}
+.craft-video-reference b{color:#d5dcff}
+.craft-video-reference a{flex-shrink:0;background:#bdb7ff;color:#1e1d42;border-radius:9px;padding:10px 14px;font-size:11px;font-weight:900}
+.installed-footnote{font-size:11px;line-height:1.9;color:#8fa5b7;margin:13px 0 0}
+@media(max-width:850px){.skill-focus-cols{grid-template-columns:1fr}.skill-focus-intro{flex-wrap:wrap}.skill-pane pre{font-size:12px}}
+@media(max-width:650px){#installed-guide-tabs{flex-wrap:nowrap;overflow:auto;scrollbar-width:thin;padding-bottom:7px}#installed-guide-tabs button{white-space:nowrap}#installed-guide-body{padding:18px}.skill-bottom{grid-template-columns:1fr}.skill-focus-intro h3{font-size:21px}.craft-video-reference{flex-direction:column;align-items:flex-start}.skill-status-row{display:grid;gap:4px}.skill-focus-intro p{font-size:11px}}
