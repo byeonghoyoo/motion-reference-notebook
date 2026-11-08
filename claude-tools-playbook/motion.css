@@ -111,4 +111,37 @@
 @media(max-width:1150px){.motion-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.motion-pipeline{grid-template-columns:repeat(2,minmax(0,1fr))}.motion-pipeline small{margin:0}.motion-pipeline>div{flex-wrap:wrap}}
 @media(max-width:800px){.motion-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:9px}.motion-controls{flex-wrap:wrap}.motion-workflows{grid-template-columns:1fr}.motion-pipeline>div{padding:12px}.motion-pipeline strong{font-size:12px}.motion-pipeline small{font-size:10px}.motion-workflows article{padding:17px}.motion-help{padding:18px}}
 @media(max-width:570px){.motion-grid{grid-template-columns:minmax(0,1fr)}.motion-stage{height:178px}.motion-demo-details p{min-height:0}.motion-control-actions{width:100%;justify-content:space-between}.motion-pipeline{gap:7px}.motion-pipeline>div{display:flex;flex-wrap:wrap;gap:5px;min-height:83px;align-content:center}.motion-pipeline strong,.motion-pipeline small{flex-basis:100%}.motion-control-title strong{font-size:11px}}
-@media(prefers-reduced-motion:reduce){.motion-stage.playing .demo-fade,.motion-stage.playing .demo-slide,.motion-stage.playing .demo-scale,.motion-stage.playing .demo-spring,.motion-stage.playing .demo-bounce,.motion-stage.playing .demo-typewriter,.motion-stage.playing .motion-split span,.motion-stage.playing .demo-line,.motion-stage.playing .demo-morph,.motion-stage.playing .demo-marquee-track,.motion-stage.playing .demo-lowerthird,.motion-stage.playing .parallax-layer{animation:none!important}}
+
+/* Playback feedback: motion only runs on explicit user click. */
+.motion-stage{outline:2px solid transparent;outline-offset:-2px;transition:outline-color .2s}
+.motion-stage.playing{outline-color:rgba(185,255,220,.45)}
+.motion-play-indicator{position:absolute;top:9px;left:10px;z-index:5;padding:3px 9px;border-radius:9px;background:#243a53;color:#c4e2e5;font:700 10px 'Noto Sans KR',sans-serif;opacity:.85;pointer-events:none}
+.motion-stage.playing .motion-play-indicator{background:#b9ffdc;color:#0c3125;opacity:1}
+.motion-play-progress{position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(255,255,255,.09);z-index:5;overflow:hidden;pointer-events:none}
+.motion-play-progress i{width:0;height:100%;display:block;background:#b9ffdc}
+.motion-stage.playing .motion-play-progress i{animation:motion-progress calc(1900ms * var(--motion-speed)) linear both}
+@keyframes motion-progress{0%{width:0}100%{width:100%}}
+.motion-demo-actions button[data-motion-play]{background:#b9ffdc;color:#14352b;border-color:#b9ffdc;font-weight:900;box-shadow:0 3px 12px rgba(185,255,220,.13)}
+.motion-demo-actions button[data-motion-play] span{margin-right:4px}
+.motion-demo-actions button[data-motion-play]:active{transform:scale(.98)}
+/* Page honors reduced motion by never auto-playing. User-triggered replay is
+   an explicit opt-in and should remain visible on Android accessibility mode. */
+/* styles.css reduces all animation durations to 0.01ms when the OS requests
+   reduced motion. The playground is an explicit play-on-click demonstration,
+   so restore the requested duration only inside the clicked demo. Nothing
+   auto-plays on page load; other site elements still honor reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .motion-section .motion-stage.playing .demo-fade{animation-duration:calc(650ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .demo-slide{animation-duration:calc(750ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .demo-scale{animation-duration:calc(800ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .demo-spring{animation-duration:calc(900ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .demo-bounce{animation-duration:calc(950ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .demo-typewriter{animation-duration:calc(1300ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .motion-split span{animation-duration:calc(850ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .demo-line{animation-duration:calc(1500ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .demo-morph{animation-duration:calc(1300ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .demo-marquee-track{animation-duration:calc(4800ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .demo-lowerthird{animation-duration:calc(3400ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .parallax-layer{animation-duration:calc(1800ms * var(--motion-speed))!important}
+  .motion-section .motion-stage.playing .motion-play-progress i{animation-duration:calc(1900ms * var(--motion-speed))!important}
+}
