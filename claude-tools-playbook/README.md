@@ -34,3 +34,14 @@ Remotion, Motion for React, GSAP은 병원 맥에 일괄 설치된 도구가 아
 - https://www.remotion.dev/docs/
 - https://motion.dev/docs/react-installation
 - https://gsap.com/docs/v3/Installation/
+
+## 설치 도구 중심 가이드 (2026-11-08 개정)
+
+- Agent Skills, Context7, Graphify, 21st MCP, Strix, Docker, Craft Anything 7개 도구 탭을 앞부분에 배치.
+- 37개 업무 상황, 48개 범용 프롬프트, 14개 모션 재생 샘플.
+- 모션 재생은 명시적인 버튼 클릭에서만 시작. 모바일의 ‘움직임 줄이기’ 설정에도 직접 선택한 모션은 재생되며, 진행률과 느린 기본 속도를 제공. 자동재생 없음.
+- 공식 Craft Anything v0.5.0: https://github.com/storytold/craft-anything
+- 사용자 제공 3분 소개영상: https://www.youtube.com/watch?v=FW_H1YL9hgk
+- Craft Anything macOS 앱·CLI·Claude Code MCP·skill·Claude Code 빌더·OpenRouter 무료 분석 모델이 등록되어 있고 doctor 결과 healthy 확인. 사용자가 소유한 로컬 웹사이트의 web-site-open 테스트 완료. 새 앱 전체 재구축까지 검증한 것은 아님.
+- Craft CLI는 개별 실행이 종료되면 브라우저가 닫히므로 web-site-open 다음 web-site-capture는 유지되는 MCP 세션/앱 안에서 함께 실행해야 함.
+- 공개 저장소에 API 키나 환자·병원 고객정보를 포함하지 않음.
