@@ -1,0 +1,279 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101b22"><title>REA-Video 실사용 가이드북 · 샷 분석부터 제작까지</title><meta name="description" content="REA-Video 설치, VIDEO.md 읽기, AI 영상과 3D 쇼츠 제작, 한국어 OCR, 실전 프롬프트 12종과 맞춤 프롬프트 생성기."><style>
+:root{--bg:#f5f3ed;--ink:#192b33;--muted:#58696e;--line:#d5dcd8;--mint:#bdf8d5;--dark:#101f27;--orange:#ef9b58}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,'Noto Sans KR',sans-serif}a{color:inherit;text-underline-offset:4px}button,input,select,textarea{font:inherit}button,a,input,select,textarea{touch-action:manipulation}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #268764;outline-offset:4px}header{position:sticky;top:0;z-index:9;background:rgba(245,243,237,.97);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:13px max(22px,calc((100vw - 1320px)/2));gap:20px}header a{text-decoration:none;font-size:13px;font-weight:800}.brand{letter-spacing:.1em}.headerbtn{border:1px solid var(--line);background:white;padding:7px 14px;border-radius:7px;font-size:12px}main{max-width:1320px;margin:auto;padding:0 28px 80px}.hero{margin:26px 0 32px;background:var(--dark);border-radius:16px;padding:60px;color:white;position:relative;overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;gap:45px}.eyebrow{letter-spacing:.17em;font-size:11px;font-weight:800;color:#63887c}.hero .eyebrow{color:var(--mint)}h1{font-size:clamp(42px,5.6vw,76px);line-height:1.1;letter-spacing:-.055em;margin:25px 0}h1 em{font-style:normal;color:var(--mint)}.hero p{color:#c1d2d5;max-width:560px}.hero .meta{margin-top:30px;font-size:12px;color:#8ca4aa}.button{display:inline-block;padding:11px 19px;text-decoration:none;border-radius:6px;background:var(--mint);color:var(--dark);font-size:14px;font-weight:800;border:0}.hero .button.secondary{background:transparent;border:1px solid #59737b;color:white;margin-left:8px}.visual{display:flex;flex-direction:column;justify-content:center}.film{position:relative;border:1px solid #4b646c;border-radius:9px;padding:22px;background:#182e38}.shotstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.shot{height:145px;position:relative;overflow:hidden;background:#233f4b;border:1px solid #68828b}.shot:before{content:'';position:absolute;width:62px;height:62px;border-radius:50%;background:var(--mint);bottom:25px;left:25px;box-shadow:18px 20px 0 #598f7b}.shot:nth-child(2):before{transform:scale(.72);left:40px}.shot:nth-child(3):before{border-radius:4px;transform:rotate(22deg);background:var(--orange)}.shot span{position:absolute;top:6px;left:9px;font:10px monospace;color:#c0d5d6}.track{height:15px;background:repeating-linear-gradient(90deg,#bdf8d5 0 3px,transparent 3px 7px);opacity:.8;margin-top:26px;clip-path:polygon(0 40%,8% 20%,15% 35%,25% 0,35% 40%,42% 5%,50% 25%,62% 0,73% 40%,83% 0,100% 25%,100% 80%,85% 100%,70% 65%,60% 100%,45% 75%,25% 100%,10% 70%,0 80%)}.ruler{display:flex;justify-content:space-between;font:10px monospace;color:#92b3bc;margin-top:12px}.visual small{font-size:11px;color:#8ba7b1;margin-top:12px}.layout{display:grid;grid-template-columns:215px minmax(0,1fr);gap:42px}aside{position:sticky;top:88px;align-self:start}aside a{display:block;text-decoration:none;color:var(--muted);padding:9px 0;font-size:13px}aside a:hover{color:#16734c}aside strong{font-size:11px;letter-spacing:.12em}.article section{padding:30px 0 45px;border-bottom:1px solid var(--line)}.sectiontop{display:flex;gap:15px;align-items:baseline}.num{font:12px monospace;color:#568674}h2{font-size:32px;letter-spacing:-.045em;line-height:1.25;margin:0 0 20px}h3{font-size:19px;letter-spacing:-.025em;line-height:1.4;margin:15px 0 8px}p{margin:10px 0 18px}.lead{font-size:18px;color:var(--muted)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.box{padding:23px;border:1px solid var(--line);border-radius:9px;background:#fff}.box p{font-size:14px;color:var(--muted);margin-bottom:0}.tag{font-size:11px;border:1px solid #9ebbb0;color:#356954;padding:3px 8px;border-radius:4px;display:inline-block}.note{padding:18px 22px;background:#e5eee7;border-left:3px solid #54806c;font-size:14px;margin:22px 0}.note.warm{background:#f6e9d9;border-color:var(--orange)}.sourcesmall{font-size:12px;color:var(--muted)}.sourcesmall a{margin-right:10px}.chapter{display:grid;grid-template-columns:56px 1fr 18px;gap:16px;align-items:start;text-decoration:none;border-top:1px solid var(--line);padding:19px 0}.chapter>b{font:14px monospace;color:#376c58;margin-top:3px}.chapter h3{margin:0 0 7px;font-size:17px}.chapter p{margin:0;color:var(--muted);font-size:14px}.video{aspect-ratio:16/9;border:0;width:100%;border-radius:9px;background:#101f27}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:14px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:#e7ece7;white-space:nowrap}td{min-width:120px}ol.steps{padding-left:22px}ol.steps>li{padding:8px 0 17px}ol.steps p{font-size:14px;color:var(--muted);margin:6px 0}pre{font:13px/1.85 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#142830;color:#d9ede7;border-radius:7px;padding:20px;margin:12px 0}code{font-family:ui-monospace,monospace;font-size:.9em;background:#e1e8e0;padding:2px 5px;border-radius:4px}pre code{background:none;color:inherit;padding:0}.copy{border:1px solid #b6cbbf;background:#fff;color:#365f4e;border-radius:5px;padding:6px 13px;font-size:12px;font-weight:700}.codehead{display:flex;justify-content:space-between;align-items:center;margin-top:24px}.routebar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.routebar button{border:1px solid #a9bcb1;border-radius:6px;padding:9px 17px;background:white;color:var(--ink);font-weight:700;font-size:14px}.routebar button[aria-pressed="true"]{background:var(--dark);color:var(--mint)}[hidden]{display:none!important}.route{background:#fff;padding:26px;border-radius:9px;border:1px solid var(--line)}.route h3{margin-top:0}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.flow span{padding:8px 12px;border:1px solid #b8c9bd;border-radius:4px;font-size:13px;background:#f6f8f3}.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}.fields label{font-size:13px;font-weight:700;display:block}.fields input,.fields select,.fields textarea{width:100%;margin-top:5px;border:1px solid #acbfb4;padding:11px;border-radius:5px;background:#fff;color:var(--ink);min-width:0}.fields .wide{grid-column:1/-1}textarea{resize:vertical;min-height:100px}.builder{background:#e9efea;border-radius:10px;padding:26px}.builder pre{max-height:500px;overflow:auto}.prompt{background:white;border:1px solid var(--line);padding:22px;border-radius:9px;margin:18px 0}.prompthead{display:flex;align-items:center;justify-content:space-between}.prompt pre{max-height:330px;overflow:auto;font-size:12px}.search{width:100%;border:1px solid #a7beb1;background:white;padding:13px;border-radius:6px}.checklist label{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}.checklist input{width:18px;height:18px;accent-color:#397253;flex-shrink:0;margin-top:5px}.progress{height:6px;background:#d6dfd5;margin:12px 0 15px;border-radius:5px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:#3d8862}.sourceList{list-style:none;padding:0}.sourceList li{display:flex;gap:18px;padding:15px 0;border-bottom:1px solid var(--line)}.sourceList b{font:12px monospace;color:#5a806e}.sourceList a{font-size:14px;font-weight:700}.sourceList p{font-size:12px;color:var(--muted);margin:5px 0}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);z-index:15;background:#142830;color:white;border-radius:7px;padding:10px 20px;font-size:13px;max-width:90vw;text-align:center}footer{font-size:12px;color:var(--muted);padding:24px 0}.mobileNav{display:none}details{border-bottom:1px solid var(--line);padding:16px 0}summary{cursor:pointer;font-weight:700;font-size:15px}details p{font-size:14px;color:var(--muted)}@media(max-width:950px){.hero{padding:35px;grid-template-columns:1fr}.visual{display:none}.layout{grid-template-columns:1fr}aside{display:none}.mobileNav{display:block;width:100%;padding:10px;margin-bottom:15px;border:1px solid var(--line);background:white}.hero p{max-width:none}}@media(max-width:600px){main{padding:0 18px 40px}.hero{margin-top:15px;padding:30px 24px}.hero .button{font-size:12px;padding:10px 12px}.hero .button.secondary{margin-left:2px}.grid,.fields{grid-template-columns:1fr}.fields .wide{grid-column:auto}h2{font-size:27px}.box,.route,.builder,.prompt{padding:19px}.chapter{grid-template-columns:43px 1fr 12px;gap:10px}header{padding:12px 18px}.brand{font-size:11px}.headerbtn{padding:6px 9px}pre{font-size:12px;padding:15px}.article section{padding-top:23px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{header,aside,.mobileNav,.hero .button,.copy,.routebar,.search,.toast,.headerbtn,iframe{display:none!important}body{background:white;color:black;font-size:11pt}.layout,.hero{display:block}.hero{background:white;color:black;padding:0}.hero p{color:black}h1{font-size:32pt}.visual{display:none}pre,.prompt pre,.builder pre{max-height:none;overflow:visible;background:#f3f3f3;color:black}.route[hidden]{display:block!important}.prompt{break-inside:avoid}.article section{padding:18px 0}main{max-width:none;padding:0}}
+</style></head><body><header><a class="brand" href="../">STUDY / AI VIDEO</a><button class="headerbtn" id="print">인쇄 · PDF 저장</button></header><main>
+<div class="hero"><div><div class="eyebrow">FIELD GUIDE 03 / REFERENCE → PRODUCTION</div><h1>REA-Video<br><em>실사용 가이드북.</em></h1><p>잘 만든 영상의 구조를 읽고,<br>나의 콘텐츠로 다시 만드는 실행 매뉴얼.</p><a class="button" href="#builder">맞춤 프롬프트 만들기 ↗</a><a class="button secondary" href="#setup">설치부터 시작</a><div class="meta">문외인 영상 기반 · 공식 문서 대조 2026.11.18<br>12개 복사 프롬프트 / 모바일 최적화 / 학습 체크리스트</div></div><div class="visual"><div class="film"><div class="shotstrip"><div class="shot"><span>01 / SUBJECT</span></div><div class="shot"><span>02 / CAMERA</span></div><div class="shot"><span>03 / MOTION</span></div></div><div class="track"></div><div class="ruler"><span>SHOT</span><span>CAMERA</span><span>BEAT</span><span>REBUILD</span></div></div><small>샷·카메라·리듬의 관계를 설명하는 개념도입니다.</small></div></div>
+<select class="mobileNav" aria-label="가이드 목차"><option value="">목차 바로가기</option><option value="#overview">01 핵심과 영상 요약</option><option value="#setup">02 설치</option><option value="#read">03 분석 보고서 읽기</option><option value="#routes">04 제작 경로</option><option value="#builder">05 맞춤 프롬프트</option><option value="#prompts">06 프롬프트 12종</option><option value="#qa">07 검수·문제 해결</option><option value="#sources">08 출처</option></select>
+<div class="layout"><aside><strong>IN THIS GUIDE</strong><a href="#overview">01 / 영상 핵심</a><a href="#setup">02 / 설치와 첫 분석</a><a href="#read">03 / 보고서 읽는 법</a><a href="#routes">04 / 제작 경로 3가지</a><a href="#builder">05 / 맞춤 프롬프트 생성</a><a href="#prompts">06 / 범용 프롬프트 12종</a><a href="#qa">07 / 검수와 오류 해결</a><a href="#sources">08 / 검증·출처</a><hr style="border:0;border-top:1px solid var(--line);margin:25px 0"><a href="../../">← 스터디 홈</a><a href="../../../">← 모션 아카이브</a></aside><div class="article">
+<section id="overview"><div class="sectiontop"><span class="num">01</span><h2>복제의 출발점은<br>프롬프트보다 제작 원리.</h2></div><p class="lead">무엇이 보이는지뿐 아니라, 어떻게 움직이고 언제 바뀌는지를 분해합니다. 분석 → 재검수 → 자산 준비 → 제작 → 비교가 기본 순서입니다.</p><div class="grid"><div class="box"><span class="tag">REA-Video</span><h3>원본의 구조와 제작 경로</h3><p>샷 경계, 제작 유형, 카메라, 자막, 소리와 필요한 자산을 분석합니다. 분석 결과를 바탕으로 촬영·AI 생성·코드 제작을 선택합니다.</p></div><div class="box"><span class="tag">Hypit</span><h3>편집 가능한 제작 워크플로</h3><p>영상 구성과 자산을 재사용해 변형을 만듭니다. 현재 공식 문서는 생성 모델 없이 자막·모션그래픽·코드 영상을 렌더하는 경로도 설명합니다.</p></div></div><div class="note">REA-Video 분석만으로 완성 영상이 자동 보장되지는 않습니다. AI 샷 자동 생성은 별도 도구·계정이 필요하고, 코드 샷의 Remotion 프로젝트는 에이전트가 따로 작성합니다. <a href="#S2">[S2]</a> <a href="#S5">[S5]</a> <a href="#S7">[S7]</a></div>
+<h3>원본 영상과 구간 바로가기</h3><iframe class="video" loading="lazy" src="https://www.youtube-nocookie.com/embed/9mngM958lx0" title="문외인 REA-Video 원본 영상" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p class="sourcesmall">재생이 제한되면 아래 시간 링크로 YouTube의 해당 구간을 엽니다. 자막·설명 기반 요약이며 원본 화면 스틸컷을 재게시하지 않았습니다.</p><a class="chapter" href="https://www.youtube.com/watch?v=9mngM958lx0&t=0s" target="_blank" rel="noopener"><b>0:00</b><div><h3>왜 비슷하게 안 나올까?</h3><p>장면 설명만 바꾸면 카메라·구도·시간 관계가 빠진다. 먼저 영상이 만들어진 구조를 분석한다.</p></div><span>↗</span></a><a class="chapter" href="https://www.youtube.com/watch?v=9mngM958lx0&t=53s" target="_blank" rel="noopener"><b>0:53</b><div><h3>REA-Video와 Hypit</h3><p>영상은 분석과 빠른 변형 제작의 차이를 설명한다. 현재 Hypit에는 코드 렌더링도 있어 “AI 생성 전용”으로 단정하지 않는다.</p></div><span>↗</span></a><a class="chapter" href="https://www.youtube.com/watch?v=9mngM958lx0&t=132s" target="_blank" rel="noopener"><b>2:12</b><div><h3>보고서와 설치</h3><p>사람은 report.html을, 에이전트는 VIDEO.md를 중심으로 읽는다. 분석 결과도 시각 재검수가 필요하다.</p></div><span>↗</span></a><a class="chapter" href="https://www.youtube.com/watch?v=9mngM958lx0&t=204s" target="_blank" rel="noopener"><b>3:24</b><div><h3>AI 영상 제작 사례</h3><p>참조 시트 → 생성 단위 → 저해상도 초안 → 고해상도 확정. 잘못 분류한 카메라 움직임은 사람이 수정한 사례다.</p></div><span>↗</span></a><a class="chapter" href="https://www.youtube.com/watch?v=9mngM958lx0&t=328s" target="_blank" rel="noopener"><b>5:28</b><div><h3>3D 쇼츠 제작 사례</h3><p>2D 캐릭터 카드와 3D 공간을 three.js·Remotion으로 구성한다. 영상 생성 크레딧과 전체 제작 비용은 다르다.</p></div><span>↗</span></a><a class="chapter" href="https://www.youtube.com/watch?v=9mngM958lx0&t=430s" target="_blank" rel="noopener"><b>7:10</b><div><h3>제작 경로 선택</h3><p>AI 샷은 생성 모델, 3D·타이포는 코드, 실촬영은 촬영 계획으로 나눈다. 한 영상 안에서도 경로를 섞을 수 있다.</p></div><span>↗</span></a>
+<h3>영상의 숫자는 이렇게 해석하세요</h3><div class="tablewrap"><table><thead><tr><th>시연 표현</th><th>실무에서의 해석</th></tr></thead><tbody><tr><td>보름 / 별 9천 개</td><td>영상 제작 당시의 인기 지표. 현재 값이나 품질 보증이 아닙니다.</td></tr><tr><td>60초 영상 → 1분 분석</td><td>시연 환경의 사례. 해상도·OCR·음성 분리·모델 호출·첫 다운로드에 따라 달라집니다.</td></tr><tr><td>모델 468MB</td><td>영상 당시 구성. 현재 CLI 문서는 음성/음악 분리 약 67MB, SFX 분리 약 149MB, 한국어 OCR 약 14MB 등 개별 다운로드를 안내합니다. 고정 총용량으로 보지 않습니다.</td></tr><tr><td>약 320크레딧 / 1080p</td><td>해당 캐릭터 시트·재시도·생성 사례의 합계. 다른 계정·모델·시점의 견적에 그대로 적용하지 않습니다.</td></tr><tr><td>3D 생성 크레딧 0</td><td>영상 생성 API를 쓰지 않았다는 뜻. 코딩 에이전트·TTS·음원·컴퓨팅 비용까지 0이라는 뜻은 아닙니다.</td></tr></tbody></table></div><p class="sourcesmall"><a href="#S1">시연 수치: S1</a><a href="#S4">현재 기술 사양: S4</a></p></section>
+<section id="setup"><div class="sectiontop"><span class="num">02</span><h2>설치와 첫 분석</h2></div><p>처음에는 <b>10–15초 구간 1개</b>로 시작하세요. 이는 이 가이드의 실무 권장값입니다. 짧은 구간으로 환경과 판정을 확인한 뒤 전체 영상으로 확장하면 재작업을 줄일 수 있습니다.</p><div class="grid"><div class="box"><h3>필수 준비</h3><p>명령을 실행할 수 있는 Claude Code 또는 Codex, Python 3.10 이상, ffmpeg·ffprobe, 레퍼런스 MP4/MOV. 분석 결과를 저장할 여유 공간도 확보합니다.</p></div><div class="box"><h3>선택 준비</h3><p>영상·이미지 이해가 가능한 모델, 실제 영상 생성 계정, TTS. 기본 도구 분석과 의미·운동 검수는 다릅니다. 설치만으로 모든 역프롬프트가 확정되는 것은 아닙니다.</p></div></div><div class="note">이 페이지의 ‘복사’ 버튼은 명령을 실행하지 않습니다. 복사한 프롬프트를 Claude Code/Codex 작업 창에 붙여넣으면 해당 에이전트가 작업합니다.</div>
+<div class="codehead"><h3>가장 쉬운 설치 요청</h3><button class="copy" data-copy="quick">복사</button></div><pre id="quick">https://github.com/JuneYaooo/rea-video 의 최신 README와 설치 스크립트를 읽고, 내 OS에 맞게 설치해줘. Python 3.10 이상과 ffmpeg·ffprobe를 점검하고 기존 설치를 보존해. CLI와 에이전트 스킬 연결을 각각 검증한 뒤 rea-video --help의 실제 실행 결과를 알려줘. 아직 유료 API는 호출하지 마.</pre>
+<details><summary>macOS / Linux · 명령어로 설치</summary><pre># 새 작업 디렉터리에서 실행. ffmpeg·ffprobe와 Python 3.10+가 필요합니다.
+git clone https://github.com/JuneYaooo/rea-video
+cd rea-video
+python3 -m venv .venv
+source .venv/bin/activate
+bash scripts/install_skill.sh
+rea-video --help</pre><p>공식 스크립트는 CLI 설치와 에이전트 스킬 연결을 처리합니다. ffmpeg가 없으면 경고하므로 실제 실행 가능 여부를 별도로 확인합니다. 기존 폴더가 있다면 덮어쓰지 말고 설치 프롬프트로 점검하세요. <a href="https://github.com/JuneYaooo/rea-video/blob/main/scripts/install_skill.sh" target="_blank" rel="noopener">설치 스크립트</a></p></details>
+<details><summary>Windows PowerShell · CLI 수동 설치</summary><pre># Git, Python 3.10+, ffmpeg·ffprobe가 설치된 PowerShell에서 실행합니다.
+git clone https://github.com/JuneYaooo/rea-video
+cd rea-video
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -e ".[ocr]"
+# 공식 CLI 문서의 OpenCV 충돌 정리. 이 프로젝트 가상환경에만 적용합니다.
+.\.venv\Scripts\python.exe -m pip uninstall -y opencv-python
+.\.venv\Scripts\python.exe -m pip install --force-reinstall --no-deps "opencv-python-headless>=4.8,<5"
+.\.venv\Scripts\rea-video.exe --help</pre><p>이 명령은 CLI 설치입니다. 스킬 등록은 01번 프롬프트로 사용하는 에이전트의 경로에 맞춰 별도로 처리합니다. Windows에서 bash 스크립트를 PowerShell 명령처럼 실행하지 않습니다.</p></details>
+<div class="codehead"><h3>한국어 자막을 포함한 기본 분석</h3><button class="copy" data-copy="cli">복사</button></div><pre id="cli"># 입력 영상을 현재 폴더의 ref.mp4로 준비한 뒤 실행합니다.
+# ko는 자막 OCR 언어, en은 보고서 언어입니다.
+rea-video decompose ref.mp4 -o out/ref --lang en --ocr-lang ko
+rea-video summary out/ref/breakdown.json
+rea-video videomd out/ref --check</pre><div class="note warm"><b>--lang ko와 --ocr-lang ko는 다릅니다.</b> 확인한 CLI 보고서 언어는 zh/en이며 한국어 자막 OCR은 ko를 지원합니다. 원본 보고서는 지원 언어로 만들고 한국어 설명은 에이전트가 별도 요약하게 하세요. 한국어 내레이션의 ASR 검수는 OCR과 별도입니다.</div><p class="sourcesmall"><a href="#S3">S3</a><a href="#S4">S4</a></p></section>
+<section id="read"><div class="sectiontop"><span class="num">03</span><h2>보고서는 이 순서로 읽기</h2></div><ol class="steps"><li><b>report.html — 사람을 위한 전체 지도</b><p>샷 시간표, 제작 유형, 신뢰도와 준비 자산을 확인합니다. 신뢰도는 판단의 확신 정도이지 ‘원본 제작자가 실제로 쓴 도구’의 증명이 아닙니다.</p></li><li><b>VIDEO.md — 에이전트의 시작점</b><p>작은 카드 → 개요 → 타임라인 → 필요한 샷 파일 순서. 원시 JSON 전체를 한 번에 넣을 필요가 없습니다.</p></li><li><b>storyboard·샷 프레임 — 눈으로 재검수</b><p>첫·중간·끝을 비교합니다. 카메라가 뒤로 이동하는지, 피사체만 작아지는지, 장면이 실제로 끊기는지 확인합니다.</p></li><li><b>제작 계획 — 샷과 호출을 구분</b><p>샷 하나가 꼭 생성 한 번은 아닙니다. 같은 공간의 연속 샷을 묶을 수 있지만 모델의 실제 길이·참조 지원을 먼저 확인합니다.</p></li></ol><div class="tablewrap"><table><thead><tr><th>실무 표의 열</th><th>기록할 내용</th></tr></thead><tbody><tr><td>ID · 시간</td><td>shot_001 / 시작 / 끝 / 길이. 초 또는 프레임 단위를 명시.</td></tr><tr><td>관측 / 추정</td><td>화면에 보인 것과 ‘AI 같다’는 판단을 분리. VIDEO.md의 ~ 표시는 추정 필드.</td></tr><tr><td>카메라</td><td>시작 구도, 이동 방향, 속도 변화, 끝 구도, 추적 대상.</td></tr><tr><td>자산·연속성</td><td>인물/제품 ID, 시작·끝 참조, 의상·색·위치의 고정 조건.</td></tr><tr><td>소리·글자</td><td>음성/BGM/SFX, 자막 시작·끝·위치·스타일, 실제 beat 시점.</td></tr><tr><td>제작 경로</td><td>AI 생성 / 3D·코드 / 촬영 / 화면 녹화 / 혼합과 검수 항목.</td></tr></tbody></table></div><div class="note"><b>영상 사례의 중요한 교훈:</b> 처음 ‘고정’으로 해석된 카메라를 실제 프레임 확인 뒤 후진 추적으로 수정했습니다. 보고서를 바로 정답으로 쓰지 말고 카메라와 인물 동작부터 재확인하세요.</div><p class="sourcesmall"><a href="#S1">S1</a><a href="#S6">S6</a></p></section>
+<section id="routes"><div class="sectiontop"><span class="num">04</span><h2>영상 종류마다 제작 경로가 다르다</h2></div><div class="routebar" role="group" aria-label="제작 경로 선택"><button data-route="ai" aria-pressed="true">AI 영상</button><button data-route="code" aria-pressed="false">3D · 코드</button><button data-route="live" aria-pressed="false">실촬영 · 혼합</button></div>
+<div class="route" id="route-ai"><span class="tag">AI / IMAGE → VIDEO</span><h3>캐릭터 일관성을 먼저, 고해상도는 나중에</h3><div class="flow"><span>참조 시트</span><span>생성 단위 설계</span><span>초안</span><span>연속성 검수</span><span>확정·합성</span></div><ol class="steps"><li><b>필요한 이미지부터 목록화</b><p>REA-Video가 인물 이미지를 직접 모두 만들어주는 것은 아닙니다. 같은 인물의 뷰·의상·표정을 자산 ID로 고정합니다.</p></li><li><b>모델의 실제 지원 확인</b><p>영상에 나온 Higgsfield/Seedance 구성은 시연 선택입니다. 현재 계정에서 쓸 수 있는 모델·참조 수·길이·해상도로 계획을 다시 계산합니다.</p></li><li><b>움직임을 시간순으로 작성</b><p>시작 구도 → 주체 행동 → 카메라 이동 → 끝 상태. 연속 장면은 앞 클립 끝 프레임을 다음 클립 참조로 활용할 수 있는지 확인합니다.</p></li><li><b>초안의 실패한 샷만 수정</b><p>업스케일로 디테일이 번지면 고해상도 재생성과 비교합니다. 자막은 영상 모델에 그리게 하지 말고 후반에서 합성합니다.</p></li></ol><p class="sourcesmall">자동 생성 연결은 capsule-cinema를 선택적으로 사용합니다. dry-run 이후 실제 유료 호출을 구분하세요. <a href="#S5">S5</a></p></div>
+<div class="route" id="route-code" hidden><span class="tag">THREE.JS + REMOTION</span><h3>3D 공간과 시간표를 코드로 설계</h3><div class="flow"><span>새 대본</span><span>내레이션</span><span>샷·시간표</span><span>장면·카메라</span><span>정지화면 검수</span><span>렌더</span></div><p>2D 캐릭터를 카드처럼 세우고, 3D 바닥·건물·소품 사이로 카메라를 이동시키는 방식입니다. 모든 오브젝트가 정교한 3D 모델이어야 하는 것은 아닙니다.</p><ol class="steps"><li><b>템플릿 설치와 요구사항 구분</b><p>claude-animated-shorts는 ~/.claude/skills/cartoon-3d-short/에 배치하며 Node·Python·ffmpeg·Remotion·@remotion/three가 필요합니다. 예제의 영어·자막 없음·길이는 내 작업 설정과 별개입니다.</p></li><li><b>보이스를 먼저 확정</b><p>말 길이가 컷 길이를 결정합니다. 내레이션이 바뀌면 장면과 자막 타이밍도 재정렬합니다.</p></li><li><b>프레임에 고정된 카메라와 동작</b><p>카메라 위치/대상/FOV, 피사체 이동, 보간 곡선을 같은 시간축으로 구성합니다. 주요 프레임부터 렌더해 가림·깊이·가독성을 확인합니다.</p></li><li><b>렌더·저장공간·비용 검토</b><p>최종 렌더 전 해상도를 낮춘 테스트를 합니다. 템플릿은 REMOTION_TMP 여유 공간을 강조합니다. 영상 API 크레딧 0과 전체 제작비 0을 구분합니다.</p></li></ol><p><a href="https://github.com/mromidev/claude-animated-shorts" target="_blank" rel="noopener">공식 템플릿 열기 ↗</a></p></div>
+<div class="route" id="route-live" hidden><span class="tag">LIVE / HYBRID</span><h3>촬영할 것과 생성할 것을 먼저 분리</h3><p>인터뷰, 실제 제품 사용, 화면 녹화처럼 원본 증거가 필요한 샷은 직접 확보합니다. 설명 타이포·추상 도형·배경 연출은 코드 또는 AI 경로로 제작할 수 있습니다.</p><ol class="steps"><li><b>촬영 계획</b><p>촬영 장소·장비·카메라 높이·주광 방향·피사체 위치·필요 테이크를 목록화합니다. 정확히 측정되지 않은 값은 추정으로 표시합니다.</p></li><li><b>자료 수집</b><p>제품 사진·공식 정보·실제 화면 녹화·내레이션을 받습니다. 누락된 샷은 명시적인 내부용 플레이스홀더로만 관리합니다.</p></li><li><b>최종 조립</b><p>촬영·생성·코드 결과를 같은 해상도와 프레임레이트로 맞춥니다. 배포본에는 미완성 원본 대체 샷이나 허가 없는 음원을 남기지 않습니다.</p></li></ol></div><div class="note">같은 영상에서도 샷별로 경로가 달라질 수 있습니다. 예: 실제 제품 촬영 + AI 분위기 컷 + 코드 가격 카드 + 음성 설명. <a href="#S2">S2</a> <a href="#S5">S5</a> <a href="#S8">S8</a></div></section>
+<section id="builder"><div class="sectiontop"><span class="num">05</span><h2>내 조건으로 바로 쓰는 프롬프트</h2></div><p>입력값은 브라우저 안에서 문장으로 조합됩니다. 서버 전송이나 영상 생성 호출은 하지 않습니다.</p><div class="builder"><div class="fields"><label class="wide">레퍼런스 경로 또는 URL<input id="ref" placeholder="예: C:\\videos\\reference.mp4 또는 YouTube URL"></label><label class="wide">새 콘텐츠 주제<input id="topic" placeholder="예: 내 포트폴리오 소개 / 제품 출시 / 과학 이야기"></label><label>길이(초)<input id="duration" type="number" min="5" max="300" value="30"></label><label>화면비<select id="ratio"><option>9:16</option><option>16:9</option><option>1:1</option><option>4:5</option></select></label><label>제작 경로<select id="mode"><option value="auto">분석 후 추천</option><option value="ai">AI 생성</option><option value="code">3D·코드</option><option value="live">실촬영·혼합</option></select></label><label>승인된 생성 예산<input id="budget" value="0원 · 유료 호출 금지"></label><label>출력 언어<input id="language" value="한국어"></label><label>출력 폴더<input id="folder" value="./out/my-video"></label><label class="wide">보존할 원리 / 교체할 요소<textarea id="changes">보존: 컷 리듬, 카메라 이동 방향, 정보가 공개되는 순서
+교체: 인물, 제품, 대본, 구체적 배경, 음악</textarea></label></div><div class="codehead"><h3>통합 실행 프롬프트</h3><button class="copy" data-copy="generated">복사</button></div><pre id="generated"></pre><button class="copy" id="download">이 프롬프트 TXT 저장 ↓</button></div></section>
+<section id="prompts"><div class="sectiontop"><span class="num">06</span><h2>단계별 범용 프롬프트 12종</h2></div><p>대괄호만 바꿔 사용하세요. 이미 끝난 단계가 있으면 해당 단계부터 이어갑니다. 아래 문장은 공식 명령어를 대신하는 <b>이 가이드의 실무용 요청 템플릿</b>입니다.</p><input class="search" id="search" type="search" aria-label="프롬프트 검색" placeholder="설치, 카메라, AI, 3D, 오류 등으로 검색"><p class="sourcesmall" id="count">12개 프롬프트</p><div id="promptList"><article class="prompt" data-search="01 · 설치와 실행 환경 점검설치REA-Video를 이 컴퓨터에서 사용할 수 있게 설치하고 검증해줘.
+공식 저장소: https://github.com/JuneYaooo/rea-video
+현재 README, docs/cli.md, 설치 스크립트를 먼저 읽고 OS에 맞게 진행해.
+1. Python 3.10 이상, ffmpeg·ffprobe, Git, 실행 중인 에이전트를 확인해.
+2. 기존 설치가 있으면 경로·버전·작업 파일을 보존하고 중복 설치하지 마.
+3. 별도 가상환경을 우선 사용하고, Windows PowerShell에서는 bash 명령을 그대로 실행하지 마.
+4. CLI와 사용하는 에이전트의 스킬 연결을 각각 확인해. CLI 설치와 스킬 등록을 같은 것으로 취급하지 마.
+5. rea-video --help 실행 결과와 실제 설치 경로를 보고해.
+6. 실행에 필요한 모델 다운로드 항목·예상 용량을 알려줘. API 키나 유료 모델 호출은 아직 사용하지 마.
+완료 기준: 실제 명령 실행 성공. 설치 계획만 출력하고 완료라고 하지 마."><div class="prompthead"><span class="tag">설치</span><button class="copy" data-copy="p0">복사</button></div><h3>01 · 설치와 실행 환경 점검</h3><pre id="p0">REA-Video를 이 컴퓨터에서 사용할 수 있게 설치하고 검증해줘.
+공식 저장소: https://github.com/JuneYaooo/rea-video
+현재 README, docs/cli.md, 설치 스크립트를 먼저 읽고 OS에 맞게 진행해.
+1. Python 3.10 이상, ffmpeg·ffprobe, Git, 실행 중인 에이전트를 확인해.
+2. 기존 설치가 있으면 경로·버전·작업 파일을 보존하고 중복 설치하지 마.
+3. 별도 가상환경을 우선 사용하고, Windows PowerShell에서는 bash 명령을 그대로 실행하지 마.
+4. CLI와 사용하는 에이전트의 스킬 연결을 각각 확인해. CLI 설치와 스킬 등록을 같은 것으로 취급하지 마.
+5. rea-video --help 실행 결과와 실제 설치 경로를 보고해.
+6. 실행에 필요한 모델 다운로드 항목·예상 용량을 알려줘. API 키나 유료 모델 호출은 아직 사용하지 마.
+완료 기준: 실제 명령 실행 성공. 설치 계획만 출력하고 완료라고 하지 마.</pre></article><article class="prompt" data-search="02 · 레퍼런스 분석부터 시작분석레퍼런스: [로컬 영상 경로 또는 이용 가능한 URL]
+분석 구간: [예: 00:00–00:15]
+출력 폴더: [예: ./out/reference]
+REA-Video로 해당 구간을 분석해줘. URL만 받은 경우 다운로드 가능 여부와 이용 조건을 확인하고, 차단되면 성공한 것처럼 진행하지 마.
+원본은 보존하고 분석용 구간 파일을 별도로 만들어. 샷 경계·시작/끝·지속시간·제작 유형·구도·카메라 이동·조명·전환·자막·음성/BGM/SFX를 분리해.
+report.html, VIDEO.md, storyboard 및 샷별 참조 프레임을 생성해.
+측정한 값 / 눈으로 확인한 내용 / 추정을 구분하고 불확실한 항목을 표시해.
+현재 지원되는 보고서 언어로 원본 결과를 생성하고, 별도로 한국어 실무 요약을 만들어. 한국어 자막이면 OCR 언어 ko 지원을 확인해 사용해.
+아직 영상 생성·결제는 하지 말고, 재현 경로와 필요한 자산 목록까지 완성해."><div class="prompthead"><span class="tag">분석</span><button class="copy" data-copy="p1">복사</button></div><h3>02 · 레퍼런스 분석부터 시작</h3><pre id="p1">레퍼런스: [로컬 영상 경로 또는 이용 가능한 URL]
+분석 구간: [예: 00:00–00:15]
+출력 폴더: [예: ./out/reference]
+REA-Video로 해당 구간을 분석해줘. URL만 받은 경우 다운로드 가능 여부와 이용 조건을 확인하고, 차단되면 성공한 것처럼 진행하지 마.
+원본은 보존하고 분석용 구간 파일을 별도로 만들어. 샷 경계·시작/끝·지속시간·제작 유형·구도·카메라 이동·조명·전환·자막·음성/BGM/SFX를 분리해.
+report.html, VIDEO.md, storyboard 및 샷별 참조 프레임을 생성해.
+측정한 값 / 눈으로 확인한 내용 / 추정을 구분하고 불확실한 항목을 표시해.
+현재 지원되는 보고서 언어로 원본 결과를 생성하고, 별도로 한국어 실무 요약을 만들어. 한국어 자막이면 OCR 언어 ko 지원을 확인해 사용해.
+아직 영상 생성·결제는 하지 말고, 재현 경로와 필요한 자산 목록까지 완성해.</pre></article><article class="prompt" data-search="03 · 샷 판정과 카메라 재검수분석분석 폴더: [./out/reference]
+VIDEO.md의 요약과 타임라인을 읽고, 필요한 샷 파일만 열어 검수해.
+각 샷의 첫·중간·마지막 프레임 및 필요한 인접 프레임을 비교해.
+특히 고정 카메라와 tracking/dolly-out, 피사체 이동과 카메라 이동, 2D 카드와 실제 3D 모델을 구분해.
+낮은 신뢰도·증거 충돌·짧은 중복 샷을 우선 검사해. 그림을 실제로 확인하지 않았다면 시각 검수 완료라고 말하지 마.
+각 수정은 기존 판정 → 수정 판정 → 프레임/시간 근거로 기록해.
+현재 CLI의 review/apply-review 절차에 맞춰 결과에 반영하고 보고서를 다시 생성해.
+측정 불가능한 렌즈 초점거리·정확한 원본 모델명은 확정하지 마."><div class="prompthead"><span class="tag">분석</span><button class="copy" data-copy="p2">복사</button></div><h3>03 · 샷 판정과 카메라 재검수</h3><pre id="p2">분석 폴더: [./out/reference]
+VIDEO.md의 요약과 타임라인을 읽고, 필요한 샷 파일만 열어 검수해.
+각 샷의 첫·중간·마지막 프레임 및 필요한 인접 프레임을 비교해.
+특히 고정 카메라와 tracking/dolly-out, 피사체 이동과 카메라 이동, 2D 카드와 실제 3D 모델을 구분해.
+낮은 신뢰도·증거 충돌·짧은 중복 샷을 우선 검사해. 그림을 실제로 확인하지 않았다면 시각 검수 완료라고 말하지 마.
+각 수정은 기존 판정 → 수정 판정 → 프레임/시간 근거로 기록해.
+현재 CLI의 review/apply-review 절차에 맞춰 결과에 반영하고 보고서를 다시 생성해.
+측정 불가능한 렌즈 초점거리·정확한 원본 모델명은 확정하지 마.</pre></article><article class="prompt" data-search="04 · 원본 원리를 새 콘텐츠로 바꾸기기획분석 폴더: [./out/reference]
+새 주제/제품: [입력]
+타깃: [입력]
+길이/화면비: [30초 / 9:16]
+보존할 요소: 훅의 역할, 정보 공개 순서, 카메라 방향, 컷 리듬
+바꿀 요소: 대본, 인물, 제품, 배경의 구체적 디자인, 음악
+레퍼런스의 효과적인 원리를 새 주제에 적용해 새 샷 설계표를 만들어줘.
+shot_id / start / end / duration / 목적 / 화면 / 카메라 / 자막 / 오디오 / 제작경로 / 필요한 자산을 표로 정리해.
+전체 길이의 합이 목표 길이와 일치하도록 계산해. 원본을 자른 것만으로 새 영상이라고 하지 마.
+의료 콘텐츠라면 확인된 자료만 사용하고 효과 보장·최상급·가짜 환자 후기를 넣지 마.
+내가 제공한 자산과 상업적 사용 가능한 자산으로 제작 가능하게 설계해."><div class="prompthead"><span class="tag">기획</span><button class="copy" data-copy="p3">복사</button></div><h3>04 · 원본 원리를 새 콘텐츠로 바꾸기</h3><pre id="p3">분석 폴더: [./out/reference]
+새 주제/제품: [입력]
+타깃: [입력]
+길이/화면비: [30초 / 9:16]
+보존할 요소: 훅의 역할, 정보 공개 순서, 카메라 방향, 컷 리듬
+바꿀 요소: 대본, 인물, 제품, 배경의 구체적 디자인, 음악
+레퍼런스의 효과적인 원리를 새 주제에 적용해 새 샷 설계표를 만들어줘.
+shot_id / start / end / duration / 목적 / 화면 / 카메라 / 자막 / 오디오 / 제작경로 / 필요한 자산을 표로 정리해.
+전체 길이의 합이 목표 길이와 일치하도록 계산해. 원본을 자른 것만으로 새 영상이라고 하지 마.
+의료 콘텐츠라면 확인된 자료만 사용하고 효과 보장·최상급·가짜 환자 후기를 넣지 마.
+내가 제공한 자산과 상업적 사용 가능한 자산으로 제작 가능하게 설계해.</pre></article><article class="prompt" data-search="05 · 캐릭터·제품 일관성 시트AI 생성기획/분석 폴더: [경로]
+사용할 인물·제품 자산: [경로]
+생성 도구: [연동된 도구명 또는 미연동]
+샷 전체에서 고정할 외형·의상·색상·비율·제품 라벨을 정리하고 자산 manifest를 만들어줘.
+인물은 정면 얼굴·측면·상반신·전신 중 해당 샷에 필요한 뷰를, 제품은 정면·측면·디테일 뷰를 구성해.
+자산별 ID와 파일명, 쓰일 shot_id, 이미지 생성 프롬프트를 작성해.
+도구가 실제 연결돼 있고 승인된 예산이 있을 때만 생성해. 연결되지 않았다면 입력할 프롬프트와 참조 파일 매핑을 납품해.
+생성 후 얼굴·머리색·표정·의상·라벨을 원본 자산과 대조해. 캐릭터 시트가 자동으로 완성된다고 가정하지 마."><div class="prompthead"><span class="tag">AI 생성</span><button class="copy" data-copy="p4">복사</button></div><h3>05 · 캐릭터·제품 일관성 시트</h3><pre id="p4">기획/분석 폴더: [경로]
+사용할 인물·제품 자산: [경로]
+생성 도구: [연동된 도구명 또는 미연동]
+샷 전체에서 고정할 외형·의상·색상·비율·제품 라벨을 정리하고 자산 manifest를 만들어줘.
+인물은 정면 얼굴·측면·상반신·전신 중 해당 샷에 필요한 뷰를, 제품은 정면·측면·디테일 뷰를 구성해.
+자산별 ID와 파일명, 쓰일 shot_id, 이미지 생성 프롬프트를 작성해.
+도구가 실제 연결돼 있고 승인된 예산이 있을 때만 생성해. 연결되지 않았다면 입력할 프롬프트와 참조 파일 매핑을 납품해.
+생성 후 얼굴·머리색·표정·의상·라벨을 원본 자산과 대조해. 캐릭터 시트가 자동으로 완성된다고 가정하지 마.</pre></article><article class="prompt" data-search="06 · AI 샷 저해상도 초안 → 확정AI 생성분석/기획: [경로]
+승인된 참조 시트: [경로]
+사용 서비스/모델: [실제로 사용 가능한 모델]
+허용 예산: [금액 또는 크레딧]
+영상 모델의 현재 최대 길이, 해상도, 참조 이미지 수, 첫/마지막 프레임 지원을 공식 문서와 계정 화면 기준으로 확인해.
+샷 수와 생성 호출 수를 분리해 생성 단위를 설계해. 각 단위별 참조 ID·첫 프레임·선택적 끝 프레임·동작·카메라·조명·금지 변화·출력 길이를 명시해.
+먼저 저비용 초안을 만들고 구도·카메라·인물 일관성을 확인해. 이어지는 단위는 앞 클립 마지막 프레임을 참조로 쓸 수 있는지 확인해.
+실패한 단위만 수정하고 최대 2회 재시도 후 원인과 비용을 보고해.
+초안 승인 후 목표 해상도로 제작해. 단순 업스케일과 원본 고해상도 재생성의 차이를 비교하고 피부·글자 번짐을 점검해.
+추가 비용이 허용 범위를 넘으면 실제 호출 전에 멈춰. 자막은 후반 합성으로 분리해."><div class="prompthead"><span class="tag">AI 생성</span><button class="copy" data-copy="p5">복사</button></div><h3>06 · AI 샷 저해상도 초안 → 확정</h3><pre id="p5">분석/기획: [경로]
+승인된 참조 시트: [경로]
+사용 서비스/모델: [실제로 사용 가능한 모델]
+허용 예산: [금액 또는 크레딧]
+영상 모델의 현재 최대 길이, 해상도, 참조 이미지 수, 첫/마지막 프레임 지원을 공식 문서와 계정 화면 기준으로 확인해.
+샷 수와 생성 호출 수를 분리해 생성 단위를 설계해. 각 단위별 참조 ID·첫 프레임·선택적 끝 프레임·동작·카메라·조명·금지 변화·출력 길이를 명시해.
+먼저 저비용 초안을 만들고 구도·카메라·인물 일관성을 확인해. 이어지는 단위는 앞 클립 마지막 프레임을 참조로 쓸 수 있는지 확인해.
+실패한 단위만 수정하고 최대 2회 재시도 후 원인과 비용을 보고해.
+초안 승인 후 목표 해상도로 제작해. 단순 업스케일과 원본 고해상도 재생성의 차이를 비교하고 피부·글자 번짐을 점검해.
+추가 비용이 허용 범위를 넘으면 실제 호출 전에 멈춰. 자막은 후반 합성으로 분리해.</pre></article><article class="prompt" data-search="07 · 3D 만화 쇼츠 코드 제작3D·코드새 영상 주제: [입력]
+길이/비율/언어: [60초 / 9:16 / 한국어]
+분석 패키지: [./out/reference]
+템플릿: https://github.com/mromidev/claude-animated-shorts
+공식 README와 SKILL.md를 읽고 현재 프로젝트에 맞게 three.js + Remotion 제작 계획을 세워줘.
+템플릿의 예제 언어·길이·자막 설정은 나의 요청값으로 바꿔. 외부 레퍼런스 프레임·스토리·음성은 배포 결과에 넣지 마.
+새 대본과 출처 → 내레이션 → 단어/문장 타이밍 → 샷 설계 → 3D 월드·2D 캐릭터 카드 → 카메라 경로 → 렌더 순서로 진행해.
+카메라 position/target/FOV와 캐릭터 이동을 시간 또는 프레임에 연결하고, 무작위 값은 seed를 고정해.
+각 샷 첫·중간·끝 프레임을 먼저 렌더해 구도·깊이·가림·글자 안전영역을 검사해.
+검수 후 MP4, 소스, 자산 목록, 실제 렌더 명령, 수정 위치 안내를 제공해.
+영상 생성 API 없이 제작하되 코딩 모델·TTS·음악·렌더링 및 Remotion의 현재 라이선스 조건은 별도로 확인해."><div class="prompthead"><span class="tag">3D·코드</span><button class="copy" data-copy="p6">복사</button></div><h3>07 · 3D 만화 쇼츠 코드 제작</h3><pre id="p6">새 영상 주제: [입력]
+길이/비율/언어: [60초 / 9:16 / 한국어]
+분석 패키지: [./out/reference]
+템플릿: https://github.com/mromidev/claude-animated-shorts
+공식 README와 SKILL.md를 읽고 현재 프로젝트에 맞게 three.js + Remotion 제작 계획을 세워줘.
+템플릿의 예제 언어·길이·자막 설정은 나의 요청값으로 바꿔. 외부 레퍼런스 프레임·스토리·음성은 배포 결과에 넣지 마.
+새 대본과 출처 → 내레이션 → 단어/문장 타이밍 → 샷 설계 → 3D 월드·2D 캐릭터 카드 → 카메라 경로 → 렌더 순서로 진행해.
+카메라 position/target/FOV와 캐릭터 이동을 시간 또는 프레임에 연결하고, 무작위 값은 seed를 고정해.
+각 샷 첫·중간·끝 프레임을 먼저 렌더해 구도·깊이·가림·글자 안전영역을 검사해.
+검수 후 MP4, 소스, 자산 목록, 실제 렌더 명령, 수정 위치 안내를 제공해.
+영상 생성 API 없이 제작하되 코딩 모델·TTS·음악·렌더링 및 Remotion의 현재 라이선스 조건은 별도로 확인해.</pre></article><article class="prompt" data-search="08 · 키네틱 타이포·3D 도형 인트로3D·코드브랜드/소개 내용: [입력]
+길이/화면비: [30초 / 16:9]
+색상: 블랙·화이트·형광 핑크
+레퍼런스 분석: [폴더]
+레퍼런스의 텍스트 등장 타이밍·카메라 방향·전환 리듬을 활용해 새로운 소개 모션그래픽을 만들어줘.
+문장은 읽을 수 있는 길이로 압축하고 글자·단어·행별로 애니메이션 단위를 나눠.
+큐브·링·구체의 회전과 원근, 조명을 구현하고 텍스트를 가리지 않도록 해.
+사용 가능한 음악을 정한 뒤 실제 beat/onset 타임스탬프를 추출해 주요 등장·회전 변화·전환을 매핑해. BPM만 맞췄다고 박자 동기화 완료로 판단하지 마.
+MP4와 반응형 웹 인트로를 제공해. 웹은 무음 자동재생, 소리 켜기, 일시정지, 다시보기와 모션 감소 설정을 지원해.
+음악의 원작자·라이선스·편집 구간을 기록하고 최종 음원 길이와 영상 길이를 일치시켜."><div class="prompthead"><span class="tag">3D·코드</span><button class="copy" data-copy="p7">복사</button></div><h3>08 · 키네틱 타이포·3D 도형 인트로</h3><pre id="p7">브랜드/소개 내용: [입력]
+길이/화면비: [30초 / 16:9]
+색상: 블랙·화이트·형광 핑크
+레퍼런스 분석: [폴더]
+레퍼런스의 텍스트 등장 타이밍·카메라 방향·전환 리듬을 활용해 새로운 소개 모션그래픽을 만들어줘.
+문장은 읽을 수 있는 길이로 압축하고 글자·단어·행별로 애니메이션 단위를 나눠.
+큐브·링·구체의 회전과 원근, 조명을 구현하고 텍스트를 가리지 않도록 해.
+사용 가능한 음악을 정한 뒤 실제 beat/onset 타임스탬프를 추출해 주요 등장·회전 변화·전환을 매핑해. BPM만 맞췄다고 박자 동기화 완료로 판단하지 마.
+MP4와 반응형 웹 인트로를 제공해. 웹은 무음 자동재생, 소리 켜기, 일시정지, 다시보기와 모션 감소 설정을 지원해.
+음악의 원작자·라이선스·편집 구간을 기록하고 최종 음원 길이와 영상 길이를 일치시켜.</pre></article><article class="prompt" data-search="09 · 오디오와 자막 타임라인편집영상/내레이션/BGM/SFX 경로: [입력]
+목표 언어: [한국어]
+완성 길이: [초]
+오디오를 음성·음악·효과음 트랙으로 분리해 계획해줘. 사용할 음원 권리를 확인하고 원본 음원을 자동으로 재사용하지 마.
+실제 음성 파일 기준으로 자막 타임스탬프를 만들고 오탈자·고유명사·문장 끊김을 검수해.
+BGM의 beat/onset과 주요 컷을 대응표로 만들고 SFX의 시작/길이/음량을 기록해.
+내레이션 구간에서는 음악을 낮춰 명료도를 확보하고 clipping과 급격한 음량 변화를 검사해.
+MP4, SRT, 자막 스타일, 트랙별 타임라인, 음원 출처 목록을 제공해.
+폰 화면에서 글자 크기·줄바꿈·플랫폼 UI 가림을 점검해."><div class="prompthead"><span class="tag">편집</span><button class="copy" data-copy="p8">복사</button></div><h3>09 · 오디오와 자막 타임라인</h3><pre id="p8">영상/내레이션/BGM/SFX 경로: [입력]
+목표 언어: [한국어]
+완성 길이: [초]
+오디오를 음성·음악·효과음 트랙으로 분리해 계획해줘. 사용할 음원 권리를 확인하고 원본 음원을 자동으로 재사용하지 마.
+실제 음성 파일 기준으로 자막 타임스탬프를 만들고 오탈자·고유명사·문장 끊김을 검수해.
+BGM의 beat/onset과 주요 컷을 대응표로 만들고 SFX의 시작/길이/음량을 기록해.
+내레이션 구간에서는 음악을 낮춰 명료도를 확보하고 clipping과 급격한 음량 변화를 검사해.
+MP4, SRT, 자막 스타일, 트랙별 타임라인, 음원 출처 목록을 제공해.
+폰 화면에서 글자 크기·줄바꿈·플랫폼 UI 가림을 점검해.</pre></article><article class="prompt" data-search="10 · 비교 검수와 실패 샷만 수정검수레퍼런스: [경로]
+완성 초안: [경로]
+보존하기로 한 원리: [구도/컷 리듬/카메라 등]
+교체하기로 한 요소: [인물/브랜드/문구 등]
+두 영상의 시간축을 맞춰 비교용 contact sheet 또는 side-by-side를 만들어줘.
+샷 경계, 카메라 방향, 주요 요소의 화면상 위치, 인물 일관성, 자막 가독성, 박자, 마지막 프레임을 확인해.
+차이를 필수 수정 / 의도한 변형 / 미확인으로 분류하고 문제가 큰 3개부터 고쳐.
+수정 전후 결과를 동일 시점으로 비교해. 주제와 인물을 바꾼 영상의 단순 픽셀 차이를 품질 점수로 오해하지 마.
+문제 없는 샷은 재생성하지 마. 최종 파일을 실제로 열어 재생 시간·해상도·음성 누락·검은 프레임을 검사하고 검증 범위를 명시해."><div class="prompthead"><span class="tag">검수</span><button class="copy" data-copy="p9">복사</button></div><h3>10 · 비교 검수와 실패 샷만 수정</h3><pre id="p9">레퍼런스: [경로]
+완성 초안: [경로]
+보존하기로 한 원리: [구도/컷 리듬/카메라 등]
+교체하기로 한 요소: [인물/브랜드/문구 등]
+두 영상의 시간축을 맞춰 비교용 contact sheet 또는 side-by-side를 만들어줘.
+샷 경계, 카메라 방향, 주요 요소의 화면상 위치, 인물 일관성, 자막 가독성, 박자, 마지막 프레임을 확인해.
+차이를 필수 수정 / 의도한 변형 / 미확인으로 분류하고 문제가 큰 3개부터 고쳐.
+수정 전후 결과를 동일 시점으로 비교해. 주제와 인물을 바꾼 영상의 단순 픽셀 차이를 품질 점수로 오해하지 마.
+문제 없는 샷은 재생성하지 마. 최종 파일을 실제로 열어 재생 시간·해상도·음성 누락·검은 프레임을 검사하고 검증 범위를 명시해.</pre></article><article class="prompt" data-search="11 · Hypit으로 변형 제작확장/hypit
+확정한 원본 프로젝트: [경로]
+변형할 항목: [훅/언어/제품 중 선택]
+변형 수: [3]
+예산 상한: [입력, 미입력 시 유료 호출 금지]
+현재 Hypit 공식 README를 확인하고 확정된 영상 구조를 재사용하는 편집 가능한 워크플로로 만들어줘.
+첫 변형 1개를 먼저 제작해 품질·타이밍·자막을 검수한 다음 나머지를 만들어.
+바뀌지 않는 자산·음악·구성은 재사용하고 바뀐 요소만 재생성 또는 재렌더해.
+지원하지 않는 모델이나 연결되지 않은 서비스를 가정하지 마.
+변형별 차이·실제 사용 비용·출력 경로를 표로 제출해. 대량 생성 전에 승인된 수량과 예산을 다시 대조해."><div class="prompthead"><span class="tag">확장</span><button class="copy" data-copy="p10">복사</button></div><h3>11 · Hypit으로 변형 제작</h3><pre id="p10">/hypit
+확정한 원본 프로젝트: [경로]
+변형할 항목: [훅/언어/제품 중 선택]
+변형 수: [3]
+예산 상한: [입력, 미입력 시 유료 호출 금지]
+현재 Hypit 공식 README를 확인하고 확정된 영상 구조를 재사용하는 편집 가능한 워크플로로 만들어줘.
+첫 변형 1개를 먼저 제작해 품질·타이밍·자막을 검수한 다음 나머지를 만들어.
+바뀌지 않는 자산·음악·구성은 재사용하고 바뀐 요소만 재생성 또는 재렌더해.
+지원하지 않는 모델이나 연결되지 않은 서비스를 가정하지 마.
+변형별 차이·실제 사용 비용·출력 경로를 표로 제출해. 대량 생성 전에 승인된 수량과 예산을 다시 대조해.</pre></article><article class="prompt" data-search="12 · 중단된 작업 이어서 완성복구프로젝트 폴더: [경로]
+현재 단계와 기존 산출물을 먼저 조사해. 설치·분석·자산·초안·렌더 중 어디까지 실제로 완료됐는지 파일과 로그로 확인해.
+완료된 단계는 반복하지 말고, 실패 원인과 누락된 최소 자산을 정리해.
+VIDEO.md부터 읽고 해당 실패 샷의 파일만 추가로 확인해.
+사용 가능한 디스크·ffmpeg·Python·Node·의존성·모델 다운로드·API 잔액을 필요한 범위에서 검사해.
+새 비용이 드는 호출은 기존 승인 범위 안에서만 실행해.
+부분 결과를 보존하며 다음 단계부터 재개하고 최종 재생 가능한 영상과 보고서 경로를 제공해."><div class="prompthead"><span class="tag">복구</span><button class="copy" data-copy="p11">복사</button></div><h3>12 · 중단된 작업 이어서 완성</h3><pre id="p11">프로젝트 폴더: [경로]
+현재 단계와 기존 산출물을 먼저 조사해. 설치·분석·자산·초안·렌더 중 어디까지 실제로 완료됐는지 파일과 로그로 확인해.
+완료된 단계는 반복하지 말고, 실패 원인과 누락된 최소 자산을 정리해.
+VIDEO.md부터 읽고 해당 실패 샷의 파일만 추가로 확인해.
+사용 가능한 디스크·ffmpeg·Python·Node·의존성·모델 다운로드·API 잔액을 필요한 범위에서 검사해.
+새 비용이 드는 호출은 기존 승인 범위 안에서만 실행해.
+부분 결과를 보존하며 다음 단계부터 재개하고 최종 재생 가능한 영상과 보고서 경로를 제공해.</pre></article></div><p id="empty" hidden>검색 결과가 없습니다. 다른 단어로 찾아보세요.</p><button class="copy" id="allprompts">12종 전체 TXT 저장 ↓</button></section>
+<section id="qa"><div class="sectiontop"><span class="num">07</span><h2>실행 체크리스트와 오류 해결</h2></div><p class="sourcesmall">체크 상태는 이 브라우저에만 저장됩니다.</p><b id="checkCount">0 / 8 완료</b><div class="progress"><span id="bar"></span></div><div class="checklist"><label><input type="checkbox">원본 파일과 분석 구간을 확보했다.</label><label><input type="checkbox">Python·ffmpeg·REA-Video CLI와 스킬 연결을 확인했다.</label><label><input type="checkbox">report.html / VIDEO.md와 샷 프레임을 열어봤다.</label><label><input type="checkbox">카메라·샷 경계·제작 유형의 불확실한 판정을 검수했다.</label><label><input type="checkbox">사용할 자산·생성 경로·예산을 확정했다.</label><label><input type="checkbox">저비용 초안 또는 3D 정지화면을 먼저 확인했다.</label><label><input type="checkbox">자막·실제 박자·오디오·연속성을 검수했다.</label><label><input type="checkbox">최종 영상을 재생하고 소스·라이선스·실제 비용을 기록했다.</label></div><h3 style="margin-top:30px">막히는 지점별 해결</h3><details><summary>URL을 넣었는데 분석이 시작되지 않음</summary><p>페이지 주소와 영상 파일은 다릅니다. 다운로드 단계가 성공했는지, 실제 재생 가능한 파일이 있는지 먼저 확인합니다. 정상 확보한 로컬 MP4로 입력을 고정하면 분석과 다운로드 오류를 분리할 수 있습니다.</p></details><details><summary>첫 실행이 오래 걸림 / 모델 다운로드 실패</summary><p>모델 다운로드·CPU 음성 분리·OCR을 구분해 로그를 확인합니다. 저장공간과 네트워크, Python 의존성 문제를 해결한 뒤 같은 폴더에서 재개합니다. ‘1분 완료’ 사례를 고정 제한시간으로 두지 않습니다.</p></details><details><summary>한국어가 깨지거나 옵션 오류가 발생</summary><p>자막은 --ocr-lang ko, 원본 보고서는 --lang en 또는 zh입니다. 한국어 설명은 별도로 요청합니다. 음성 인식의 잘못된 고유명사는 실제 오디오를 듣고 교정합니다.</p></details><details><summary>프롬프트가 빈약함 / 카메라가 다름</summary><p>기본 도구 분석과 의미 분석을 구분합니다. VLM이 전부 실패하면 켠 것처럼 보이더라도 실질적으로 미사용 상태일 수 있습니다. 실제 프레임을 보는 에이전트로 review하고, 시작·중간·끝의 관계로 이동을 다시 작성합니다.</p></details><details><summary>인물이 바뀌거나 두 클립이 끊어져 보임</summary><p>자산 ID, 의상, 머리색, 구도, 마지막 프레임 연결을 점검합니다. 여러 변수 중 하나씩 고치고 실패한 생성 단위만 재시도합니다.</p></details><details><summary>3D 렌더가 멈추거나 저장공간이 부족</summary><p>예제 전체 자산의 복사량과 REMOTION_TMP 위치를 확인합니다. 짧은 구간·낮은 해상도 테스트 후 최종 렌더합니다. 실제 에러 로그를 기준으로 의존성, 브라우저 렌더, 메모리 문제를 구분합니다.</p></details><details><summary>음악 BPM은 같은데 움직임이 안 맞음</summary><p>곡의 시작 오프셋, 실제 beat/onset, 전환 지점을 확인합니다. BPM만으로 곡의 첫 박자나 강박 위치가 자동 확정되지 않습니다. 같은 타임라인에서 오디오와 프레임을 함께 평가합니다.</p></details></section>
+<section id="sources"><div class="sectiontop"><span class="num">08</span><h2>검증 기준과 원문</h2></div><p>2026년 11월 18일 기준으로 원본 영상의 추출 자막·설명과 공식 자료를 대조했습니다. 이 가이드 작성 과정에서 REA-Video 설치나 유료 생성 모델의 실제 제작 성능을 재현 시험하지는 않았습니다.</p><p>권장 순서·검수 기준·프롬프트는 실사용을 위한 재구성입니다. 영상에서 주장한 속도·조회수·크레딧과 공식 기능을 구분했습니다. 원본의 제작 원리를 배우되, 배포물은 사용 권한이 있는 인물·음성·음악·이미지로 만듭니다.</p><ul class="sourceList"><li id="S1"><b>S1</b><div><a href="https://www.youtube.com/watch?v=9mngM958lx0" target="_blank" rel="noopener">원본 영상 · 문외인 Layperson ↗</a><p>영상 자막·사용자가 제공한 설명·타임스탬프. 시연 숫자는 영상의 주장으로 구분.</p></div></li><li id="S2"><b>S2</b><div><a href="https://github.com/JuneYaooo/rea-video" target="_blank" rel="noopener">REA-Video 공식 저장소 ↗</a><p>기능 범위·분석과 생성의 구분·비용 및 재현 경로.</p></div></li><li id="S3"><b>S3</b><div><a href="https://reavideo.ai/en/docs/" target="_blank" rel="noopener">공식 시작 가이드 ↗</a><p>에이전트 기반 설치, 로컬 실행, 보고서 읽는 순서.</p></div></li><li id="S4"><b>S4</b><div><a href="https://github.com/JuneYaooo/rea-video/blob/main/docs/cli.md" target="_blank" rel="noopener">CLI·설치 스크립트 ↗</a><p>명령어, 언어 옵션, 모델 용량, review 및 remake-run.</p></div></li><li id="S5"><b>S5</b><div><a href="https://github.com/JuneYaooo/rea-video/blob/main/docs/replicate.md" target="_blank" rel="noopener">재현 가이드 ↗</a><p>AI·실촬영·코드 경로. 코드 프로젝트는 에이전트가 별도 작성.</p></div></li><li id="S6"><b>S6</b><div><a href="https://videomd.github.io/videomd/" target="_blank" rel="noopener">VIDEO.md 명세 ↗</a><p>계층 읽기와 관측/추정 분리.</p></div></li><li id="S7"><b>S7</b><div><a href="https://github.com/hypit-ai/hypit" target="_blank" rel="noopener">Hypit 공식 저장소 ↗</a><p>현재 코드 렌더링 지원·설치 명령·모델 비용 구분.</p></div></li><li id="S8"><b>S8</b><div><a href="https://github.com/mromidev/claude-animated-shorts" target="_blank" rel="noopener">Claude Animated Shorts ↗</a><p>three.js·Remotion 템플릿, 설치 위치, 참조 자료의 사용 범위.</p></div></li><li id="S9"><b>S9</b><div><a href="https://higgsfield.ai/" target="_blank" rel="noopener">Higgsfield ↗</a><p>영상에 등장하는 생성 서비스. 계정별 모델·크레딧은 실행 시 재확인.</p></div></li></ul></section>
+<footer>STUDY / AI VIDEO & MOTION · REA-Video Field Guide · 2026.11.18<br>이 가이드는 설치나 유료 호출을 자동 실행하지 않습니다.</footer></div></div></main><div id="toast" class="toast" role="status" hidden></div><script>
+const promptData=[{"title": "01 · 설치와 실행 환경 점검", "tag": "설치", "body": "REA-Video를 이 컴퓨터에서 사용할 수 있게 설치하고 검증해줘.\n공식 저장소: https://github.com/JuneYaooo/rea-video\n현재 README, docs/cli.md, 설치 스크립트를 먼저 읽고 OS에 맞게 진행해.\n1. Python 3.10 이상, ffmpeg·ffprobe, Git, 실행 중인 에이전트를 확인해.\n2. 기존 설치가 있으면 경로·버전·작업 파일을 보존하고 중복 설치하지 마.\n3. 별도 가상환경을 우선 사용하고, Windows PowerShell에서는 bash 명령을 그대로 실행하지 마.\n4. CLI와 사용하는 에이전트의 스킬 연결을 각각 확인해. CLI 설치와 스킬 등록을 같은 것으로 취급하지 마.\n5. rea-video --help 실행 결과와 실제 설치 경로를 보고해.\n6. 실행에 필요한 모델 다운로드 항목·예상 용량을 알려줘. API 키나 유료 모델 호출은 아직 사용하지 마.\n완료 기준: 실제 명령 실행 성공. 설치 계획만 출력하고 완료라고 하지 마."}, {"title": "02 · 레퍼런스 분석부터 시작", "tag": "분석", "body": "레퍼런스: [로컬 영상 경로 또는 이용 가능한 URL]\n분석 구간: [예: 00:00–00:15]\n출력 폴더: [예: ./out/reference]\nREA-Video로 해당 구간을 분석해줘. URL만 받은 경우 다운로드 가능 여부와 이용 조건을 확인하고, 차단되면 성공한 것처럼 진행하지 마.\n원본은 보존하고 분석용 구간 파일을 별도로 만들어. 샷 경계·시작/끝·지속시간·제작 유형·구도·카메라 이동·조명·전환·자막·음성/BGM/SFX를 분리해.\nreport.html, VIDEO.md, storyboard 및 샷별 참조 프레임을 생성해.\n측정한 값 / 눈으로 확인한 내용 / 추정을 구분하고 불확실한 항목을 표시해.\n현재 지원되는 보고서 언어로 원본 결과를 생성하고, 별도로 한국어 실무 요약을 만들어. 한국어 자막이면 OCR 언어 ko 지원을 확인해 사용해.\n아직 영상 생성·결제는 하지 말고, 재현 경로와 필요한 자산 목록까지 완성해."}, {"title": "03 · 샷 판정과 카메라 재검수", "tag": "분석", "body": "분석 폴더: [./out/reference]\nVIDEO.md의 요약과 타임라인을 읽고, 필요한 샷 파일만 열어 검수해.\n각 샷의 첫·중간·마지막 프레임 및 필요한 인접 프레임을 비교해.\n특히 고정 카메라와 tracking/dolly-out, 피사체 이동과 카메라 이동, 2D 카드와 실제 3D 모델을 구분해.\n낮은 신뢰도·증거 충돌·짧은 중복 샷을 우선 검사해. 그림을 실제로 확인하지 않았다면 시각 검수 완료라고 말하지 마.\n각 수정은 기존 판정 → 수정 판정 → 프레임/시간 근거로 기록해.\n현재 CLI의 review/apply-review 절차에 맞춰 결과에 반영하고 보고서를 다시 생성해.\n측정 불가능한 렌즈 초점거리·정확한 원본 모델명은 확정하지 마."}, {"title": "04 · 원본 원리를 새 콘텐츠로 바꾸기", "tag": "기획", "body": "분석 폴더: [./out/reference]\n새 주제/제품: [입력]\n타깃: [입력]\n길이/화면비: [30초 / 9:16]\n보존할 요소: 훅의 역할, 정보 공개 순서, 카메라 방향, 컷 리듬\n바꿀 요소: 대본, 인물, 제품, 배경의 구체적 디자인, 음악\n레퍼런스의 효과적인 원리를 새 주제에 적용해 새 샷 설계표를 만들어줘.\nshot_id / start / end / duration / 목적 / 화면 / 카메라 / 자막 / 오디오 / 제작경로 / 필요한 자산을 표로 정리해.\n전체 길이의 합이 목표 길이와 일치하도록 계산해. 원본을 자른 것만으로 새 영상이라고 하지 마.\n의료 콘텐츠라면 확인된 자료만 사용하고 효과 보장·최상급·가짜 환자 후기를 넣지 마.\n내가 제공한 자산과 상업적 사용 가능한 자산으로 제작 가능하게 설계해."}, {"title": "05 · 캐릭터·제품 일관성 시트", "tag": "AI 생성", "body": "기획/분석 폴더: [경로]\n사용할 인물·제품 자산: [경로]\n생성 도구: [연동된 도구명 또는 미연동]\n샷 전체에서 고정할 외형·의상·색상·비율·제품 라벨을 정리하고 자산 manifest를 만들어줘.\n인물은 정면 얼굴·측면·상반신·전신 중 해당 샷에 필요한 뷰를, 제품은 정면·측면·디테일 뷰를 구성해.\n자산별 ID와 파일명, 쓰일 shot_id, 이미지 생성 프롬프트를 작성해.\n도구가 실제 연결돼 있고 승인된 예산이 있을 때만 생성해. 연결되지 않았다면 입력할 프롬프트와 참조 파일 매핑을 납품해.\n생성 후 얼굴·머리색·표정·의상·라벨을 원본 자산과 대조해. 캐릭터 시트가 자동으로 완성된다고 가정하지 마."}, {"title": "06 · AI 샷 저해상도 초안 → 확정", "tag": "AI 생성", "body": "분석/기획: [경로]\n승인된 참조 시트: [경로]\n사용 서비스/모델: [실제로 사용 가능한 모델]\n허용 예산: [금액 또는 크레딧]\n영상 모델의 현재 최대 길이, 해상도, 참조 이미지 수, 첫/마지막 프레임 지원을 공식 문서와 계정 화면 기준으로 확인해.\n샷 수와 생성 호출 수를 분리해 생성 단위를 설계해. 각 단위별 참조 ID·첫 프레임·선택적 끝 프레임·동작·카메라·조명·금지 변화·출력 길이를 명시해.\n먼저 저비용 초안을 만들고 구도·카메라·인물 일관성을 확인해. 이어지는 단위는 앞 클립 마지막 프레임을 참조로 쓸 수 있는지 확인해.\n실패한 단위만 수정하고 최대 2회 재시도 후 원인과 비용을 보고해.\n초안 승인 후 목표 해상도로 제작해. 단순 업스케일과 원본 고해상도 재생성의 차이를 비교하고 피부·글자 번짐을 점검해.\n추가 비용이 허용 범위를 넘으면 실제 호출 전에 멈춰. 자막은 후반 합성으로 분리해."}, {"title": "07 · 3D 만화 쇼츠 코드 제작", "tag": "3D·코드", "body": "새 영상 주제: [입력]\n길이/비율/언어: [60초 / 9:16 / 한국어]\n분석 패키지: [./out/reference]\n템플릿: https://github.com/mromidev/claude-animated-shorts\n공식 README와 SKILL.md를 읽고 현재 프로젝트에 맞게 three.js + Remotion 제작 계획을 세워줘.\n템플릿의 예제 언어·길이·자막 설정은 나의 요청값으로 바꿔. 외부 레퍼런스 프레임·스토리·음성은 배포 결과에 넣지 마.\n새 대본과 출처 → 내레이션 → 단어/문장 타이밍 → 샷 설계 → 3D 월드·2D 캐릭터 카드 → 카메라 경로 → 렌더 순서로 진행해.\n카메라 position/target/FOV와 캐릭터 이동을 시간 또는 프레임에 연결하고, 무작위 값은 seed를 고정해.\n각 샷 첫·중간·끝 프레임을 먼저 렌더해 구도·깊이·가림·글자 안전영역을 검사해.\n검수 후 MP4, 소스, 자산 목록, 실제 렌더 명령, 수정 위치 안내를 제공해.\n영상 생성 API 없이 제작하되 코딩 모델·TTS·음악·렌더링 및 Remotion의 현재 라이선스 조건은 별도로 확인해."}, {"title": "08 · 키네틱 타이포·3D 도형 인트로", "tag": "3D·코드", "body": "브랜드/소개 내용: [입력]\n길이/화면비: [30초 / 16:9]\n색상: 블랙·화이트·형광 핑크\n레퍼런스 분석: [폴더]\n레퍼런스의 텍스트 등장 타이밍·카메라 방향·전환 리듬을 활용해 새로운 소개 모션그래픽을 만들어줘.\n문장은 읽을 수 있는 길이로 압축하고 글자·단어·행별로 애니메이션 단위를 나눠.\n큐브·링·구체의 회전과 원근, 조명을 구현하고 텍스트를 가리지 않도록 해.\n사용 가능한 음악을 정한 뒤 실제 beat/onset 타임스탬프를 추출해 주요 등장·회전 변화·전환을 매핑해. BPM만 맞췄다고 박자 동기화 완료로 판단하지 마.\nMP4와 반응형 웹 인트로를 제공해. 웹은 무음 자동재생, 소리 켜기, 일시정지, 다시보기와 모션 감소 설정을 지원해.\n음악의 원작자·라이선스·편집 구간을 기록하고 최종 음원 길이와 영상 길이를 일치시켜."}, {"title": "09 · 오디오와 자막 타임라인", "tag": "편집", "body": "영상/내레이션/BGM/SFX 경로: [입력]\n목표 언어: [한국어]\n완성 길이: [초]\n오디오를 음성·음악·효과음 트랙으로 분리해 계획해줘. 사용할 음원 권리를 확인하고 원본 음원을 자동으로 재사용하지 마.\n실제 음성 파일 기준으로 자막 타임스탬프를 만들고 오탈자·고유명사·문장 끊김을 검수해.\nBGM의 beat/onset과 주요 컷을 대응표로 만들고 SFX의 시작/길이/음량을 기록해.\n내레이션 구간에서는 음악을 낮춰 명료도를 확보하고 clipping과 급격한 음량 변화를 검사해.\nMP4, SRT, 자막 스타일, 트랙별 타임라인, 음원 출처 목록을 제공해.\n폰 화면에서 글자 크기·줄바꿈·플랫폼 UI 가림을 점검해."}, {"title": "10 · 비교 검수와 실패 샷만 수정", "tag": "검수", "body": "레퍼런스: [경로]\n완성 초안: [경로]\n보존하기로 한 원리: [구도/컷 리듬/카메라 등]\n교체하기로 한 요소: [인물/브랜드/문구 등]\n두 영상의 시간축을 맞춰 비교용 contact sheet 또는 side-by-side를 만들어줘.\n샷 경계, 카메라 방향, 주요 요소의 화면상 위치, 인물 일관성, 자막 가독성, 박자, 마지막 프레임을 확인해.\n차이를 필수 수정 / 의도한 변형 / 미확인으로 분류하고 문제가 큰 3개부터 고쳐.\n수정 전후 결과를 동일 시점으로 비교해. 주제와 인물을 바꾼 영상의 단순 픽셀 차이를 품질 점수로 오해하지 마.\n문제 없는 샷은 재생성하지 마. 최종 파일을 실제로 열어 재생 시간·해상도·음성 누락·검은 프레임을 검사하고 검증 범위를 명시해."}, {"title": "11 · Hypit으로 변형 제작", "tag": "확장", "body": "/hypit\n확정한 원본 프로젝트: [경로]\n변형할 항목: [훅/언어/제품 중 선택]\n변형 수: [3]\n예산 상한: [입력, 미입력 시 유료 호출 금지]\n현재 Hypit 공식 README를 확인하고 확정된 영상 구조를 재사용하는 편집 가능한 워크플로로 만들어줘.\n첫 변형 1개를 먼저 제작해 품질·타이밍·자막을 검수한 다음 나머지를 만들어.\n바뀌지 않는 자산·음악·구성은 재사용하고 바뀐 요소만 재생성 또는 재렌더해.\n지원하지 않는 모델이나 연결되지 않은 서비스를 가정하지 마.\n변형별 차이·실제 사용 비용·출력 경로를 표로 제출해. 대량 생성 전에 승인된 수량과 예산을 다시 대조해."}, {"title": "12 · 중단된 작업 이어서 완성", "tag": "복구", "body": "프로젝트 폴더: [경로]\n현재 단계와 기존 산출물을 먼저 조사해. 설치·분석·자산·초안·렌더 중 어디까지 실제로 완료됐는지 파일과 로그로 확인해.\n완료된 단계는 반복하지 말고, 실패 원인과 누락된 최소 자산을 정리해.\nVIDEO.md부터 읽고 해당 실패 샷의 파일만 추가로 확인해.\n사용 가능한 디스크·ffmpeg·Python·Node·의존성·모델 다운로드·API 잔액을 필요한 범위에서 검사해.\n새 비용이 드는 호출은 기존 승인 범위 안에서만 실행해.\n부분 결과를 보존하며 다음 단계부터 재개하고 최종 재생 가능한 영상과 보고서 경로를 제공해."}];
+const $=s=>document.querySelector(s);let timer;
+function toast(s){$('#toast').textContent=s;$('#toast').hidden=false;clearTimeout(timer);timer=setTimeout(()=>$('#toast').hidden=true,2400)}
+async function copyText(text){try{await navigator.clipboard.writeText(text);toast('복사했어요. 에이전트 작업 창에 붙여넣으세요.')}catch(e){const a=document.createElement('textarea');a.value=text;a.style.position='fixed';a.style.left='-9999px';document.body.append(a);a.select();const ok=document.execCommand('copy');a.remove();toast(ok?'복사했어요.':'복사가 제한됐어요. 프롬프트 본문을 선택해 복사하세요.')}}
+document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>copyText(document.getElementById(b.dataset.copy).textContent));
+$('#print').onclick=()=>window.print();$('.mobileNav').onchange=e=>{if(e.target.value)location.hash=e.target.value};
+document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-route]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.querySelectorAll('.route').forEach(x=>x.hidden=x.id!=='route-'+b.dataset.route)});
+function build(){const val=(s,d)=>$(s).value.trim()||d;const mode=val('#mode','auto');const route={auto:'샷별 분석 결과를 근거로 AI 생성 / 3D·코드 / 실촬영·혼합 경로를 제안해.',ai:'지원되는 영상 모델을 확인하고 참조 시트 → 생성 단위 → 저비용 초안 → 연속성 검수 → 확정 영상 순서로 제작해.',code:'three.js + Remotion 코드 경로를 우선 사용해. 대본 → 내레이션 → 시간표 → 장면·카메라 → 정지화면 QA → 렌더 순서로 진행해.',live:'촬영·화면 녹화가 필요한 샷과 AI/코드로 만들 샷을 분리하고, 필요한 자산을 먼저 목록화해.'}[mode];return `너는 레퍼런스 분석과 영상 제작을 연결하는 프로듀서다.
+
+[작업 조건]
+레퍼런스: ${val('#ref','[로컬 영상 경로 또는 URL을 입력]')}
+새 주제: ${val('#topic','[새 콘텐츠 주제를 입력]')}
+길이: ${val('#duration','30')}초 / 화면비: ${val('#ratio','9:16')}
+언어: ${val('#language','한국어')}
+출력 폴더: ${val('#folder','./out/my-video')}
+승인된 생성 예산: ${val('#budget','0원 · 유료 호출 금지')}
+${val('#changes','보존: 리듬·카메라 / 교체: 인물·대본·음악')}
+
+[실행 순서]
+1. https://github.com/JuneYaooo/rea-video 의 최신 README·CLI 문서와 현재 설치를 확인해. 기존 작업은 보존하고 OS에 맞게 환경을 준비해.
+2. 실제 영상 파일과 분석 구간을 확인해. report.html, VIDEO.md, 샷별 참조 프레임을 만들고 관측·측정·추정을 분리해.
+3. 실제 프레임을 비교해 샷 경계·카메라 이동·인물 동작·제작 유형을 재검수해. 미확인 내용은 표시해.
+4. ${route}
+5. 새 대본과 샷별 start/end/duration, 카메라, 자산 ID, 자막, 오디오, 제작 경로를 작성해. 길이 합계를 검증해.
+6. 사용할 모델의 실제 지원 길이·참조 수·해상도와 비용을 확인해. 예산 미입력·0원이면 유료 생성은 하지 말고 실행 직전의 프롬프트·자산 계획까지 완성해.
+7. 승인 범위에서 짧은 초안부터 제작하고 실패한 샷만 수정해. 제공한 소재 또는 이용 권한이 있는 자산을 사용해.
+8. 자막은 음성의 실제 타이밍에, 모션은 음악의 실제 beat/onset에 맞춰 합성해. 음악·SFX 출처도 기록해.
+9. 결과를 직접 재생하고 길이·해상도·자막·카메라·주체 일관성·음성 누락을 검수해.
+10. MP4, 편집 가능한 소스, 한국어 사용 안내, 자산·비용 내역을 납품해. 완료와 미완료, 실제 검증과 추정을 구분해.
+
+분석 보고서 원본 언어는 현재 CLI 지원값을 사용하고 한국어 안내는 별도로 작성해. 지원하지 않는 --lang ko를 임의로 만들지 마. 연결되지 않은 서비스에서 생성했다고 말하지 마.`}
+function update(){$('#generated').textContent=build()}document.querySelectorAll('.fields input,.fields select,.fields textarea').forEach(e=>e.addEventListener('input',update));update();
+function download(text,name){const u=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}$('#download').onclick=()=>download(build(),'REA-Video-custom-prompt.txt');$('#allprompts').onclick=()=>download(promptData.map(p=>p.title+'\n\n'+p.body).join('\n\n--------------------\n\n'),'REA-Video-12-prompts.txt');
+$('#search').oninput=e=>{const q=e.target.value.toLowerCase().trim();let n=0;document.querySelectorAll('.prompt').forEach(c=>{c.hidden=!c.dataset.search.toLowerCase().includes(q);if(!c.hidden)n++});$('#count').textContent=n+'개 프롬프트';$('#empty').hidden=n!==0};
+const checks=[...document.querySelectorAll('.checklist input')];let saved=[];try{saved=JSON.parse(localStorage.getItem('rea-video-guide-checks-v1')||'[]');if(!Array.isArray(saved))saved=[]}catch(e){}checks.forEach((c,i)=>{c.checked=!!saved[i];c.onchange=()=>{try{localStorage.setItem('rea-video-guide-checks-v1',JSON.stringify(checks.map(x=>x.checked)))}catch(e){}progress()}});function progress(){let n=checks.filter(x=>x.checked).length;$('#checkCount').textContent=n+' / '+checks.length+' 완료';$('#bar').style.width=n/checks.length*100+'%'}progress();
+</script></body></html>
